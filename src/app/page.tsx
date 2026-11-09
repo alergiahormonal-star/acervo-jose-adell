@@ -1,5 +1,6 @@
-import LandingPage from './[locale]/page';
+import React from 'react';
+import LandingPageClient from '@/components/LandingPageClient';
 
 export default function RootHomePage() {
-  return <LandingPage />;
+  return <LandingPageClient initialLocale="pt" />;
 }
