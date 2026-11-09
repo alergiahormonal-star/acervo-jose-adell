@@ -1,15 +1,10 @@
 import React from 'react';
-import LandingPageClient from '@/components/LandingPageClient';
-import { Locale } from '@/lib/taxonomy';
+import HomeExperience from '@/components/HomeExperience';
 
-export function generateStaticParams(): { locale: Locale }[] {
+export function generateStaticParams() {
   return [{ locale: 'pt' }, { locale: 'es' }, { locale: 'va' }];
 }
 
-export default function LocaleHomePage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
-  return <LandingPageClient initialLocale={params?.locale || 'pt'} />;
+export default function LocaleHomePage() {
+  return <HomeExperience />;
 }

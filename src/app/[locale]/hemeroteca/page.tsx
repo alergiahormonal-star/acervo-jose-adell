@@ -1,15 +1,10 @@
 import React from 'react';
-import DocumentViewerPage from '@/components/DocumentViewerPage';
-import { Locale } from '@/lib/taxonomy';
+import AcervoCompletoPage from '@/app/acervo/page';
 
-export function generateStaticParams(): { locale: Locale }[] {
+export function generateStaticParams() {
   return [{ locale: 'pt' }, { locale: 'es' }, { locale: 'va' }];
 }
 
-export default function HemerotecaViewerRoute({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
-  return <DocumentViewerPage initialLocale={params?.locale || 'pt'} />;
+export default function LocaleHemerotecaPage() {
+  return <AcervoCompletoPage />;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import LandingPageClient from '@/components/LandingPageClient';
+import HomeExperience from '@/components/HomeExperience';
 
 export default function RootHomePage() {
-  return <LandingPageClient initialLocale="pt" />;
+  return <HomeExperience />;
 }
