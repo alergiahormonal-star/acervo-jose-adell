@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <!-- Documento #047: Entrevista com Fernando Tarrida del Mármol (1893) -->
+  <url>
+    <loc>https://memorialjoseadell.org/pt/hemeroteca/periodicos-atuacao/imprensa-diaspora-brasil/entrevista-tarrida-del-marmol-1893</loc>
+    <lastmod>2026-11-09T08:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://memorialjoseadell.org/pt/hemeroteca/periodicos-atuacao/imprensa-diaspora-brasil/entrevista-tarrida-del-marmol-1893"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://memorialjoseadell.org/es/hemeroteca/periodicos-actuacion/prensa-diaspora-brasil/entrevista-tarrida-del-marmol-1893"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="ca-valencia"
+      href="https://memorialjoseadell.org/va/hemeroteca/periodics-actuacio/premsa-diaspora-brasil/entrevista-tarrida-del-marmol-1893"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://memorialjoseadell.org/es/hemeroteca/periodicos-actuacion/prensa-diaspora-brasil/entrevista-tarrida-del-marmol-1893"
+    />
+    <image:image>
+      <image:loc>https://memorialjoseadell.org/acervo-facsimiles/doc-047-tarrida-1893-p59.avif</image:loc>
+      <image:title>Carta de Madrid por A. Fons (José Adell y Fons) sobre o atentado de Paulino Pallás e entrevista com Fernando Tarrida del Mármol (30 Set. 1893)</image:title>
+      <image:caption>Fac-símile original publicado em La Unión Española (Rio de Janeiro, 1893) — Páginas 59 e 60 do Documento.pdf.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Dossiê Adolfo Morales de los Ríos: Tributo "Pepe Adell, ha muerto" (1927) -->
+  <url>
+    <loc>https://memorialjoseadell.org/pt/arte-gravura-numismatica/circulo-belas-artes-rio/dossie-adolfo-morales-de-los-rios/tributo-pepe-adell-ha-muerto-1927</loc>
+    <lastmod>2026-11-09T08:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://memorialjoseadell.org/pt/arte-gravura-numismatica/circulo-belas-artes-rio/dossie-adolfo-morales-de-los-rios/tributo-pepe-adell-ha-muerto-1927"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="es-ES"
+      href="https://memorialjoseadell.org/es/arte-grabado-numismatica/circulo-bellas-artes-rio/dossier-adolfo-morales-de-los-rios/tributo-pepe-adell-ha-muerto-1927"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="ca-valencia"
+      href="https://memorialjoseadell.org/va/art-gravat-numismatica/cercle-belles-arts-rio/dossier-adolfo-morales-de-los-rios/tribut-pepe-adell-ha-muerto-1927"
+    />
+  </url>
+</urlset>

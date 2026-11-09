@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <!-- Páginas Principais Trilíngues (PT-BR, ES-ES, CA-VALENCIA) -->
+  <url>
+    <loc>https://acervo-jose-adell.pages.dev/pt/</loc>
+    <lastmod>2026-11-09T09:00:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://acervo-jose-adell.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://acervo-jose-adell.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="ca-valencia" href="https://acervo-jose-adell.pages.dev/va/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acervo-jose-adell.pages.dev/pt/" />
+  </url>
+  <url>
+    <loc>https://acervo-jose-adell.pages.dev/es/</loc>
+    <lastmod>2026-11-09T09:00:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://acervo-jose-adell.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://acervo-jose-adell.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="ca-valencia" href="https://acervo-jose-adell.pages.dev/va/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acervo-jose-adell.pages.dev/pt/" />
+  </url>
+  <url>
+    <loc>https://acervo-jose-adell.pages.dev/va/</loc>
+    <lastmod>2026-11-09T09:00:00-03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://acervo-jose-adell.pages.dev/pt/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://acervo-jose-adell.pages.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="ca-valencia" href="https://acervo-jose-adell.pages.dev/va/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://acervo-jose-adell.pages.dev/pt/" />
+  </url>
+
+  <!-- Visualizador de Documento Hemerográfico #047 (Entrevista com Fernando Tarrida del Mármol - 1893) -->
+  <url>
+    <loc>https://acervo-jose-adell.pages.dev/pt/hemeroteca/</loc>
+    <lastmod>2026-11-09T09:00:00-03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://acervo-jose-adell.pages.dev/pt/hemeroteca/" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://acervo-jose-adell.pages.dev/es/hemeroteca/" />
+    <xhtml:link rel="alternate" hreflang="ca-valencia" href="https://acervo-jose-adell.pages.dev/va/hemeroteca/" />
+  </url>
+</urlset>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Jost:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Paleta Principal: Pergaminho Clássico & Art Déco Valenciano */
+  --bg-parchment: #F6F2E9;
+  --bg-parchment-elevated: #EFE9DA;
+  --bg-card: #FAF7F0;
+  --text-charcoal: #1C1B18;
+  --text-muted: #524E46;
+
+  /* Acentos Art Déco & Buril de Gravador */
+  --gold-medal: #B8860B;
+  --gold-burnished: #C5A059;
+  --gold-light: #E6D2A8;
+  --blue-valencia: #1B365D;
+  --crimson-republic: #7A1C1C;
+
+  /* Tipografia */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-insignia: 'Cinzel Decorative', serif;
+  --font-serif-body: 'Source Serif 4', Georgia, serif;
+  --font-sans-meta: 'Jost', system-ui, sans-serif;
+}
+
+.dark {
+  /* Modo Noturno: Azul Noite Mediterrâneo */
+  --bg-parchment: #0F1722;
+  --bg-parchment-elevated: #162232;
+  --bg-card: #1A283B;
+  --text-charcoal: #F2ECE1;
+  --text-muted: #B0BAC9;
+
+  --gold-medal: #D4AF37;
+  --gold-burnished: #C5A059;
+  --gold-light: #4A3C1E;
+  --blue-valencia: #3B669E;
+  --crimson-republic: #B23A3A;
+}
+
+body {
+  background-color: var(--bg-parchment);
+  color: var(--text-charcoal);
+  font-family: var(--font-serif-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Moldura Dupla Art Déco (Buril de Gravador em Metal) */
+.deco-frame {
+  position: relative;
+  border: 1px solid var(--gold-burnished);
+  background-color: var(--bg-card);
+  box-shadow: inset 0 0 0 4px var(--bg-parchment), inset 0 0 0 5px var(--gold-burnished);
+}
+
+.deco-frame::before,
+.deco-frame::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--gold-medal);
+  pointer-events: none;
+}
+
+.deco-frame::before {
+  top: 4px;
+  left: 4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.deco-frame::after {
+  bottom: 4px;
+  right: 4px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Divisor Editorial com Florão Valenciano */
+.deco-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.deco-divider::before,
+.deco-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-burnished) 50%,
+    transparent
+  );
+}
+
+/* Filtros Visuais para Leitura de Fac-símiles do Século XIX */
+.facsimile-high-contrast {
+  filter: contrast(165%) brightness(102%) grayscale(30%);
+}
+
+.facsimile-sepia-enhance {
+  filter: sepia(45%) contrast(135%) brightness(98%);
+}
+
+.facsimile-invert-manuscript {
+  filter: invert(92%) hue-rotate(180deg) contrast(140%);
+}

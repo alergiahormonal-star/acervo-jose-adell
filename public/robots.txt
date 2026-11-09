@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /pt/
+Allow: /es/
+Allow: /va/
+Allow: /acervo-facsimiles/
+Allow: /medalhas-3d/
+
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+Sitemap: https://acervo-jose-adell.pages.dev/sitemap.xml
+Sitemap: https://acervo-jose-adell.pages.dev/sitemap-index.xml
