@@ -8,6 +8,20 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
   const prefix = `/${lang}`;
   const homeHref = lang === 'es' ? '/' : `/${lang}/`;
 
+  const curatorNote =
+    lang === 'pt'
+      ? 'Memorial idealizado e elaborado por seu trineto, Dr. Marcello Bossois de Melo Ferreira (espanhol e brasileiro, carioca e valenciano), ao lado de sua esposa, Dra. Patricia Frozi Schlinkert.'
+      : lang === 'va'
+      ? 'Memorial concebut i elaborat pel seu rebesnet, Dr. Marcello Bossois de Melo Ferreira (espanyol i brasiler, carioca i valencià), al costat de la seua esposa, Dra. Patricia Frozi Schlinkert.'
+      : 'Memorial concebido y elaborado por su tataranieto, Dr. Marcello Bossois de Melo Ferreira (español y brasileño, carioca y valenciano), junto a su esposa, Dra. Patricia Frozi Schlinkert.';
+
+  const legacyNavLabel =
+    lang === 'pt'
+      ? 'Legado Vivo & Curadoria: Dr. Marcello Bossois e Dra. Patricia Schlinkert'
+      : lang === 'va'
+      ? 'Llegat Viu i Curadoria: Dr. Marcello Bossois i Dra. Patricia Schlinkert'
+      : 'Legado Vivo y Curaduría: Dr. Marcello Bossois y Dra. Patricia Schlinkert';
+
   return (
     <footer className="border-t-2 border-deco-burnished bg-[#181613] text-[#EFE9DA] mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -23,6 +37,15 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
           </h3>
           <p className="font-serif text-sm text-[#C8C0B0] leading-relaxed">
             {t.footerDedicated}
+          </p>
+          <p className="font-serif text-xs text-[#E6D2A8] border-l-2 border-[#D4AF37] pl-3 leading-relaxed">
+            {curatorNote}{' '}
+            <Link
+              href={`${prefix}/legado-marcello-bossois/`}
+              className="underline font-semibold hover:text-white"
+            >
+              →
+            </Link>
           </p>
         </div>
 
@@ -44,6 +67,11 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
             <li>
               <Link href={`${homeHref}#familia`} className="hover:text-white underline-offset-4 hover:underline">
                 → {t.navFamily}
+              </Link>
+            </li>
+            <li>
+              <Link href={`${prefix}/legado-marcello-bossois/`} className="text-[#E6D2A8] font-bold hover:text-white underline-offset-4 hover:underline">
+                → {legacyNavLabel}
               </Link>
             </li>
             <li>
@@ -71,7 +99,7 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
               rel="noopener noreferrer"
               className="px-3 py-1.5 border border-[#D4AF37]/60 text-[#EFE9DA] hover:bg-[#D4AF37] hover:text-[#181613] transition-colors font-semibold"
             >
-              🗺️ Sitemap.xml (547 URLs)
+              🗺️ Sitemap.xml (550 URLs)
             </a>
             <a
               href="/robots.txt"

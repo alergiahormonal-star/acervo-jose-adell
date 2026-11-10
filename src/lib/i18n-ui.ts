@@ -180,7 +180,7 @@ export const UI_STRINGS: Record<SiteLang, UIMessages> = {
     footerNavTitle: 'Navegación Completa del Memorial',
     footerSeoTitle: 'Indexación Multilingüe y Datos Abiertos',
     footerSeoDesc:
-      '72 obras individuales, 12 dossieres de personalidades y 89 páginas originales indexadas en Castellano, Valencià y Português (547 URLs activas).',
+      '72 obras individuales, 12 dossieres de personalidades, informe del legado vivo y 89 páginas originales indexadas en Castellano, Valencià y Português (550 URLs activas).',
     footerMotto:
       '«Más vale hablar de cosas risueñas, que escribir sobre lágrimas.» — Memorial Histórico y Familiar José Adell y Fons',
   },
@@ -275,7 +275,7 @@ export const UI_STRINGS: Record<SiteLang, UIMessages> = {
     footerNavTitle: 'Navegació Completa del Memorial',
     footerSeoTitle: 'Indexació Multilingüe i Dades Obertes',
     footerSeoDesc:
-      '72 obres individuals, 12 dossiers de personalitats i 89 pàgines originals indexades en Castellà, Valencià i Portugués (547 URLs actives).',
+      '72 obres individuals, 12 dossiers de personalitats, informe del llegat viu i 89 pàgines originals indexades en Castellà, Valencià i Portugués (550 URLs actives).',
     footerMotto:
       '«Més val parlar de coses rialleres que escriure sobre llàgrimes.» — Memorial Històric i Familiar José Adell y Fons',
   },
@@ -370,7 +370,7 @@ export const UI_STRINGS: Record<SiteLang, UIMessages> = {
     footerNavTitle: 'Navegação Completa do Memorial',
     footerSeoTitle: 'Indexação Multilíngue & Dados Abertos',
     footerSeoDesc:
-      '72 obras individuais, 12 dossiês de personalidades e 89 páginas originais indexadas em Castellano, Valencià e Português (547 URLs ativas).',
+      '72 obras individuais, 12 dossiês de personalidades, relatório do legado vivo e 89 páginas originais indexadas em Castellano, Valencià e Português (550 URLs ativas).',
     footerMotto:
       '“Mais vale falar de coisas risonhas do que escrever sobre lágrimas.” — Memorial Histórico & Familiar José Adell y Fons',
   },

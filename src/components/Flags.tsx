@@ -78,3 +78,23 @@ export function SpainAndValenciaFlags({ size = 'md' }: { size?: 'sm' | 'md' | 'l
     </span>
   );
 }
+
+export function SpainValenciaBrazilFlags({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
+  const dims =
+    size === 'lg'
+      ? 'w-10 h-7'
+      : size === 'sm'
+      ? 'w-6 h-4'
+      : 'w-8 h-5';
+
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-parchment-card/95 border border-deco-gold/80 rounded-sm shadow-sm"
+      title="España • Comunitat Valenciana • Brasil"
+    >
+      <SpainFlag className={dims} />
+      <ValenciaFlag className={dims} />
+      <BrazilFlag className={dims} />
+    </span>
+  );
+}

@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.95,
       },
       {
+        url: `${BASE_URL}/${lang}/legado-marcello-bossois/`,
+        lastModified: now,
+        changeFrequency: 'weekly',
+        priority: 0.98,
+      },
+      {
         url: `${BASE_URL}/${lang}/caderno-original/`,
         lastModified: now,
         changeFrequency: 'monthly',

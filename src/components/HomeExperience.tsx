@@ -6,6 +6,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ArchiveCatalogSection from '@/components/ArchiveCatalogSection';
 import PersonalitiesAndTheatroSection from '@/components/PersonalitiesAndTheatroSection';
+import MarcelloLegacyHomeSection from '@/components/MarcelloLegacyHomeSection';
 import { SpainAndValenciaFlags } from '@/components/Flags';
 import {
   getLocalizedFamily,
@@ -128,6 +129,26 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                   </p>
                   <p>
                     <strong className="text-charcoal">{t.diedLabel}</strong> {t.diedText}
+                  </p>
+                  <p className="pt-2 border-t border-deco-burnished/30 text-xs">
+                    <strong className="text-deco-crimson">
+                      {lang === 'pt'
+                        ? '🏛️ Elaboração e Curadoria:'
+                        : lang === 'va'
+                        ? '🏛️ Elaboració i Curadoria:'
+                        : '🏛️ Elaboración y Curaduría:'}
+                    </strong>{' '}
+                    <Link
+                      href={`${prefix}/legado-marcello-bossois/`}
+                      className="font-bold text-charcoal underline underline-offset-4 hover:text-deco-crimson"
+                    >
+                      Dr. Marcello Bossois
+                    </Link>{' '}
+                    {lang === 'pt'
+                      ? '(trineto de Pepe Adell — espanhol e brasileiro, carioca e valenciano) & Dra. Patricia Schlinkert →'
+                      : lang === 'va'
+                      ? '(rebesnet de Pepe Adell — espanyol i brasiler, carioca i valencià) & Dra. Patricia Schlinkert →'
+                      : '(tataranieto de Pepe Adell — español y brasileño, carioca y valenciano) & Dra. Patricia Schlinkert →'}
                   </p>
                 </div>
               </div>
@@ -331,6 +352,9 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
 
         {/* ==================== THEATRO MUNICIPAL DO RIO & PERSONALIDADES ==================== */}
         <PersonalitiesAndTheatroSection lang={lang} />
+
+        {/* ==================== LEGADO VIVO & CURADORIA: DR. MARCELLO BOSSOIS & DRA. PATRICIA SCHLINKERT ==================== */}
+        <MarcelloLegacyHomeSection lang={lang} />
 
         {/* ==================== CATÁLOGO COMPLETO DAS 72 OBRAS ==================== */}
         <ArchiveCatalogSection lang={lang} />

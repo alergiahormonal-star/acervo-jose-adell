@@ -81,6 +81,7 @@ export function getMemorialJsonLd() {
         url: `${BASE}/es/acervo/`,
         inLanguage: ['es-ES', 'ca-valencia', 'pt-BR'],
         about: { '@id': `${BASE}/#jose-adell-y-fons` },
+        creator: { '@id': `${BASE}/#dr-marcello-bossois` },
         numberOfItems: 72,
         temporalCoverage: '1885/1927',
         spatialCoverage: [
@@ -89,6 +90,34 @@ export function getMemorialJsonLd() {
           'Madrid, Espanha',
           'Rio de Janeiro, Brasil',
           'Salvador, Bahia, Brasil',
+        ],
+      },
+      {
+        '@type': 'Person',
+        '@id': `${BASE}/#dr-marcello-bossois`,
+        name: 'Dr. Marcello Bossois de Melo Ferreira',
+        alternateName: ['Marcello Bossois', 'Dr. Marcello Bossois'],
+        identifier: 'CRM/RJ 732141',
+        nationality: ['Espanha', 'Brasil'],
+        description:
+          'Trineto de José Adell y Fons (“Pepe Adell”), espanhol e brasileiro, carioca e valenciano; médico alergista e imunologista, pesquisador em Terapia Gênica e CRISPR-Cas9, fundador do Projeto Social Brasil Sem Alergia e responsável pela elaboração do Memorial José Adell y Fons.',
+        url: `${BASE}/pt/legado-marcello-bossois/`,
+        parent: [
+          { '@type': 'Person', name: 'Dr. Vanuzio Ferreira' },
+          { '@type': 'Person', name: 'Dra. Lúcia Bossois' },
+        ],
+        spouse: {
+          '@type': 'Person',
+          '@id': `${BASE}/#dra-patricia-schlinkert`,
+          name: 'Dra. Patricia Frozi Schlinkert',
+          identifier: 'CRM/RJ 5274541-3',
+          description:
+            'Cofundadora e colíder do Projeto Social Brasil Sem Alergia, médica militar no Hospital Central do Exército (HCE), especialista em Alergia e Imunologia e Auditoria Médica, filha de Lauro Schlinkert e Adma Schlinkert.',
+        },
+        sameAs: [
+          'https://pubmed.ncbi.nlm.nih.gov/24584076/',
+          'https://pmc.ncbi.nlm.nih.gov/articles/PMC11276142/',
+          'https://www.brasilsemalergia.com.br',
         ],
       },
       {
