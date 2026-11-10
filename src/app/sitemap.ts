@@ -33,10 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.95,
       },
       {
-        url: `${BASE_URL}/${lang}/legado-marcello-bossois/`,
+        url: `${BASE_URL}/${lang}/trineto-de-pepe-adell/`,
         lastModified: now,
-        changeFrequency: 'weekly',
-        priority: 0.98,
+        changeFrequency: 'monthly',
+        priority: 0.9,
       },
       {
         url: `${BASE_URL}/${lang}/caderno-original/`,

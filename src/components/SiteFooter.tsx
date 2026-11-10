@@ -10,17 +10,12 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
 
   const curatorNote =
     lang === 'pt'
-      ? 'Memorial idealizado e elaborado por seu trineto, Dr. Marcello Bossois de Melo Ferreira (espanhol e brasileiro, carioca e valenciano), ao lado de sua esposa, Dra. Patricia Frozi Schlinkert.'
+      ? 'Site idealizado por seu trineto, Dr. Marcello Bossois de Melo Ferreira (espanhol e brasileiro, carioca e valenciano).'
       : lang === 'va'
-      ? 'Memorial concebut i elaborat pel seu rebesnet, Dr. Marcello Bossois de Melo Ferreira (espanyol i brasiler, carioca i valencià), al costat de la seua esposa, Dra. Patricia Frozi Schlinkert.'
-      : 'Memorial concebido y elaborado por su tataranieto, Dr. Marcello Bossois de Melo Ferreira (español y brasileño, carioca y valenciano), junto a su esposa, Dra. Patricia Frozi Schlinkert.';
+      ? 'Lloc web idealitzat pel seu trineto (rebesnet), Dr. Marcello Bossois de Melo Ferreira (espanyol i brasiler, carioca i valencià).'
+      : 'Sitio idealizado por su trineto (tataranieto), Dr. Marcello Bossois de Melo Ferreira (español y brasileño, carioca y valenciano).';
 
-  const legacyNavLabel =
-    lang === 'pt'
-      ? 'Legado Vivo & Curadoria: Dr. Marcello Bossois e Dra. Patricia Schlinkert'
-      : lang === 'va'
-      ? 'Llegat Viu i Curadoria: Dr. Marcello Bossois i Dra. Patricia Schlinkert'
-      : 'Legado Vivo y Curaduría: Dr. Marcello Bossois y Dra. Patricia Schlinkert';
+  const legacyNavLabel = 'Trineto de Pepe Adell (Dr. Marcello Bossois)';
 
   return (
     <footer className="border-t-2 border-deco-burnished bg-[#181613] text-[#EFE9DA] mt-16">
@@ -41,10 +36,10 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
           <p className="font-serif text-xs text-[#E6D2A8] border-l-2 border-[#D4AF37] pl-3 leading-relaxed">
             {curatorNote}{' '}
             <Link
-              href={`${prefix}/legado-marcello-bossois/`}
+              href={`${prefix}/trineto-de-pepe-adell/`}
               className="underline font-semibold hover:text-white"
             >
-              →
+              Trineto de Pepe Adell →
             </Link>
           </p>
         </div>
@@ -70,7 +65,7 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
               </Link>
             </li>
             <li>
-              <Link href={`${prefix}/legado-marcello-bossois/`} className="text-[#E6D2A8] font-bold hover:text-white underline-offset-4 hover:underline">
+              <Link href={`${prefix}/trineto-de-pepe-adell/`} className="text-[#E6D2A8] font-bold hover:text-white underline-offset-4 hover:underline">
                 → {legacyNavLabel}
               </Link>
             </li>

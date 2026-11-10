@@ -133,22 +133,17 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                   <p className="pt-2 border-t border-deco-burnished/30 text-xs">
                     <strong className="text-deco-crimson">
                       {lang === 'pt'
-                        ? '🏛️ Elaboração e Curadoria:'
+                        ? '✦ Idealizador do Site:'
                         : lang === 'va'
-                        ? '🏛️ Elaboració i Curadoria:'
-                        : '🏛️ Elaboración y Curaduría:'}
+                        ? '✦ Idealitzador del Lloc Web:'
+                        : '✦ Idealizador del Sitio:'}
                     </strong>{' '}
                     <Link
-                      href={`${prefix}/legado-marcello-bossois/`}
+                      href={`${prefix}/trineto-de-pepe-adell/`}
                       className="font-bold text-charcoal underline underline-offset-4 hover:text-deco-crimson"
                     >
-                      Dr. Marcello Bossois
-                    </Link>{' '}
-                    {lang === 'pt'
-                      ? '(trineto de Pepe Adell — espanhol e brasileiro, carioca e valenciano) & Dra. Patricia Schlinkert →'
-                      : lang === 'va'
-                      ? '(rebesnet de Pepe Adell — espanyol i brasiler, carioca i valencià) & Dra. Patricia Schlinkert →'
-                      : '(tataranieto de Pepe Adell — español y brasileño, carioca y valenciano) & Dra. Patricia Schlinkert →'}
+                      Trineto de Pepe Adell — Dr. Marcello Bossois →
+                    </Link>
                   </p>
                 </div>
               </div>

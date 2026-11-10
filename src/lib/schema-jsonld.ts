@@ -101,7 +101,7 @@ export function getMemorialJsonLd() {
         nationality: ['Espanha', 'Brasil'],
         description:
           'Trineto de José Adell y Fons (“Pepe Adell”), espanhol e brasileiro, carioca e valenciano; médico alergista e imunologista, pesquisador em Terapia Gênica e CRISPR-Cas9, fundador do Projeto Social Brasil Sem Alergia e responsável pela elaboração do Memorial José Adell y Fons.',
-        url: `${BASE}/pt/legado-marcello-bossois/`,
+        url: `${BASE}/pt/trineto-de-pepe-adell/`,
         parent: [
           { '@type': 'Person', name: 'Dr. Vanuzio Ferreira' },
           { '@type': 'Person', name: 'Dra. Lúcia Bossois' },

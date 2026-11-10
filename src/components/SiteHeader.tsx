@@ -31,19 +31,12 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
   const prefix = `/${lang}`;
   const homeHref = lang === 'es' ? '/' : `/${lang}/`;
 
-  const legacyLabel =
-    lang === 'pt'
-      ? 'Legado Vivo: Dr. Marcello Bossois'
-      : lang === 'va'
-      ? 'Llegat Viu: Dr. Marcello Bossois'
-      : 'Legado Vivo: Dr. Marcello Bossois';
-
   const navItems = [
     { href: homeHref, label: t.navHome },
     { href: `${homeHref}#historias`, label: t.navStories },
     { href: `${homeHref}#familia`, label: t.navFamily },
     { href: `${homeHref}#personalidades`, label: 'Personalidades & Theatro Municipal' },
-    { href: `${prefix}/legado-marcello-bossois/`, label: legacyLabel },
+    { href: `${prefix}/trineto-de-pepe-adell/`, label: 'Trineto de Pepe Adell' },
     { href: `${prefix}/acervo/`, label: t.navArchive },
     { href: `${prefix}/caderno-original/`, label: t.navNotebook },
   ];

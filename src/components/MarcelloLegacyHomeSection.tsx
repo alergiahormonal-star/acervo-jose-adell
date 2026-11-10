@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { SpainValenciaBrazilFlags } from '@/components/Flags';
-import { MARCELLO_LEGACY_I18N } from '@/data/legado-marcello-bossois';
+import { TRINETO_IDEALIZADOR_I18N } from '@/data/legado-marcello-bossois';
 import { SiteLang } from '@/lib/i18n-ui';
 
 export default function MarcelloLegacyHomeSection({
@@ -11,104 +11,73 @@ export default function MarcelloLegacyHomeSection({
 }: {
   lang?: SiteLang;
 }) {
-  const c = MARCELLO_LEGACY_I18N[lang];
-  const reportHref = `/${lang}/legado-marcello-bossois/`;
+  const c = TRINETO_IDEALIZADOR_I18N[lang];
+  const trinetoHref = `/${lang}/trineto-de-pepe-adell/`;
 
   return (
     <section
-      id="legado-vivo"
-      className="py-16 px-4 sm:px-6 bg-parchment-elevated border-t-2 border-b-2 border-deco-burnished"
+      id="idealizador"
+      className="py-12 px-4 sm:px-6 bg-parchment-elevated border-t-2 border-b-2 border-deco-burnished"
     >
-      <div className="max-w-7xl mx-auto space-y-10">
-        {/* Selo de Curadoria & Elaboração do Memorial */}
-        <div className="deco-frame p-6 sm:p-8 bg-parchment-card border-2 border-deco-gold shadow-xl">
+      <div className="max-w-5xl mx-auto">
+        <div className="deco-frame p-6 sm:p-8 bg-parchment-card border border-deco-gold shadow-lg">
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-deco-burnished/40">
             <div className="inline-flex flex-wrap items-center gap-3">
-              <SpainValenciaBrazilFlags size="md" />
+              <SpainValenciaBrazilFlags size="sm" />
               <span className="font-sans text-xs uppercase tracking-[0.18em] text-deco-crimson font-bold">
-                {c.badge}
+                {c.kicker}
               </span>
             </div>
-            <span className="px-3 py-1 bg-deco-crimson text-parchment font-sans text-[11px] font-bold uppercase tracking-wider">
-              ✦ {c.curatorshipBannerTitle}
-            </span>
+            <Link
+              href={trinetoHref}
+              className="font-sans text-xs font-bold text-deco-valencia hover:text-deco-crimson underline underline-offset-4"
+            >
+              {c.linkLabel} →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6 items-center">
-            {/* Foto Oficial do Casal + Estatísticas */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="border-2 border-deco-gold bg-[#E5DEC9] p-2.5 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-5 items-center">
+            <div className="md:col-span-4">
+              <div className="border border-deco-gold bg-[#E5DEC9] p-2 shadow-sm">
                 <img
                   src="/destaques/dr-marcello-bossois-patricia-schlinkert.webp"
                   alt="Dr. Marcello Bossois e Dra. Patricia Frozi Schlinkert"
                   loading="lazy"
-                  className="w-full h-auto object-cover shadow-sm"
+                  className="w-full h-auto object-cover"
                 />
-                <p className="font-serif text-xs text-charcoal-muted italic mt-2.5 px-1 leading-relaxed">
+                <p className="font-serif text-[11px] text-charcoal-muted italic mt-2 leading-snug">
                   {c.photoCaption}
                 </p>
               </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2.5 text-center font-sans">
-                {c.stats.map((st) => (
-                  <div
-                    key={st.label}
-                    className="p-3 bg-parchment border border-deco-burnished/40"
-                  >
-                    <span className="block font-display text-2xl font-bold text-deco-crimson">
-                      {st.value}
-                    </span>
-                    <span className="text-[10px] uppercase tracking-wider text-charcoal-muted font-bold">
-                      {st.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* Narrativa Executiva & Destaques */}
-            <div className="lg:col-span-7 space-y-5">
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+            <div className="md:col-span-8 space-y-3.5">
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-charcoal leading-tight">
                 {c.title}
               </h2>
 
-              <div className="p-4 bg-parchment-elevated border-l-4 border-deco-gold font-serif text-sm sm:text-base text-charcoal leading-relaxed">
-                <strong className="font-sans text-xs uppercase tracking-widest text-deco-crimson block mb-1">
-                  🏛️ {c.curatorshipBannerTitle}
-                </strong>
-                {c.curatorshipBannerText}
-              </div>
-
-              <p className="font-serif text-base text-charcoal-muted leading-relaxed">
-                {c.homeSummaryLead}
+              <p className="font-serif text-sm sm:text-base text-charcoal leading-relaxed">
+                {c.paragraphs[0]}
               </p>
 
-              <ul className="space-y-2.5 font-serif text-sm text-charcoal">
-                {c.homeSummaryBullets.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="p-3 bg-parchment border border-deco-burnished/30 leading-relaxed"
-                  >
-                    <span className="text-deco-crimson font-bold mr-1.5">❖</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="font-serif text-sm text-charcoal-muted leading-relaxed">
+                {c.paragraphs[1]} {c.paragraphs[2]}
+              </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-3 font-sans text-xs">
                 <Link
-                  href={reportHref}
-                  className="px-6 py-3.5 bg-deco-crimson text-parchment font-bold uppercase tracking-widest border border-deco-gold hover:bg-deco-valencia transition-colors shadow-md"
+                  href={trinetoHref}
+                  className="px-4 py-2.5 bg-deco-crimson text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-valencia transition-colors"
                 >
-                  {c.homeCtaBtn}
+                  {c.linkLabel} →
                 </Link>
                 <a
                   href="https://www.brasilsemalergia.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3.5 bg-parchment text-charcoal font-bold uppercase tracking-widest border border-deco-burnished hover:border-deco-gold transition-colors"
+                  className="px-4 py-2.5 bg-parchment text-charcoal font-bold uppercase tracking-wider border border-deco-burnished hover:border-deco-gold transition-colors"
                 >
-                  Portal Brasil Sem Alergia ↗
+                  {c.externalPortalLabel}
                 </a>
               </div>
             </div>
