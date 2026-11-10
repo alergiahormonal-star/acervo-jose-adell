@@ -1,8 +1,8 @@
 import React from 'react';
-import { Locale } from '@/lib/taxonomy';
+import { SUPPORTED_LANGS, SiteLang } from '@/lib/i18n-ui';
 
-export function generateStaticParams(): { locale: Locale }[] {
-  return [{ locale: 'pt' }, { locale: 'es' }, { locale: 'va' }];
+export function generateStaticParams(): { locale: SiteLang }[] {
+  return SUPPORTED_LANGS.map((locale) => ({ locale }));
 }
 
 export default function LocaleLayout({

@@ -1140,20 +1140,325 @@ export const CATALOG_WORKS: CatalogWork[] = [
   {
     id: '56',
     slug: 'cuentas-anejas-e-a-la-uniao-portugueza-1894-1896',
-    title: 'Cuentas Añejas (1894) & Á la “União Portugueza” (1896)',
-    humanTitle: 'Da história da Guerra Peninsular ao bom humor sobre as zarzuelas traduzidas em Lisboa',
-    date: '18 de Agosto de 1894 e 19 de Setembro de 1896',
+    title: 'Cuentas Añejas (Respuesta histórica a Pinheiro Chagas sobre la Guerra Peninsular)',
+    humanTitle: 'A verdade documental das batalhas de Bailén, Albuera, Salamanca e Vitória',
+    date: '18 de Agosto de 1894',
+    year: 1894,
+    periodical: 'La Unión Española',
+    city: 'Rio de Janeiro',
+    signature: 'José Adell',
+    category: 'arte-iberismo',
+    pages: [64, 63, 66, 65],
+    summary:
+      'Restabelece com rigor documental o protagonismo popular e militar espanhol nas batalhas da Guerra da Independência contra as tropas napoleônicas, respondendo às inexatidões publicadas por Pinheiro Chagas em O Paiz.',
+    excerpt:
+      '¡Españoles y buenos españoles eran los que en las asperezas del Bruch infligían cruentísima derrota á los generales Schwartz y Chabran; los que humillaron á Lefebvre ante los muros de Zaragoza!',
+    excerptTranslation:
+      'Espanhóis e bons espanhóis eram os que nas asperezas do Bruch infligiam derrota aos generais de Napoleão; os que humilharam Lefebvre diante dos muros de Saragoça!',
+  },
+  {
+    id: '57',
+    slug: 'replica-amistosa-ii-queretaro-tonkin-1895',
+    title: 'Réplica amistosa (II — La Aventura de Querétaro y el Derecho Colonial)',
+    humanTitle: 'Segunda resposta a L’Écho du Brésil: Maximiliano no México, Amapá e o respeito aos soldados caídos',
+    date: '17 de Agosto de 1895',
+    year: 1895,
+    periodical: 'La Unión Española',
+    city: 'Rio de Janeiro',
+    signature: 'J. A. [José Adell]',
+    category: 'cuba-filipinas-imprensa',
+    pages: [74],
+    summary:
+      'Segunda parte da polêmica com o jornal francês do Rio de Janeiro, contrastando a trágica aventura imperial de Napoleão III no México (encerrada no fuzilamento de Maximiliano em Querétaro) com a história secular hispano-americana e pedindo respeito humano aos jovens soldados vitimados pela febre tropical.',
+    excerpt:
+      'Respeto y veneración merecen sus despojos, como lo merecen los caídos en Argel y en el Tonkín, en Túnez y en Massuah.',
+    excerptTranslation:
+      'Respeito e veneração merecem seus despojos, assim como os merecem os caídos em Argel e no Tonquim, na Tunísia e em Massawa.',
+  },
+  {
+    id: '58',
+    slug: 'agitaciones-francia-ii-1789-e-cadiz-1889',
+    title: 'Las agitaciones políticas en Francia y el porvenir de la raza latina (II)',
+    humanTitle: 'Segunda carta em Barcelona: como os livros de 1789 iluminaram as Cortes de Cádiz de 1812',
+    date: 'Março de 1889',
+    year: 1889,
+    periodical: 'El Sufragio Universal',
+    city: 'Barcelona',
+    signature: 'J. Adell y Fons',
+    category: 'europa-mundo',
+    pages: [44, 43, 42],
+    summary:
+      'Conclusão magistral do debate histórico com D. M. M. G., demonstrando como as ideias filosóficas da Revolução Francesa atravessaram os Pireneus e inspiraram os legisladores espanhóis de 1812, de 1820 (Riego) e da Revolução de 1868.',
+    excerpt:
+      'No, los españoles no debemos ser franceses con Narváez, ni ingleses con Espartero, ni alemanes con nuestros conservadores; pero debemos ser liberales, debemos ser demócratas.',
+    excerptTranslation:
+      'Não, os espanhóis não devemos ser franceses com Narváez, nem ingleses com Espartero, nem alemães com nossos conservadores; mas devemos ser liberais, devemos ser democratas.',
+  },
+  {
+    id: '59',
+    slug: 'nota-redaccion-sufragio-elogio-adell-1889',
+    title: 'Nota de la Redacción: Elogio al joven y entusiasta posibilitista D. José Adell Fons',
+    humanTitle: 'A homenagem do jornal de Barcelona à nobreza e cavalheirismo do jovem Adell no debate',
+    date: 'Março de 1889',
+    year: 1889,
+    periodical: 'El Sufragio Universal',
+    city: 'Barcelona',
+    signature: 'A Redação',
+    category: 'europa-mundo',
+    pages: [41],
+    summary:
+      'Encerrando as dissertações político-históricas entre o veterano republicano M. M. G. e o jovem José Adell Fons, a redação exalta a fidalguia, o espírito de companheirismo e o brilho intelectual de seu jovem paisano de Vinaròs.',
+    excerpt:
+      'Nuestro paisano, el jóven y entusiasta posibilista Sr. Adell, para no herir susceptibilidades entre compañeros de colaboración, dejó á nuestro criterio el apreciar la conveniencia de publicar su última carta.',
+    excerptTranslation:
+      'Nosso conterrâneo, o jovem e entusiasta possibilista Sr. Adell, para não ferir suscetibilidades entre companheiros de colaboração, deixou a nosso critério publicar sua última carta.',
+  },
+  {
+    id: '60',
+    slug: 'tonterias-portuguesas-resposta-eugenio-silveira-1896',
+    title: 'Tonterías Portuguesas (Sobre las supuestas “Aspirações Hespanholas”)',
+    humanTitle: 'Desmentindo com bom humor o boato de que a Espanha sonhava invadir Portugal!',
+    date: 'Setembro de 1896',
     year: 1896,
     periodical: 'La Unión Española',
     city: 'Rio de Janeiro',
     signature: 'José Adell',
     category: 'arte-iberismo',
-    pages: [64, 63, 66, 65, 69, 70],
+    pages: [69],
     summary:
-      'Reúne os dois diálogos históricos e bem-humorados com escritores portugueses no Rio: primeiro, restabelecendo a documentação histórica das batalhas de Bailén, Albuera e Vitória frente a Pinheiro Chagas; depois, respondendo com graça a Eugenio Silveira (da União Portugueza) que os únicos espanhóis que “reclamavam” de Portugal eram os autores de zarzuelas cômicas traduzidas sem direitos autorais, encerrando com votos sinceros de glória à heroica nação lusitana.',
+      'Primeiro artigo respondendo com ironia bem-humorada a Eugenio Silveira (do jornal União Portugueza no Rio), que acusava a Espanha de guardar o “segredo” de querer reconquistar Portugal.',
     excerpt:
-      'Como el señor Silveira por España, sentimos nosotros por Portugal todo el cariño y admiración á que la hacen acreedor todas sus virtudes y sus legendarias glorias.',
+      'Lo que sí podemos asegurarle al señor Silveira es que en España de lo que menos nos acordamos es de unirnos con Portugal, cuya independencia está ya consagrada por el andar de los siglos.',
     excerptTranslation:
-      'Como o senhor Silveira pela Espanha, sentimos nós por Portugal todo o carinho e admiração a que o tornam credor todas as suas virtudes e suas lendárias glórias.',
+      'O que podemos assegurar ao senhor Silveira é que na Espanha do que menos cogitamos é de anexar Portugal, cuja independência já está consagrada pelo andar dos séculos.',
+  },
+  {
+    id: '61',
+    slug: 'a-la-uniao-portugueza-zarzuelas-e-fraternidade-1896',
+    title: 'Á la “União Portugueza” (Las Zarzuelas y el Cariño a la Nación Lusitana)',
+    humanTitle: 'O caso curioso das zarzuelas espanholas adaptadas em Portugal e o abraço fraterno final',
+    date: '19 de Setembro de 1896',
+    year: 1896,
+    periodical: 'La Unión Española',
+    city: 'Rio de Janeiro',
+    signature: 'José Adell',
+    category: 'arte-iberismo',
+    pages: [69, 70],
+    summary:
+      'Segundo artigo dirigido à União Portugueza, contando com fina graça como sucessos teatrais espanhóis como La Gran Vía e Cádiz viravam “O Porto” nos palcos portugueses, e concluindo com uma declaração emocionante de admiração pelas glórias de Portugal.',
+    excerpt:
+      'Hacemos votos para que en un mañana muy próximo logre la heróica nación lusitana el destino que por su abolengo merece.',
+    excerptTranslation:
+      'Fazemos votos para que num amanhã muito próximo conquiste a heroica nação lusitana o destino que por sua linhagem merece.',
+  },
+  {
+    id: '62',
+    slug: 'proceso-times-parnell-gladstone-irlanda-1889',
+    title: 'El Proceso Times-Parnell y el Triunfo Moral de Gladstone por Irlanda',
+    humanTitle: 'Quando as cartas falsificadas contra a Irlanda ruíram em Londres e Gladstone venceu na praça pública',
+    date: 'Abril de 1889',
+    year: 1889,
+    periodical: 'El Sufragio Universal',
+    city: 'Barcelona',
+    signature: 'J. Adell y Fons',
+    category: 'europa-mundo',
+    pages: [34, 33],
+    summary:
+      'Narra o escândalo das cartas forjadas por Pigott publicadas pelo jornal The Times para incriminar o líder irlandês Charles Stewart Parnell, exaltando a nobreza do “Grande Ancião” William Gladstone em defender a justiça para a Irlanda.',
+    excerpt:
+      '¡Qué hermoso y consolador espectáculo el presentado por Inglaterra! El gran anciano toma sobre sí el ímprobo trabajo de demostrar lo justo de las peticiones de Irlanda con su elocuente voz.',
+    excerptTranslation:
+      'Que belo e consolador espetáculo! O grande ancião toma sobre si o árduo trabalho de demonstrar a justiça das petições da Irlanda com sua voz eloquente.',
+  },
+  {
+    id: '63',
+    slug: 'abdicacion-rey-milano-reina-natalia-serbia-1889',
+    title: 'La Política en Europa — Mayo: La Abdicación de Milano y el Dolor de la Reina Natalia de Serbia',
+    humanTitle: 'Amor desfeito em Florença e um filho arrancado dos braços da mãe em Wiesbaden',
+    date: 'Maio de 1889',
+    year: 1889,
+    periodical: 'El Sufragio Universal',
+    city: 'Barcelona',
+    signature: 'J. Adell y Fons',
+    category: 'europa-mundo',
+    pages: [37, 38, 36, 35],
+    summary:
+      'Com pena digna de um romancista, Adell reconstrói a história íntima e política do Rei Milano e da Rainha Natália da Sérvia: do idílio juvenil em Florença aos escândalos da corte de Belgrado, o assalto policial para tomar o pequeno príncipe Alexandre dos braços maternos na Alemanha e a abdicação final do monarca.',
+    excerpt:
+      'Vivo se conserva aún en las enarenadas calles de la ville Dimidoff, allá en la soñadora Florencia, el recuerdo de aquellos niños que renovaron con sus amores los idílicos de Pablo y Virginia.',
+    excerptTranslation:
+      'Viva conserva-se ainda nas ruas de areia da vila Demidoff, lá na sonhadora Florença, a lembrança daqueles jovens que renovaram os amores idílicos de Paulo e Virgínia.',
+  },
+  {
+    id: '64',
+    slug: 'ocaso-dinastia-bismarck-emperatriz-victoria-1889',
+    title: 'El Ocaso de “La Dinastía Bismarck” y la Emperatriz Viuda Victoria',
+    humanTitle: 'O chanceler de ferro alemão perdendo forças diante de uma mulher liberal',
+    date: 'Março de 1889',
+    year: 1889,
+    periodical: 'El Sufragio Universal',
+    city: 'Barcelona',
+    signature: 'J. Adell y Fons',
+    category: 'europa-mundo',
+    pages: [37],
+    summary:
+      'Analisa a repercussão europeia do célebre artigo “A Dinastia Bismarck” na Contemporary Review de Londres, detalhando o embate entre o autoritarismo do chanceler Otto von Bismarck e a influência liberal da Imperatriz Vitória, viúva de Frederico III.',
+    excerpt:
+      'Decae el genio político de Bismarck de evidentísimo modo, como si al extinguirse sus fuerzas físicas se extinguiera aquella potencia gobernante.',
+    excerptTranslation:
+      'Decai o gênio político de Bismarck de modo evidentíssimo, como se ao extinguirem-se suas forças físicas se apagasse aquela potência governante.',
+  },
+  {
+    id: '65',
+    slug: 'crisis-italia-800-mil-obreros-sin-trabajo-1889',
+    title: 'La Ruina de la Hacienda Italiana y el Clamor de 800.000 Obreros sin Trabajo en Roma',
+    humanTitle: 'O preço humano das alianças militares: multidões famintas marchando pelas ruas de Roma',
+    date: 'Março de 1889',
+    year: 1889,
+    periodical: 'El Sufragio Universal',
+    city: 'Barcelona',
+    signature: 'J. Adell y Fons',
+    category: 'questao-social',
+    pages: [39, 40],
+    summary:
+      'Mostra com números implacáveis como os gastos bélicos da Tríplice Aliança quintuplicaram a dívida da jovem Itália, deixando oitocentos mil trabalhadores sem pão e provocando levantes de fome em Prati di Castello, em Roma.',
+    excerpt:
+      'En todas las naciones es precaria la situación del proletariado; pero verdaderamente en ninguna tan angustiosa como en la joven Italia... que oye los lamentos de los ochocientos mil obreros que permanecen inactivos por falta de trabajo.',
+    excerptTranslation:
+      'Em todas as nações é precária a situação do proletariado; mas em nenhuma tão angustiosa quanto na jovem Itália... que ouve os lamentos dos oitocentos mil operários sem trabalho.',
+  },
+  {
+    id: '66',
+    slug: 'cuestion-mora-estados-unidos-sagasta-1893',
+    title: 'La Cuestión Mora con Estados Unidos y las Tribulaciones de Sagasta',
+    humanTitle: 'Os bastidores de Madrid: inundações, insônias do primeiro-ministro e pressões de Washington',
+    date: '20 de Setembro de 1893',
+    year: 1893,
+    periodical: 'La Unión Española',
+    city: 'Madrid / Rio de Janeiro',
+    signature: 'A. Fons [José Adell]',
+    category: 'cuba-filipinas-imprensa',
+    pages: [58, 57],
+    summary:
+      'Relata de Madrid as negociações diplomáticas em torno das indenizações exigidas pelos Estados Unidos no “Expediente Mora” e retrata com fina ironia o primeiro-ministro Sagasta usando as catástrofes naturais para ganhar uma trégua política.',
+    excerpt:
+      'El gobierno de los Estados Unidos ha vuelto á reclamar del de España las indemnizaciones que representa el ya célebre expediente Mora.',
+    excerptTranslation:
+      'O governo dos Estados Unidos voltou a reclamar da Espanha as indenizações do já célebre expediente Mora.',
+  },
+  {
+    id: '67',
+    slug: 'gran-meeting-republicano-gijon-salmeron-azcarate-1893',
+    title: 'El Gran “Meeting” Republicano de Gijón: Azcárate, Salmerón, Pedregal y Labra',
+    humanTitle: 'Cinco mil cidadãos ouvindo os grandes filósofos da República Espanhola — e a temporada de ópera em Madrid',
+    date: '30 de Setembro de 1893',
+    year: 1893,
+    periodical: 'La Unión Española',
+    city: 'Madrid / Rio de Janeiro',
+    signature: 'A. Fons [José Adell]',
+    category: 'republicanismo-espanha',
+    pages: [57, 60],
+    summary:
+      'Resenha vibrante do encontro de cinco mil republicanos em Gijón com discursos de Gumersindo de Azcárate, Nicolás Salmerón, Manuel Pedregal e Rafael María de Labra, encerrando com uma charmosa nota cultural sobre a estreia da ópera Os Pireneus, de Felipe Pedrell e Víctor Balaguer, no Teatro Real de Madrid.',
+    excerpt:
+      'Habló el Sr. Azcárate é hizo una sangrienta crítica de las Comisiones de actas... Terminó Salmerón ocupándose del problema social, diciendo que ofrece la República al proletario como protección.',
+    excerptTranslation:
+      'Falou o Sr. Azcárate... Terminou Salmerón ocupando-se do problema social, dizendo que oferece a República ao proletário como proteção.',
+  },
+  {
+    id: '68',
+    slug: 'congreso-literario-barcelona-protesta-almeria-1893',
+    title: 'El Congreso Literario Internacional en Barcelona y la Rebelión Cívica de Almería',
+    humanTitle: 'Banquetes para escritores em Barcelona enquanto o povo de Almería fecha o comércio em protesto!',
+    date: '30 de Setembro de 1893',
+    year: 1893,
+    periodical: 'La Unión Española',
+    city: 'Madrid / Barcelona',
+    signature: 'A. Fons [José Adell]',
+    category: 'arte-iberismo',
+    pages: [72],
+    summary:
+      'Agradece ao amigo anarquista Fernando Tarrida pelos exemplares de sua obra El Materialismo, descreve com delicioso bom humor a maratona de banquetes, serenatas e teatro catalão oferecida aos 82 delegados do Congresso Literário Internacional na Universidade de Barcelona (“Quem dera ser congressista!”) e noticia a greve geral de comércio em Almería por verbas de socorro às vítimas de enchentes.',
+    excerpt:
+      'Despedíme del amigo Tarrida, el cual me hizo presente de un par de ejemplares de su obra “El Materialismo”... Realmente después de leer el programa de obsequios en Barcelona solo cabe decir: ¡Quién fuera congresista!',
+    excerptTranslation:
+      'Despedi-me do amigo Tarrida, que me presenteou com dois exemplares de sua obra “O Materialismo”... Realmente, depois de ler o programa de banquetes em Barcelona, só cabe dizer: Quem dera ser congressista!',
+  },
+  {
+    id: '69',
+    slug: 'discurso-francisco-fernandez-tumba-2666-emilia-adell-1903',
+    title: 'Sepelio en San Juan Bautista (Tumba Nº 2666) y Despedida de D. Francisco Fernández a Doña Emilia',
+    humanTitle: 'As últimas palavras à beira do túmulo 2666 para aquela que foi “toda amor, bondade, engenho e alegria”',
+    date: '6 de Setembro de 1903',
+    year: 1903,
+    periodical: 'Imprensa Espanhola do Rio de Janeiro',
+    city: 'Rio de Janeiro',
+    signature: 'Crônica Social e Necrológica',
+    category: 'humanidade-familia',
+    pages: [82],
+    featured: true,
+    summary:
+      'Registra nominalmente dezenas de amigos presentes no sepultamento de Doña Emilia Vallespí de Adell e preserva as palavras comovidas de Don Francisco Fernández ao descer o corpo à sepultura nº 2666 do quadro 2º do Cemitério de São João Batista, no Rio de Janeiro.',
+    excerpt:
+      'Al bajar el cuerpo á la sepultura, Don Francisco Fernández pronunció breves y sentidas frases de despedida... y después, de la que fué toda amor, bondad, ingenio y alegría, queda solamente visible el número 2666 del cuadro 2º del cementerio de San Juan Bautista.',
+    excerptTranslation:
+      'Ao descer o corpo à sepultura, Don Francisco Fernández pronunciou breves e sentidas frases de despedida... e depois, daquela que foi toda amor, bondade, engenho e alegria, fica somente visível o número 2666 do quadro 2º do Cemitério de São João Batista.',
+  },
+  {
+    id: '70',
+    slug: 'arquiteto-espanhol-mnba-retrato-portinari-1991',
+    title: 'Arquiteto espanhol no Museu de Belas Artes (O Retrato de Morales de los Ríos por Portinari)',
+    humanTitle: 'A memória perene do amigo de Pepe Adell retratado por Cândido Portinari no Rio',
+    date: 'Novembro de 1991',
+    year: 1991,
+    periodical: 'Imprensa Carioca (Acervo Familiar)',
+    city: 'Rio de Janeiro',
+    signature: 'Redação Cultural',
+    category: 'humanidade-familia',
+    pages: [89],
+    summary:
+      'Nota ilustrada guardada na última folha do álbum familiar destacando a mostra de 300 aquarelas, desenhos e cópias heliográficas de Adolfo Morales de los Ríos no MNBA, incluindo seu retrato pintado por Cândido Portinari.',
+    excerpt:
+      'O retrato de Los Rios feito por Portinari é um dos destaques da mostra.',
+    excerptTranslation:
+      'Recorte preservado na página 89 encerrando o dossiê documental da família Adell.',
+  },
+  {
+    id: '71',
+    slug: 'carta-lucio-de-mendonca-o-paiz-4-setembro-1895',
+    title: 'Carta de Lúcio de Mendonça a “O Paiz” em prol de Cuba (Reproduzida em Português)',
+    humanTitle: 'O documento original em português do magistrado brasileiro que acendeu o grande debate de 1895',
+    date: '4 de Setembro de 1895',
+    year: 1895,
+    periodical: 'O Paiz / La Unión Española',
+    city: 'Rio de Janeiro',
+    signature: 'Lúcio de Mendonça',
+    category: 'cuba-filipinas-imprensa',
+    pages: [26],
+    summary:
+      'Texto integral em português de autoria de Lúcio de Mendonça (Ministro do Supremo Tribunal Federal e idealizador da Academia Brasileira de Letras), transcrito fielmente nas colunas de La Unión Española antes da refutação de José Adell.',
+    excerpt:
+      'No vivo, no apaixonado interesse com que acompanhamos, dia por dia, os progressos da bella revolução cubana... appellamos confiadamente para os nossos correligionarios.',
+    excerptTranslation:
+      'Documento histórico originalmente publicado em língua portuguesa no Rio de Janeiro em 1895 (página 26).',
+  },
+  {
+    id: '72',
+    slug: 'noche-de-san-daniel-el-rasgo-y-cortes-constituyentes-castelar-1892',
+    title: 'La Noche de San Daniel, “El Rasgo” y la Condena a Muerte de Emilio Castelar',
+    humanTitle: 'Quando um artigo de jornal derrubou ministros, levou Castelar à sentença de morte e incendiou 1868',
+    date: 'Junho de 1892',
+    year: 1892,
+    periodical: 'La Unión Española',
+    city: 'Rio de Janeiro',
+    signature: 'José Adell',
+    category: 'republicanismo-espanha',
+    pages: [11, 12],
+    summary:
+      'Narra o episódio dramático em que Emilio Castelar perdeu sua cátedra universitária após publicar o célebre artigo El Rasgo contra a corte de Isabel II, foi condenado à morte pelo ditador Narváez após o levante de 22 de junho de 1866 e retornou do exílio para brilhar nas Cortes Constituintes de 1869.',
+    excerpt:
+      'Condenado á muerte por el soberbio dictador Narváez que creía extirpar una idea con mandar sus apóstoles al cadalso, tuvo que abandonar el suelo de la patria con la mente llena de esperanzas y el corazón de amarguras.',
+    excerptTranslation:
+      'Condenado à morte pelo soberbo ditador Narváez, que acreditava extirpar uma ideia mandando seus apóstolos ao cadafalso, teve de abandonar o solo pátrio com a mente cheia de esperanças e o coração de amarguras.',
   },
 ];

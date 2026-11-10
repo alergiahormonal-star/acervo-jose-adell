@@ -4,19 +4,25 @@ import { getMemorialJsonLd } from '@/lib/schema-jsonld';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://acervo-jose-adell.mbossois.workers.dev'),
-  title: 'Memorial Humano & Acervo Completo José Adell y Fons (1868–1927)',
+  title: 'Memorial Humano y Archivo Completo José Adell y Fons (1868–1927)',
   description:
-    'A vida emocionante, a família, o sorriso, o buril de mestre gravador e todas as 56 obras e 89 páginas originais de José Adell y Fons ("Pepe Adell", Vinaròs 1868 – Salvador da Bahia 1927).',
+    'La vida conmovedora, la familia, la sonrisa, el buril de maestro grabador y las 72 obras y 89 páginas originales de José Adell y Fons ("Pepe Adell", Vinaròs, Comunidad Valenciana, España, 1868 – Salvador de Bahía, Brasil, 1927).',
   alternates: {
     canonical: 'https://acervo-jose-adell.mbossois.workers.dev/',
+    languages: {
+      'es-ES': 'https://acervo-jose-adell.mbossois.workers.dev/',
+      'ca-valencia': 'https://acervo-jose-adell.mbossois.workers.dev/va/',
+      'pt-BR': 'https://acervo-jose-adell.mbossois.workers.dev/pt/',
+      'x-default': 'https://acervo-jose-adell.mbossois.workers.dev/',
+    },
   },
   openGraph: {
-    title: 'Memorial Humano & Acervo Completo José Adell y Fons (1868–1927)',
+    title: 'Memorial Humano y Archivo Completo José Adell y Fons (1868–1927)',
     description:
-      'Conheça as histórias humanas de Pepe Adell, a carta de adeus de Adolfo Morales de los Ríos, o luto por Doña Emilia e o catálogo completo de suas 56 publicações.',
+      'Conozca las historias humanas de Pepe Adell, la carta de adiós de Adolfo Morales de los Ríos, el duelo por Doña Emilia y sus 72 obras en Castellano, Valencià y Português.',
     url: 'https://acervo-jose-adell.mbossois.workers.dev/',
     siteName: 'Memorial José Adell y Fons',
-    locale: 'pt_BR',
+    locale: 'es_ES',
     type: 'website',
     images: [
       {
@@ -37,7 +43,7 @@ export default function RootLayout({
   const jsonLd = getMemorialJsonLd();
 
   return (
-    <html lang="pt-BR">
+    <html lang="es">
       <head>
         <script
           type="application/ld+json"

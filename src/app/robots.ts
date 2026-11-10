@@ -5,7 +5,14 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/acervo/', '/caderno-original/', '/historia/', '/obra/', '/paginas/', '/destaques/'],
+        allow: [
+          '/',
+          '/es/',
+          '/va/',
+          '/pt/',
+          '/paginas/',
+          '/destaques/',
+        ],
       },
     ],
     sitemap: 'https://acervo-jose-adell.mbossois.workers.dev/sitemap.xml',

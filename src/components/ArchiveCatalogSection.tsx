@@ -2,24 +2,31 @@
 
 import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { WorkCategory } from '@/data/acervo-completo';
 import {
-  CATALOG_WORKS,
-  CATEGORY_LABELS,
-  WorkCategory,
-} from '@/data/acervo-completo';
+  CATEGORY_LABELS_I18N,
+  getLocalizedWorksList,
+} from '@/data/acervo-trilingue';
+import { SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
 
 export default function ArchiveCatalogSection({
+  lang = 'es',
   initialCategory = 'ALL',
 }: {
+  lang?: SiteLang;
   initialCategory?: WorkCategory | 'ALL';
 }) {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState<WorkCategory | 'ALL'>(initialCategory);
   const [periodicalFilter, setPeriodicalFilter] = useState<string>('ALL');
 
+  const t = UI_STRINGS[lang];
+  const catDict = CATEGORY_LABELS_I18N[lang];
+  const worksList = useMemo(() => getLocalizedWorksList(lang), [lang]);
+
   const filteredWorks = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return CATALOG_WORKS.filter((work) => {
+    return worksList.filter((work) => {
       if (category !== 'ALL' && work.category !== category) return false;
       if (periodicalFilter !== 'ALL') {
         if (!work.periodical.toLowerCase().includes(periodicalFilter.toLowerCase())) {
@@ -38,7 +45,7 @@ export default function ArchiveCatalogSection({
         work.pages.some((p) => String(p) === q)
       );
     });
-  }, [search, category, periodicalFilter]);
+  }, [worksList, search, category, periodicalFilter]);
 
   const padPage = (n: number) => String(n).padStart(2, '0');
 
@@ -46,13 +53,13 @@ export default function ArchiveCatalogSection({
     <section id="acervo-completo" className="py-14 px-4 sm:px-6 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-10">
         <span className="font-sans text-xs uppercase tracking-[0.25em] text-deco-gold font-bold">
-          Acervo Integral Catalogado • 56 Obras & Documentos • 89 Páginas
+          {t.catalogKicker}
         </span>
         <h2 className="font-display text-3xl sm:text-5xl font-bold text-charcoal mt-2 mb-3">
-          Todas as Obras, Cartas, Crônicas e Memórias de Família
+          {t.catalogTitle}
         </h2>
         <p className="font-serif text-base sm:text-lg text-charcoal-muted leading-relaxed">
-          Cada recorte preservado entre 1885 e 1927 foi lido, contextualizado com sensibilidade humana e vinculado às páginas originais escaneadas. Pesquise por tema, pessoa, jornal ou número de página.
+          {t.catalogSubtitle}
         </p>
       </div>
 
@@ -61,36 +68,36 @@ export default function ArchiveCatalogSection({
         <div className="flex flex-col md:flex-row gap-3">
           <div className="flex-1">
             <label htmlFor="busca-acervo-input" className="sr-only">
-              Pesquisar nas 56 obras do acervo
+              {t.searchPlaceholder}
             </label>
             <input
               id="busca-acervo-input"
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Buscar por Emilia, Morales, pedrada, Barcelona, Castelar, Tarrida, Campos Sales, Málaga, Vinaròs..."
+              placeholder={t.searchPlaceholder}
               className="w-full px-4 py-3 border border-deco-burnished bg-parchment text-charcoal font-serif text-sm focus:outline-none focus:border-deco-crimson"
             />
           </div>
 
           <select
-            aria-label="Filtrar por jornal ou fonte"
+            aria-label="Fuente / Periódico"
             value={periodicalFilter}
             onChange={(e) => setPeriodicalFilter(e.target.value)}
             className="px-4 py-3 border border-deco-burnished bg-parchment font-sans text-xs font-semibold text-charcoal"
           >
-            <option value="ALL">Todas as Fontes e Periódicos (56)</option>
-            <option value="La Unión Española">La Unión Española — Rio de Janeiro</option>
+            <option value="ALL">{t.allSources}</option>
+            <option value="La Unión Española">La Unión Española — Río de Janeiro</option>
             <option value="La Luz">La Luz — Barcelona (1885–1886)</option>
             <option value="El Sufragio Universal">El Sufragio Universal — Barcelona (1889)</option>
             <option value="El Fantasma">El Fantasma — Barcelona (1886)</option>
             <option value="Correo de España">Correo de España — 1927</option>
             <option value="Conde">Carta de Morales de los Ríos — 1927</option>
-            <option value="Manuscrito">Manuscrito Biográfico da Família</option>
+            <option value="Manuscrito">Manuscrito Familiar (1900)</option>
           </select>
         </div>
 
-        {/* Pílulas de Categorias Humanizadas */}
+        {/* Categorias */}
         <div className="flex flex-wrap gap-2 pt-1 font-sans text-xs">
           <button
             type="button"
@@ -101,11 +108,11 @@ export default function ArchiveCatalogSection({
                 : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
             }`}
           >
-            Todas as Obras ({CATALOG_WORKS.length})
+            {t.allWorksBtn} ({worksList.length})
           </button>
 
-          {(Object.keys(CATEGORY_LABELS) as WorkCategory[]).map((catKey) => {
-            const count = CATALOG_WORKS.filter((w) => w.category === catKey).length;
+          {(Object.keys(catDict) as WorkCategory[]).map((catKey) => {
+            const count = worksList.filter((w) => w.category === catKey).length;
             return (
               <button
                 key={catKey}
@@ -117,7 +124,7 @@ export default function ArchiveCatalogSection({
                     : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
                 }`}
               >
-                {CATEGORY_LABELS[catKey].label} ({count})
+                {catDict[catKey].label} ({count})
               </button>
             );
           })}
@@ -125,8 +132,8 @@ export default function ArchiveCatalogSection({
 
         <div className="flex flex-wrap items-center justify-between text-xs font-sans text-charcoal-muted pt-1 border-t border-deco-burnished/30">
           <span>
-            Exibindo <strong className="text-charcoal">{filteredWorks.length}</strong> de{' '}
-            <strong>{CATALOG_WORKS.length}</strong> obras e documentos históricos.
+            <strong className="text-charcoal">{filteredWorks.length}</strong> /{' '}
+            <strong>{worksList.length}</strong> {t.showingCount}
           </span>
           {(search || category !== 'ALL' || periodicalFilter !== 'ALL') && (
             <button
@@ -138,17 +145,18 @@ export default function ArchiveCatalogSection({
               }}
               className="text-deco-crimson font-bold hover:underline"
             >
-              Limpar filtros ✕
+              {t.clearFilters}
             </button>
           )}
         </div>
       </div>
 
-      {/* Grade de Cartões das Obras */}
+      {/* Grade das 72 Obras */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredWorks.map((work) => {
-          const catMeta = CATEGORY_LABELS[work.category];
+          const catMeta = catDict[work.category];
           const thumbUrl = `/paginas/pagina-${padPage(work.pages[0])}.webp`;
+          const workHref = `/${lang}/obra/${work.slug}/`;
 
           return (
             <article
@@ -156,9 +164,8 @@ export default function ArchiveCatalogSection({
               className="deco-frame flex flex-col justify-between overflow-hidden group hover:shadow-xl transition-shadow"
             >
               <div>
-                {/* Miniatura Real do Recorte Escaneado */}
                 <Link
-                  href={`/obra/${work.slug}/`}
+                  href={workHref}
                   className="block relative h-48 overflow-hidden bg-[#E5DEC9] border-b border-deco-burnished/40"
                 >
                   <img
@@ -174,7 +181,7 @@ export default function ArchiveCatalogSection({
                     </span>
                     {work.featured && (
                       <span className="px-2 py-0.5 bg-deco-crimson text-white font-bold uppercase tracking-wider">
-                        ★ Destaque Humano
+                        {t.featuredBadge}
                       </span>
                     )}
                   </div>
@@ -186,7 +193,6 @@ export default function ArchiveCatalogSection({
                   </div>
                 </Link>
 
-                {/* Conteúdo Humanizado */}
                 <div className="p-5">
                   <span
                     className={`inline-block px-2.5 py-0.5 text-[10px] font-sans font-bold uppercase tracking-wider mb-2 ${catMeta.badgeColor}`}
@@ -199,11 +205,11 @@ export default function ArchiveCatalogSection({
                   </p>
 
                   <h3 className="font-display text-xl font-bold text-charcoal leading-snug mb-1.5 group-hover:text-deco-crimson transition-colors">
-                    <Link href={`/obra/${work.slug}/`}>{work.humanTitle}</Link>
+                    <Link href={workHref}>{work.humanTitle}</Link>
                   </h3>
 
                   <p className="font-sans text-[11px] text-charcoal-muted italic mb-3">
-                    Título original: &ldquo;{work.title}&rdquo;
+                    {t.originalTitleLabel} &ldquo;{work.title}&rdquo;
                   </p>
 
                   <p className="font-serif text-sm text-charcoal-muted leading-relaxed line-clamp-4">
@@ -217,10 +223,10 @@ export default function ArchiveCatalogSection({
                   ✍ {work.signature}
                 </span>
                 <Link
-                  href={`/obra/${work.slug}/`}
+                  href={workHref}
                   className="px-3 py-1.5 bg-deco-valencia text-parchment font-bold uppercase tracking-wider text-[11px] hover:bg-deco-crimson transition-colors"
                 >
-                  Ler & Ver Original →
+                  {t.readAndViewBtn}
                 </Link>
               </div>
             </article>
