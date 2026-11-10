@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/site-config';
 const BASE_URL = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
+  const now = new Date().toISOString().split('T')[0];
   const entries: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}/`,
