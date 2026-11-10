@@ -1,13 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
+import { getLocalizedWorksList } from '@/data/acervo-trilingue';
 import {
   MENTIONED_FIGURES,
   PERSONALITIES_LIST,
   THEATRO_MUNICIPAL_NOTE,
 } from '@/data/personalidades';
-import { SiteLang } from '@/lib/i18n-ui';
+import { SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
 
 const SECTION_TEXTS: Record<
   SiteLang,
@@ -75,6 +76,8 @@ export default function PersonalitiesAndTheatroSection({
 }) {
   const tm = THEATRO_MUNICIPAL_NOTE[lang];
   const st = SECTION_TEXTS[lang];
+  const t = UI_STRINGS[lang];
+  const worksList = useMemo(() => getLocalizedWorksList(lang), [lang]);
   const prefix = `/${lang}`;
   const padPage = (n: number) => String(n).padStart(2, '0');
 
@@ -140,8 +143,30 @@ export default function PersonalitiesAndTheatroSection({
                 />
               </div>
               <p className="font-serif text-xs text-[#D4AF37] italic text-center px-2">
-                «Una casa baja, de un solo piso, cuyo alero de tejado casi tocábamos con la punta de los bastones... en la Rua d’Ajuda» — Adolfo Morales de los Ríos (Pág. 85)
+                {lang === 'va'
+                  ? '«Una casa baixa, d’un sol pis, el ràfec de la qual quasi tocàvem amb la punta dels bastons... a la Rua d’Ajuda» — Adolfo Morales de los Ríos (Pàg. 85)'
+                  : lang === 'pt'
+                  ? '«Uma casa baixa, de um só pavimento, cujo beiral de telhado quase tocávamos com a ponta das bengalas... na Rua d’Ajuda» — Adolfo Morales de los Ríos (Pág. 85)'
+                  : '«Una casa baja, de un solo piso, cuyo alero de tejado casi tocábamos con la punta de los bastones... en la Rua d’Ajuda» — Adolfo Morales de los Ríos (Pág. 85)'}
               </p>
+
+              {/* Transcrição abaixo do documento original da Pág. 85 */}
+              <div className="p-3.5 bg-[#1C2738] border border-[#D4AF37]/50 text-xs font-serif text-[#F3E9D2] space-y-2 leading-relaxed max-h-48 overflow-y-auto">
+                <span className="font-sans text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold block">
+                  {lang === 'va'
+                    ? '📜 Transcripció de la Carta Original (Pàgs. 84–85)'
+                    : lang === 'pt'
+                    ? '📜 Transcrição da Carta Original (Págs. 84–85)'
+                    : '📜 Transcripción de la Carta Original (Págs. 84–85)'}
+                </span>
+                <p>
+                  {lang === 'va'
+                    ? '«Pepe Adell ha mort. Els seus ossos reposen en un racó ignorat d’un cementeri provincià, allà a Bahia... Allà en aquella caseta colonial baixa d’un sol pis de la Rua da Ajuda, el ràfec de la qual quasi tocàvem amb la punta dels nostres bastons, tenia el seu taller de mestre gravador en metall i la impremta de La Unión Española... Érem tots així, riallers, alegres: perquè intuïtivament seguíem aquella màxima de Pepe Adell que diu: “Més val parlar de coses rialleres que escriure sobre llàgrimes.”»'
+                    : lang === 'pt'
+                    ? '«Pepe Adell morreu. Seus ossos jazem num canto ignorado de um cemitério provinciano, lá na Bahia... Lá naquela casinha colonial baixa de um só pavimento da Rua da Ajuda, cujo beiral de telhado quase tocávamos com a ponta de nossas bengalas, funcionavam sua oficina de mestre gravador em metal e a tipografia de La Unión Española... Éramos todos assim, risonhos, alegres: porque intuitivamente seguíamos aquela máxima de Pepe Adell que diz: “Mais vale falar de coisas risonhas do que escrever sobre lágrimas.”»'
+                    : '«Pepe Adell, ha muerto. Sus huesos yacen en un rincón ignorado de un cementerio provinciano, allá en Bahía... Allá en aquella casita colonial baja de un solo piso de la Rua da Ajuda, cuyo alero de tejado casi tocábamos con la punta de nuestros bastones, tenía su taller de maestro grabador en metal y la imprenta de La Unión Española... Éramos todos así, risueños, alegres: porque intuitivamente seguíamos aquella máxima de Pepe Adell que dice: “Más vale hablar de cosas risueñas, que escribir sobre lágrimas.”»'}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -169,6 +194,11 @@ export default function PersonalitiesAndTheatroSection({
             const loc = p[lang];
             const thumb = `/paginas/pagina-${padPage(p.pagesInArchive[0])}.webp`;
             const profileHref = `${prefix}/personalidade/${p.slug}/`;
+            const personWork = worksList.find(
+              (w) =>
+                p.relatedWorkSlugs.includes(w.slug) ||
+                w.pages.includes(p.pagesInArchive[0])
+            );
 
             return (
               <article
@@ -211,6 +241,22 @@ export default function PersonalitiesAndTheatroSection({
                   <p className="font-serif text-sm text-charcoal-muted leading-relaxed">
                     {loc.bio}
                   </p>
+
+                  {personWork && (
+                    <div className="p-3 bg-parchment-elevated border-l-4 border-deco-crimson space-y-1">
+                      <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
+                        {t.workExcerptTitle} (Nº {personWork.id})
+                      </span>
+                      <div className="font-serif text-xs text-charcoal leading-relaxed space-y-1.5 max-h-36 overflow-y-auto pr-1">
+                        {personWork.excerpt
+                          .split(/\n\n+/)
+                          .filter(Boolean)
+                          .map((para, pIdx) => (
+                            <p key={pIdx}>{para}</p>
+                          ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-4 mt-4 border-t border-deco-burnished/30 space-y-2.5 font-sans text-xs">

@@ -211,26 +211,44 @@ export default function ArchiveCatalogSection({
                   </div>
                 </Link>
 
-                <div className="p-5">
+                <div className="p-5 space-y-3">
                   <span
-                    className={`inline-block px-2.5 py-0.5 text-[10px] font-sans font-bold uppercase tracking-wider mb-2 ${catMeta.badgeColor}`}
+                    className={`inline-block px-2.5 py-0.5 text-[10px] font-sans font-bold uppercase tracking-wider ${catMeta.badgeColor}`}
                   >
                     {catMeta.label}
                   </span>
 
-                  <p className="font-sans text-[11px] text-deco-gold font-semibold mb-1">
+                  <p className="font-sans text-[11px] text-deco-gold font-semibold">
                     {work.periodical} • {work.city}
                   </p>
 
-                  <h3 className="font-display text-xl font-bold text-charcoal leading-snug mb-1.5 group-hover:text-deco-crimson transition-colors">
+                  <h3 className="font-display text-xl font-bold text-charcoal leading-snug group-hover:text-deco-crimson transition-colors">
                     <Link href={workHref}>{work.humanTitle}</Link>
                   </h3>
 
-                  <p className="font-sans text-[11px] text-charcoal-muted italic mb-3">
+                  <p className="font-sans text-[11px] text-charcoal-muted italic">
                     {t.originalTitleLabel} &ldquo;{work.title}&rdquo;
                   </p>
 
-                  <p className="font-serif text-sm text-charcoal-muted leading-relaxed line-clamp-4">
+                  {/* Transcrição do Artigo Original sempre abaixo da imagem do artigo original */}
+                  <div className="p-3.5 bg-parchment-elevated border-l-4 border-deco-crimson space-y-2">
+                    <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
+                      {t.workExcerptTitle}
+                    </span>
+                    <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-56 overflow-y-auto pr-1">
+                      {work.excerpt
+                        .split(/\n\n+/)
+                        .filter(Boolean)
+                        .map((para, pIdx) => (
+                          <p key={pIdx}>{para}</p>
+                        ))}
+                    </div>
+                  </div>
+
+                  <p className="font-serif text-xs text-charcoal-muted leading-relaxed">
+                    <strong className="font-sans uppercase text-[10px] tracking-wider text-deco-valencia">
+                      {t.workContextTitle}:
+                    </strong>{' '}
                     {work.summary}
                   </p>
                 </div>

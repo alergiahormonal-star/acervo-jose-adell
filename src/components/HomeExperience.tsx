@@ -8,6 +8,7 @@ import ArchiveCatalogSection from '@/components/ArchiveCatalogSection';
 import PersonalitiesAndTheatroSection from '@/components/PersonalitiesAndTheatroSection';
 import MarcelloLegacyHomeSection from '@/components/MarcelloLegacyHomeSection';
 import { SpainAndValenciaFlags } from '@/components/Flags';
+import { getLocalizedWorksList } from '@/data/acervo-trilingue';
 import {
   getLocalizedFamily,
   getLocalizedStories,
@@ -20,7 +21,12 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
   const t = UI_STRINGS[lang];
   const stories = useMemo(() => getLocalizedStories(lang), [lang]);
   const familyList = useMemo(() => getLocalizedFamily(lang), [lang]);
+  const worksList = useMemo(() => getLocalizedWorksList(lang), [lang]);
   const activeMember = familyList[selectedFamilyIdx];
+  const activeFamilyWork = useMemo(
+    () => worksList.find((w) => w.pages.includes(activeMember.pages[0])),
+    [worksList, activeMember]
+  );
   const prefix = `/${lang}`;
 
   return (
@@ -210,6 +216,11 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {stories.map((story, idx) => {
               const storyHref = `${prefix}/historia/${story.slug}/`;
+              const primaryWork = worksList.find(
+                (w) =>
+                  story.relatedWorkSlugs.includes(w.slug) ||
+                  w.pages.includes(story.pages[0])
+              );
               return (
                 <article
                   key={story.id}
@@ -246,6 +257,23 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                     </Link>
 
                     <div className="p-6 space-y-4">
+                      {/* Transcrição do Recorte Original logo abaixo da imagem do artigo original */}
+                      {primaryWork && (
+                        <div className="p-3.5 bg-parchment-elevated border-l-4 border-deco-crimson space-y-1.5">
+                          <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
+                            {t.workExcerptTitle} (Nº {primaryWork.id} — {primaryWork.date})
+                          </span>
+                          <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-44 overflow-y-auto pr-1">
+                            {primaryWork.excerpt
+                              .split(/\n\n+/)
+                              .filter(Boolean)
+                              .map((para, pIdx) => (
+                                <p key={pIdx}>{para}</p>
+                              ))}
+                          </div>
+                        </div>
+                      )}
+
                       <p className="font-serif text-base text-charcoal font-medium leading-relaxed">
                         {story.subtitle}
                       </p>
@@ -336,7 +364,7 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
 
               <div className="lg:col-span-7 deco-frame p-6 sm:p-8 shadow-xl">
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
-                  <div className="sm:col-span-5">
+                  <div className="sm:col-span-5 space-y-3">
                     <div className="border border-deco-burnished bg-[#E5DEC9] p-2">
                       <img
                         src={activeMember.image}
@@ -344,9 +372,24 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                         className="w-full h-72 object-cover object-top shadow-sm"
                       />
                     </div>
-                    <p className="font-sans text-[11px] text-center text-charcoal-muted mt-2">
+                    <p className="font-sans text-[11px] text-center text-charcoal-muted">
                       {t.familyFacsimileLabel} {activeMember.pages.join(', ')}
                     </p>
+                    {activeFamilyWork && (
+                      <div className="p-3 bg-parchment-elevated border-l-4 border-deco-crimson space-y-1.5 text-left">
+                        <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
+                          {t.workExcerptTitle} (Pág. {activeMember.pages[0]})
+                        </span>
+                        <div className="font-serif text-xs text-charcoal leading-relaxed space-y-1.5 max-h-44 overflow-y-auto pr-1">
+                          {activeFamilyWork.excerpt
+                            .split(/\n\n+/)
+                            .filter(Boolean)
+                            .map((para, pIdx) => (
+                              <p key={pIdx}>{para}</p>
+                            ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="sm:col-span-7 space-y-4">

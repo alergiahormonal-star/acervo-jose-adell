@@ -59,18 +59,6 @@ export default function WorkDetailClient({
           CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, pp. ${work.pages.join(', ')}.`,
         };
 
-  const transcriptionParagraphs = useMemo(
-    () => work.excerpt.split(/\n\n+/).filter(Boolean),
-    [work.excerpt]
-  );
-
-  const profileNotice =
-    lang === 'va'
-      ? 'Perfil actiu: Valencià — Transcripció íntegra en aquest idioma. Podeu canviar de perfil per llegir la transcripció en Castellà o Portugués:'
-      : lang === 'pt'
-      ? 'Perfil ativo: Português — Transcrição integral neste idioma. Você pode alternar de perfil para ler a transcrição em Castellano ou Valencià:'
-      : 'Perfil activo: Castellano — Transcripción íntegra en este idioma. Puede cambiar de perfil para leer la transcripción en Valencià o Português:';
-
   const handleCopy = () => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(citations[citeFmt]);
@@ -106,8 +94,9 @@ export default function WorkDetailClient({
         </ol>
       </nav>
 
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-8">
-        <article className="deco-frame p-6 sm:p-8 mb-8 shadow-md">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 space-y-8">
+        {/* Cabeçalho da Obra */}
+        <article className="deco-frame p-6 sm:p-8 shadow-md">
           <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-deco-burnished/40 font-sans text-xs">
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-2.5 py-1 bg-[#181613] text-[#D4AF37] font-bold">
@@ -124,7 +113,7 @@ export default function WorkDetailClient({
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-1.5 text-charcoal-muted">
-              <span>Págs.:</span>
+              <span>{lang === 'va' ? 'Pàgs.:' : 'Págs.:'}</span>
               {work.pages.map((p) => (
                 <Link
                   key={p}
@@ -160,121 +149,66 @@ export default function WorkDetailClient({
           </div>
         </article>
 
+        {/* 1. ARTIGO ORIGINAL DIGITALIZADO + TRANSCRIÇÃO COMPLETA LOGO ABAIXO DO ARTIGO ORIGINAL */}
+        <section aria-label={t.viewerOriginalBadge}>
+          <PageScanViewer
+            pages={work.pages}
+            title={work.title}
+            lang={lang}
+            work={work}
+          />
+        </section>
+
+        {/* 2. CONTEXTO HUMANO E HISTÓRICO + COMO CITAR */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-7">
-            <PageScanViewer pages={work.pages} title={work.title} lang={lang} />
-          </div>
+          <section className="lg:col-span-7 deco-frame p-6 space-y-4">
+            <h3 className="font-sans text-xs uppercase tracking-widest text-deco-crimson font-bold border-b border-deco-burnished/40 pb-2">
+              {t.workContextTitle}
+            </h3>
+            <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+              {work.summary}
+            </p>
+          </section>
 
-          <div className="lg:col-span-5 space-y-6">
-            <section className="deco-frame p-6 space-y-4">
-              <h3 className="font-sans text-xs uppercase tracking-widest text-deco-crimson font-bold border-b border-deco-burnished/40 pb-2">
-                {t.workContextTitle}
+          <section className="lg:col-span-5 deco-frame p-6 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h3 className="font-sans text-xs uppercase tracking-widest text-charcoal font-bold">
+                {t.workCiteTitle}
               </h3>
-              <p className="font-serif text-base text-charcoal leading-relaxed">
-                {work.summary}
-              </p>
-            </section>
-
-            <section className="deco-frame p-6 space-y-4">
-              <div className="border-b border-deco-burnished/40 pb-3 space-y-2.5">
-                <h3 className="font-sans text-xs uppercase tracking-widest text-deco-valencia font-bold">
-                  {t.workExcerptTitle}
-                </h3>
-                <p className="font-sans text-[11px] text-charcoal-muted leading-snug">
-                  {profileNotice}
-                </p>
-                <div className="flex flex-wrap gap-1.5 font-sans text-xs pt-0.5">
-                  <Link
-                    href={`/es/obra/${work.slug}/`}
-                    className={`px-3 py-1.5 border font-bold transition-colors ${
-                      lang === 'es'
-                        ? 'bg-deco-crimson text-parchment border-deco-gold shadow-sm'
-                        : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
+              <div className="flex gap-1 font-sans text-xs">
+                {(['ABNT', 'APA', 'CHICAGO'] as const).map((fmt) => (
+                  <button
+                    key={fmt}
+                    type="button"
+                    onClick={() => setCiteFmt(fmt)}
+                    className={`px-2.5 py-1 border font-bold ${
+                      citeFmt === fmt
+                        ? 'bg-deco-valencia text-parchment border-deco-gold'
+                        : 'bg-parchment border-deco-burnished/50 text-charcoal'
                     }`}
                   >
-                    ES • Transcripción en Castellano
-                  </Link>
-                  <Link
-                    href={`/va/obra/${work.slug}/`}
-                    className={`px-3 py-1.5 border font-bold transition-colors ${
-                      lang === 'va'
-                        ? 'bg-deco-valencia text-parchment border-deco-gold shadow-sm'
-                        : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
-                    }`}
-                  >
-                    VA • Transcripció en Valencià
-                  </Link>
-                  <Link
-                    href={`/pt/obra/${work.slug}/`}
-                    className={`px-3 py-1.5 border font-bold transition-colors ${
-                      lang === 'pt'
-                        ? 'bg-[#1D4E38] text-parchment border-deco-gold shadow-sm'
-                        : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
-                    }`}
-                  >
-                    PT • Transcrição em Português
-                  </Link>
-                </div>
-              </div>
-
-              <blockquote className="p-4 sm:p-5 bg-parchment-elevated border-l-4 border-deco-gold font-serif text-sm sm:text-base text-charcoal leading-relaxed space-y-3">
-                {transcriptionParagraphs.map((paragraph, idx) => (
-                  <p key={idx} className="leading-relaxed">
-                    {idx === 0 ? `«${paragraph}` : paragraph}
-                    {idx === transcriptionParagraphs.length - 1 ? '»' : ''}
-                  </p>
+                    {fmt}
+                  </button>
                 ))}
-              </blockquote>
-
-              <div className="pt-2 border-t border-deco-burnished/30">
-                <span className="font-sans text-[11px] uppercase tracking-wider text-deco-gold font-bold block mb-1">
-                  {t.workTranslationLabel}
-                </span>
-                <p className="font-serif text-sm text-charcoal-muted leading-relaxed">
-                  {work.excerptTranslation}
-                </p>
               </div>
-            </section>
+            </div>
 
-            <section className="deco-frame p-6 space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="font-sans text-xs uppercase tracking-widest text-charcoal font-bold">
-                  {t.workCiteTitle}
-                </h3>
-                <div className="flex gap-1 font-sans text-xs">
-                  {(['ABNT', 'APA', 'CHICAGO'] as const).map((fmt) => (
-                    <button
-                      key={fmt}
-                      type="button"
-                      onClick={() => setCiteFmt(fmt)}
-                      className={`px-2.5 py-1 border font-bold ${
-                        citeFmt === fmt
-                          ? 'bg-deco-valencia text-parchment border-deco-gold'
-                          : 'bg-parchment border-deco-burnished/50 text-charcoal'
-                      }`}
-                    >
-                      {fmt}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            <div className="p-3 bg-parchment-elevated border border-deco-burnished/40 font-mono text-xs text-charcoal break-words select-all">
+              {citations[citeFmt]}
+            </div>
 
-              <div className="p-3 bg-parchment-elevated border border-deco-burnished/40 font-mono text-xs text-charcoal break-words select-all">
-                {citations[citeFmt]}
-              </div>
-
-              <button
-                type="button"
-                onClick={handleCopy}
-                className="w-full py-2 bg-deco-gold text-parchment font-sans text-xs font-bold uppercase tracking-wider hover:bg-deco-crimson transition-colors"
-              >
-                {copied ? t.workCopied : t.workCopyCite}
-              </button>
-            </section>
-          </div>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="w-full py-2 bg-deco-gold text-parchment font-sans text-xs font-bold uppercase tracking-wider hover:bg-deco-crimson transition-colors"
+            >
+              {copied ? t.workCopied : t.workCopyCite}
+            </button>
+          </section>
         </div>
 
-        <div className="mt-12 pt-6 border-t-2 border-deco-burnished flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 font-sans text-xs">
+        {/* Navegação entre Obras */}
+        <div className="pt-6 border-t-2 border-deco-burnished flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 font-sans text-xs">
           {prevWork ? (
             <Link
               href={`${prefix}/obra/${prevWork.slug}/`}

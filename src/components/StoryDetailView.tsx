@@ -128,15 +128,26 @@ export default function StoryDetailView({
                 <Link
                   key={w.id}
                   href={`${prefix}/obra/${w.slug}/`}
-                  className="deco-frame p-5 hover:border-deco-crimson transition-colors block"
+                  className="deco-frame p-5 hover:border-deco-crimson transition-colors block space-y-2"
                 >
-                  <span className="font-sans text-[11px] font-bold text-deco-gold uppercase">
+                  <span className="font-sans text-[11px] font-bold text-deco-gold uppercase block">
                     Nº {w.id} • {w.date} • Págs. {w.pages.join(', ')}
                   </span>
-                  <h4 className="font-display text-xl font-bold text-charcoal mt-1">
+                  <h4 className="font-display text-xl font-bold text-charcoal">
                     {w.humanTitle}
                   </h4>
-                  <span className="inline-block mt-2 font-sans text-xs font-bold text-deco-crimson">
+                  <div className="p-3 bg-parchment-elevated border-l-4 border-deco-crimson font-serif text-xs text-charcoal leading-relaxed space-y-1.5">
+                    <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
+                      {t.workExcerptTitle}
+                    </span>
+                    {w.excerpt
+                      .split(/\n\n+/)
+                      .filter(Boolean)
+                      .map((para, pIdx) => (
+                        <p key={pIdx}>{para}</p>
+                      ))}
+                  </div>
+                  <span className="inline-block pt-1 font-sans text-xs font-bold text-deco-crimson">
                     {t.openRecordLink}
                   </span>
                 </Link>
