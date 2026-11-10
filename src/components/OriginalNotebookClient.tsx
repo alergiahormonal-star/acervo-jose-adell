@@ -160,7 +160,11 @@ export default function OriginalNotebookClient({
                 </div>
               ) : (
                 <p className="font-serif text-sm text-charcoal-muted">
-                  Reverso documental del recorte impreso (pág. {page}).
+                  {lang === 'va'
+                    ? `Revers documental del retall imprés (pàg. ${page}).`
+                    : lang === 'pt'
+                    ? `Verso documental do recorte impresso (pág. ${page}).`
+                    : `Reverso documental del recorte impreso (pág. ${page}).`}
                 </p>
               )}
             </div>

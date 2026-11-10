@@ -53,6 +53,7 @@ export default function LocaleObraPage({
     : 'es';
   const raw = CATALOG_WORKS.find((w) => w.slug === params.slug);
   if (!raw) return notFound();
+  const localizedWork = getLocalizedWork(raw, lang);
 
-  return <WorkDetailClient work={raw} lang={lang} />;
+  return <WorkDetailClient work={localizedWork} lang={lang} />;
 }

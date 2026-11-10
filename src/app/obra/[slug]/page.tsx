@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import WorkDetailClient from '@/components/WorkDetailClient';
 import { CATALOG_WORKS } from '@/data/acervo-completo';
+import { getLocalizedWork } from '@/data/acervo-trilingue';
 import { SITE_URL } from '@/lib/site-config';
 
 export function generateStaticParams() {
@@ -28,5 +29,5 @@ export default function RootObraPage({
 }) {
   const work = CATALOG_WORKS.find((w) => w.slug === params.slug);
   if (!work) return notFound();
-  return <WorkDetailClient work={work} lang="es" />;
+  return <WorkDetailClient work={getLocalizedWork(work, 'es')} lang="es" />;
 }

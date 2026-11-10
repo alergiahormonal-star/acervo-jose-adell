@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.95,
       },
       {
+        url: `${BASE_URL}/${lang}/prefacio/`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.95,
+      },
+      {
         url: `${BASE_URL}/${lang}/trineto-de-pepe-adell/`,
         lastModified: now,
         changeFrequency: 'monthly',

@@ -48,6 +48,38 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                 {t.heroLead}
               </p>
 
+              <div className="p-4 sm:p-5 border-2 border-deco-gold bg-[#181613] text-[#EFE9DA] shadow-lg space-y-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.22em] text-[#D4AF37] font-bold block">
+                  {lang === 'va'
+                    ? '★ Pensament Immortal de Pepe Adell (12 d’octubre de 1893)'
+                    : lang === 'pt'
+                    ? '★ Pensamento Imortal de Pepe Adell (12 de outubro de 1893)'
+                    : '★ Pensamiento Inmortal de Pepe Adell (12 de octubre de 1893)'}
+                </span>
+                <p className="font-display text-xl sm:text-2xl italic font-bold text-[#F9E7B2] leading-snug">
+                  “¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!”
+                </p>
+                {lang === 'va' && (
+                  <p className="font-serif text-sm italic text-[#D8D0C2]">
+                    («Quan comprendran tots que a la força dels principis, i no a la força dels hòmens, està reservada la victòria!»)
+                  </p>
+                )}
+                {lang === 'pt' && (
+                  <p className="font-serif text-sm italic text-[#D8D0C2]">
+                    («Quando compreenderão todos que à força dos princípios, e não à força dos homens, está reservada a vitória!»)
+                  </p>
+                )}
+                <div className="pt-1 flex items-center justify-between font-sans text-[11px] text-[#D4AF37]">
+                  <span className="font-bold">— Pepe Adell (José Adell y Fons)</span>
+                  <Link
+                    href={`${prefix}/obra/carta-abierta-gaspar-thous-actitud-castelar-1893/`}
+                    className="underline hover:text-white font-semibold"
+                  >
+                    {lang === 'va' ? 'Vore Obra Nº 24 →' : lang === 'pt' ? 'Ver Obra Nº 24 →' : 'Ver Obra Nº 24 →'}
+                  </Link>
+                </div>
+              </div>
+
               <blockquote className="p-4 sm:p-5 border-l-4 border-deco-crimson bg-parchment-card shadow-sm">
                 <p className="font-display text-xl sm:text-2xl italic text-charcoal leading-snug">
                   {t.heroQuote}
@@ -58,18 +90,28 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
               </blockquote>
 
               <div className="flex flex-wrap gap-3 pt-2 font-sans text-xs">
-                <a
-                  href="#historias"
+                <Link
+                  href={`${prefix}/prefacio/`}
                   className="px-6 py-3.5 bg-deco-crimson text-parchment font-bold uppercase tracking-widest border border-deco-gold hover:bg-deco-valencia transition-colors shadow-md"
                 >
-                  {t.btnReadStories}
-                </a>
+                  {lang === 'va'
+                    ? '📜 Llegir Prefaci per Dr. Marcello Bossois →'
+                    : lang === 'pt'
+                    ? '📜 Ler Prefácio por Dr. Marcello Bossois →'
+                    : '📜 Leer Prefacio por Dr. Marcello Bossois →'}
+                </Link>
                 <Link
                   href={`${prefix}/acervo/`}
                   className="px-6 py-3.5 bg-deco-valencia text-parchment font-bold uppercase tracking-widest border border-deco-gold hover:bg-deco-crimson transition-colors shadow-md"
                 >
                   {t.btnExploreArchive}
                 </Link>
+                <a
+                  href="#historias"
+                  className="px-5 py-3.5 bg-parchment-card text-charcoal font-bold uppercase tracking-widest border border-deco-burnished hover:border-deco-gold transition-colors"
+                >
+                  {t.btnReadStories}
+                </a>
                 <Link
                   href={`${prefix}/caderno-original/`}
                   className="px-5 py-3.5 bg-parchment-card text-charcoal font-bold uppercase tracking-widest border border-deco-burnished hover:border-deco-gold transition-colors"

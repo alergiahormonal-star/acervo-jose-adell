@@ -87,13 +87,31 @@ export default function ArchiveCatalogSection({
             className="px-4 py-3 border border-deco-burnished bg-parchment font-sans text-xs font-semibold text-charcoal"
           >
             <option value="ALL">{t.allSources}</option>
-            <option value="La Unión Española">La Unión Española — Río de Janeiro</option>
+            <option value="La Unión Española">
+              {lang === 'va'
+                ? 'La Unión Española — Rio de Janeiro'
+                : lang === 'pt'
+                ? 'La Unión Española — Rio de Janeiro'
+                : 'La Unión Española — Río de Janeiro'}
+            </option>
             <option value="La Luz">La Luz — Barcelona (1885–1886)</option>
             <option value="El Sufragio Universal">El Sufragio Universal — Barcelona (1889)</option>
             <option value="El Fantasma">El Fantasma — Barcelona (1886)</option>
             <option value="Correo de España">Correo de España — 1927</option>
-            <option value="Conde">Carta de Morales de los Ríos — 1927</option>
-            <option value="Manuscrito">Manuscrito Familiar (1900)</option>
+            <option value="Conde">
+              {lang === 'va'
+                ? 'Carta de Morales de los Ríos — 1927'
+                : lang === 'pt'
+                ? 'Carta de Morales de los Ríos — 1927'
+                : 'Carta de Morales de los Ríos — 1927'}
+            </option>
+            <option value="Manuscrito">
+              {lang === 'va'
+                ? 'Manuscrit Familiar (1900)'
+                : lang === 'pt'
+                ? 'Manuscrito Familiar (1900)'
+                : 'Manuscrito Familiar (1900)'}
+            </option>
           </select>
         </div>
 

@@ -40,11 +40,36 @@ export default function WorkDetailClient({
   const prefix = `/${lang}`;
   const canonicalUrl = `${SITE_URL}/${lang}/obra/${work.slug}/`;
 
-  const citations: Record<'ABNT' | 'APA' | 'CHICAGO', string> = {
-    ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano y Archivo Digital José Adell y Fons, Obra nº ${work.id} (Cuaderno Original, p. ${work.pages.join(', ')}). Disponible en: ${canonicalUrl}`,
-    APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pp. ${work.pages.join(', ')}). ${canonicalUrl}`,
-    CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, pp. ${work.pages.join(', ')}.`,
-  };
+  const citations: Record<'ABNT' | 'APA' | 'CHICAGO', string> =
+    lang === 'va'
+      ? {
+          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humà i Arxiu Digital José Adell y Fons, Obra núm. ${work.id} (Quadern Original, p. ${work.pages.join(', ')}). Disponible a: ${canonicalUrl}`,
+          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pàgs. ${work.pages.join(', ')}). ${canonicalUrl}`,
+          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Històric José Adell y Fons, doc. #${work.id}, pàgs. ${work.pages.join(', ')}.`,
+        }
+      : lang === 'pt'
+      ? {
+          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano e Acervo Digital José Adell y Fons, Obra nº ${work.id} (Caderno Original, p. ${work.pages.join(', ')}). Disponível em: ${canonicalUrl}`,
+          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pp. ${work.pages.join(', ')}). ${canonicalUrl}`,
+          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, pp. ${work.pages.join(', ')}.`,
+        }
+      : {
+          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano y Archivo Digital José Adell y Fons, Obra nº ${work.id} (Cuaderno Original, p. ${work.pages.join(', ')}). Disponible en: ${canonicalUrl}`,
+          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pp. ${work.pages.join(', ')}). ${canonicalUrl}`,
+          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, pp. ${work.pages.join(', ')}.`,
+        };
+
+  const transcriptionParagraphs = useMemo(
+    () => work.excerpt.split(/\n\n+/).filter(Boolean),
+    [work.excerpt]
+  );
+
+  const profileNotice =
+    lang === 'va'
+      ? 'Perfil actiu: Valencià — Transcripció íntegra en aquest idioma. Podeu canviar de perfil per llegir la transcripció en Castellà o Portugués:'
+      : lang === 'pt'
+      ? 'Perfil ativo: Português — Transcrição integral neste idioma. Você pode alternar de perfil para ler a transcrição em Castellano ou Valencià:'
+      : 'Perfil activo: Castellano — Transcripción íntegra en este idioma. Puede cambiar de perfil para leer la transcripción en Valencià o Português:';
 
   const handleCopy = () => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -123,6 +148,16 @@ export default function WorkDetailClient({
           <h2 className="font-serif text-base sm:text-lg italic text-charcoal-muted">
             {t.originalTitleLabel} &ldquo;{work.title}&rdquo;
           </h2>
+
+          {/* Epígrafe de Destaque de Pepe Adell */}
+          <div className="mt-5 pt-4 border-t border-deco-burnished/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-parchment-elevated px-4 py-3 border-l-4 border-l-deco-crimson">
+            <p className="font-display text-sm sm:text-base italic font-semibold text-charcoal">
+              “¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!”
+            </p>
+            <span className="font-sans text-[11px] uppercase tracking-widest text-deco-crimson font-bold whitespace-nowrap">
+              — Pepe Adell (1893)
+            </span>
+          </div>
         </article>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -141,14 +176,57 @@ export default function WorkDetailClient({
             </section>
 
             <section className="deco-frame p-6 space-y-4">
-              <h3 className="font-sans text-xs uppercase tracking-widest text-deco-valencia font-bold border-b border-deco-burnished/40 pb-2">
-                {t.workExcerptTitle}
-              </h3>
-              <blockquote className="p-4 bg-parchment-elevated border-l-4 border-deco-gold font-serif text-sm sm:text-base italic text-charcoal leading-relaxed">
-                &ldquo;{work.excerpt}&rdquo;
+              <div className="border-b border-deco-burnished/40 pb-3 space-y-2.5">
+                <h3 className="font-sans text-xs uppercase tracking-widest text-deco-valencia font-bold">
+                  {t.workExcerptTitle}
+                </h3>
+                <p className="font-sans text-[11px] text-charcoal-muted leading-snug">
+                  {profileNotice}
+                </p>
+                <div className="flex flex-wrap gap-1.5 font-sans text-xs pt-0.5">
+                  <Link
+                    href={`/es/obra/${work.slug}/`}
+                    className={`px-3 py-1.5 border font-bold transition-colors ${
+                      lang === 'es'
+                        ? 'bg-deco-crimson text-parchment border-deco-gold shadow-sm'
+                        : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
+                    }`}
+                  >
+                    ES • Transcripción en Castellano
+                  </Link>
+                  <Link
+                    href={`/va/obra/${work.slug}/`}
+                    className={`px-3 py-1.5 border font-bold transition-colors ${
+                      lang === 'va'
+                        ? 'bg-deco-valencia text-parchment border-deco-gold shadow-sm'
+                        : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
+                    }`}
+                  >
+                    VA • Transcripció en Valencià
+                  </Link>
+                  <Link
+                    href={`/pt/obra/${work.slug}/`}
+                    className={`px-3 py-1.5 border font-bold transition-colors ${
+                      lang === 'pt'
+                        ? 'bg-[#1D4E38] text-parchment border-deco-gold shadow-sm'
+                        : 'bg-parchment border-deco-burnished/50 text-charcoal hover:border-deco-gold'
+                    }`}
+                  >
+                    PT • Transcrição em Português
+                  </Link>
+                </div>
+              </div>
+
+              <blockquote className="p-4 sm:p-5 bg-parchment-elevated border-l-4 border-deco-gold font-serif text-sm sm:text-base text-charcoal leading-relaxed space-y-3">
+                {transcriptionParagraphs.map((paragraph, idx) => (
+                  <p key={idx} className="leading-relaxed">
+                    {idx === 0 ? `«${paragraph}` : paragraph}
+                    {idx === transcriptionParagraphs.length - 1 ? '»' : ''}
+                  </p>
+                ))}
               </blockquote>
 
-              <div>
+              <div className="pt-2 border-t border-deco-burnished/30">
                 <span className="font-sans text-[11px] uppercase tracking-wider text-deco-gold font-bold block mb-1">
                   {t.workTranslationLabel}
                 </span>

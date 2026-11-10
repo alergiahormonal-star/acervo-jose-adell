@@ -31,15 +31,44 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
   const prefix = `/${lang}`;
   const homeHref = lang === 'es' ? '/' : `/${lang}/`;
 
+  const personalitiesLabel =
+    lang === 'va'
+      ? 'Personalitats i Theatro Municipal'
+      : lang === 'pt'
+      ? 'Personalidades & Theatro Municipal'
+      : 'Personalidades y Theatro Municipal';
+
+  const prefaceLabel =
+    lang === 'va'
+      ? 'Prefaci (Dr. Marcello Bossois)'
+      : lang === 'pt'
+      ? 'Prefácio (Dr. Marcello Bossois)'
+      : 'Prefacio (Dr. Marcello Bossois)';
+
   const navItems = [
     { href: homeHref, label: t.navHome },
+    { href: `${prefix}/prefacio/`, label: prefaceLabel },
+    { href: `${prefix}/trineto-de-pepe-adell/`, label: 'Trineto de Pepe Adell' },
     { href: `${homeHref}#historias`, label: t.navStories },
     { href: `${homeHref}#familia`, label: t.navFamily },
-    { href: `${homeHref}#personalidades`, label: 'Personalidades & Theatro Municipal' },
-    { href: `${prefix}/trineto-de-pepe-adell/`, label: 'Trineto de Pepe Adell' },
+    { href: `${homeHref}#personalidades`, label: personalitiesLabel },
     { href: `${prefix}/acervo/`, label: t.navArchive },
     { href: `${prefix}/caderno-original/`, label: t.navNotebook },
   ];
+
+  const featuredQuote =
+    lang === 'va'
+      ? '“Quan comprendran tots que a la força dels principis, i no a la força dels hòmens, està reservada la victòria!” — «¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!»'
+      : lang === 'pt'
+      ? '“Quando compreenderão todos que à força dos princípios, e não à força dos homens, está reservada a vitória!” — «¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!»'
+      : '“¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!”';
+
+  const quoteAttribution =
+    lang === 'va'
+      ? '— Pepe Adell (José Adell y Fons, 12 d’octubre de 1893 • Obra Nº 24)'
+      : lang === 'pt'
+      ? '— Pepe Adell (José Adell y Fons, 12 de outubro de 1893 • Obra Nº 24)'
+      : '— Pepe Adell (José Adell y Fons, 12 de octubre de 1893 • Obra Nº 24)';
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-deco-burnished/70 bg-parchment/95 backdrop-blur-md shadow-sm">
@@ -149,6 +178,21 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
           ))}
         </nav>
       )}
+
+      {/* Faixa de Destaque Oficial em Todas as Páginas — Frase Imortal de Pepe Adell */}
+      <div className="bg-gradient-to-r from-[#181613] via-[#2B1816] to-[#181613] border-t border-[#D4AF37]/60 text-[#EFE9DA] py-2 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center">
+          <span className="font-display text-sm sm:text-base italic font-semibold text-[#F9E7B2] leading-snug">
+            {featuredQuote}
+          </span>
+          <Link
+            href={`${prefix}/obra/carta-abierta-gaspar-thous-actitud-castelar-1893/`}
+            className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest text-[#D4AF37] font-bold hover:text-white underline-offset-4 hover:underline whitespace-nowrap"
+          >
+            {quoteAttribution}
+          </Link>
+        </div>
+      </div>
     </header>
   );
 }

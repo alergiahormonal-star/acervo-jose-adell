@@ -3,7 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { SpainValenciaBrazilFlags } from '@/components/Flags';
-import { TRINETO_IDEALIZADOR_I18N } from '@/data/legado-marcello-bossois';
+import {
+  CORRESPONDENCE_MAILTO,
+  TRINETO_IDEALIZADOR_I18N,
+} from '@/data/legado-marcello-bossois';
 import { SiteLang } from '@/lib/i18n-ui';
 
 export default function MarcelloLegacyHomeSection({
@@ -13,6 +16,7 @@ export default function MarcelloLegacyHomeSection({
 }) {
   const c = TRINETO_IDEALIZADOR_I18N[lang];
   const trinetoHref = `/${lang}/trineto-de-pepe-adell/`;
+  const prefacioHref = `/${lang}/prefacio/`;
 
   return (
     <section
@@ -28,12 +32,20 @@ export default function MarcelloLegacyHomeSection({
                 {c.kicker}
               </span>
             </div>
-            <Link
-              href={trinetoHref}
-              className="font-sans text-xs font-bold text-deco-valencia hover:text-deco-crimson underline underline-offset-4"
-            >
-              {c.linkLabel} →
-            </Link>
+            <div className="flex flex-wrap items-center gap-4 font-sans text-xs">
+              <Link
+                href={prefacioHref}
+                className="font-bold text-deco-crimson hover:text-deco-valencia underline underline-offset-4"
+              >
+                📜 {c.prefaceLinkLabel} →
+              </Link>
+              <Link
+                href={trinetoHref}
+                className="font-bold text-deco-valencia hover:text-deco-crimson underline underline-offset-4"
+              >
+                {c.linkLabel} →
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-5 items-center">
@@ -61,24 +73,34 @@ export default function MarcelloLegacyHomeSection({
               </p>
 
               <p className="font-serif text-sm text-charcoal-muted leading-relaxed">
-                {c.paragraphs[1]} {c.paragraphs[2]}
+                {c.paragraphs[1]}
               </p>
+
+              <div className="p-3 bg-parchment-elevated border-l-4 border-deco-gold font-sans text-xs flex flex-wrap items-center justify-between gap-2">
+                <span className="font-bold text-charcoal">
+                  ✉️ {c.correspondenceLabel}
+                </span>
+                <a
+                  href={CORRESPONDENCE_MAILTO}
+                  className="font-mono font-bold text-deco-crimson hover:underline"
+                >
+                  {c.correspondenceEmail}
+                </a>
+              </div>
 
               <div className="pt-2 flex flex-wrap items-center gap-3 font-sans text-xs">
                 <Link
+                  href={prefacioHref}
+                  className="px-4 py-2.5 bg-deco-crimson text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-valencia transition-colors shadow-sm"
+                >
+                  {c.readPrefaceBtnLabel}
+                </Link>
+                <Link
                   href={trinetoHref}
-                  className="px-4 py-2.5 bg-deco-crimson text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-valencia transition-colors"
+                  className="px-4 py-2.5 bg-deco-valencia text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-crimson transition-colors"
                 >
                   {c.linkLabel} →
                 </Link>
-                <a
-                  href="https://www.brasilsemalergia.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 bg-parchment text-charcoal font-bold uppercase tracking-wider border border-deco-burnished hover:border-deco-gold transition-colors"
-                >
-                  {c.externalPortalLabel}
-                </a>
               </div>
             </div>
           </div>

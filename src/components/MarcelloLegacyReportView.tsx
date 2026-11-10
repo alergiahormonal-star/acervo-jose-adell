@@ -5,7 +5,10 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { SpainValenciaBrazilFlags } from '@/components/Flags';
-import { TRINETO_IDEALIZADOR_I18N } from '@/data/legado-marcello-bossois';
+import {
+  CORRESPONDENCE_MAILTO,
+  TRINETO_IDEALIZADOR_I18N,
+} from '@/data/legado-marcello-bossois';
 import { SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
 
 export default function MarcelloLegacyReportView({
@@ -14,9 +17,11 @@ export default function MarcelloLegacyReportView({
   lang?: SiteLang;
 }) {
   const c = TRINETO_IDEALIZADOR_I18N[lang];
+  const p = c.preface;
   const t = UI_STRINGS[lang];
   const homeHref = lang === 'es' ? '/' : `/${lang}/`;
   const prefix = `/${lang}`;
+  const prefacioHref = `/${lang}/prefacio/`;
 
   return (
     <div className="min-h-screen bg-parchment text-charcoal flex flex-col">
@@ -44,7 +49,8 @@ export default function MarcelloLegacyReportView({
         </ol>
       </nav>
 
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 space-y-8">
+      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 space-y-10">
+        {/* Card do Idealizador do Site — Trineto de Pepe Adell */}
         <article className="deco-frame p-6 sm:p-10 shadow-xl space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-deco-burnished/40 pb-4">
             <div className="inline-flex flex-wrap items-center gap-3">
@@ -53,6 +59,12 @@ export default function MarcelloLegacyReportView({
                 {c.kicker}
               </span>
             </div>
+            <Link
+              href={prefacioHref}
+              className="font-sans text-xs font-bold text-deco-crimson hover:text-deco-valencia underline underline-offset-4"
+            >
+              📜 {c.prefaceLinkLabel} →
+            </Link>
           </div>
 
           <div className="space-y-2">
@@ -79,9 +91,33 @@ export default function MarcelloLegacyReportView({
             </div>
 
             <div className="md:col-span-7 space-y-4 font-serif text-base text-charcoal leading-relaxed">
-              {c.paragraphs.map((p, idx) => (
-                <p key={idx}>{p}</p>
+              {c.paragraphs.map((para, idx) => (
+                <p key={idx}>{para}</p>
               ))}
+
+              <div className="p-4 bg-parchment-elevated border-2 border-deco-gold space-y-1.5 font-sans text-xs">
+                <span className="uppercase tracking-wider text-deco-crimson font-bold block">
+                  ✉️ {c.correspondenceLabel}
+                </span>
+                <p className="font-serif text-charcoal-muted">
+                  {p.correspondenceText}
+                </p>
+                <a
+                  href={CORRESPONDENCE_MAILTO}
+                  className="inline-block font-mono text-sm font-bold text-deco-valencia hover:text-deco-crimson underline underline-offset-4"
+                >
+                  {c.correspondenceEmail}
+                </a>
+              </div>
+
+              <div className="pt-1">
+                <Link
+                  href={prefacioHref}
+                  className="inline-block px-5 py-3 bg-deco-crimson text-parchment font-sans text-xs font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-valencia transition-colors shadow-md"
+                >
+                  {c.readPrefaceBtnLabel}
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -93,31 +129,63 @@ export default function MarcelloLegacyReportView({
               {c.quoteAuthor}
             </footer>
           </blockquote>
+        </article>
 
-          <div className="pt-3 border-t border-deco-burnished/40 flex flex-wrap items-center justify-between gap-3 font-sans text-xs">
-            <Link
-              href={homeHref}
-              className="px-5 py-3 bg-deco-crimson text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-valencia transition-colors"
-            >
-              ← {t.navHome}
-            </Link>
-            <div className="flex flex-wrap gap-2.5">
-              <a
-                href="https://www.brasilsemalergia.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-3 bg-parchment text-charcoal font-bold uppercase tracking-wider border border-deco-burnished hover:border-deco-gold transition-colors"
-              >
-                {c.externalPortalLabel}
-              </a>
-              <Link
-                href={`${prefix}/acervo/`}
-                className="px-5 py-3 bg-deco-valencia text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-crimson transition-colors"
-              >
-                {t.btnExploreArchive}
+        {/* Prefácio Histórico-Literário Completo da Vida de Pepe Adell (por Dr. Marcello Bossois) */}
+        <article id="prefacio-literario" className="deco-frame p-6 sm:p-12 shadow-2xl space-y-8">
+          <header className="space-y-3 border-b-2 border-deco-burnished pb-6 text-center">
+            <span className="font-sans text-xs uppercase tracking-[0.2em] text-deco-crimson font-bold block">
+              {p.kicker}
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-charcoal leading-tight">
+              <Link href={prefacioHref} className="hover:text-deco-crimson transition-colors">
+                {p.title}
               </Link>
-            </div>
+            </h2>
+            <p className="font-serif text-base italic text-charcoal-muted max-w-3xl mx-auto">
+              {p.subtitle}
+            </p>
+            <p className="font-display text-lg font-bold text-deco-crimson pt-1">
+              ✍ {p.authorLine}
+            </p>
+          </header>
+
+          <div className="space-y-8">
+            {p.chapters.map((chapter) => (
+              <section key={chapter.roman} className="space-y-3.5">
+                <div className="flex items-center gap-3 border-b border-deco-burnished/40 pb-2">
+                  <span className="px-2.5 py-0.5 bg-deco-crimson text-parchment font-display text-base font-bold border border-deco-gold">
+                    {chapter.roman}
+                  </span>
+                  <h3 className="font-display text-2xl font-bold text-charcoal">
+                    {chapter.title}
+                  </h3>
+                </div>
+                <div className="space-y-3.5 font-serif text-base text-charcoal leading-relaxed">
+                  {chapter.paragraphs.map((para, pIdx) => (
+                    <p key={pIdx}>{para}</p>
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
+
+          <footer className="pt-4 border-t border-deco-burnished/40 flex flex-wrap items-center justify-between gap-4 font-sans text-xs">
+            <div>
+              <span className="font-display text-xl font-bold text-charcoal block">
+                {p.closingSignature}
+              </span>
+              <span className="text-deco-crimson font-bold uppercase tracking-wider">
+                {p.closingRole}
+              </span>
+            </div>
+            <Link
+              href={prefacioHref}
+              className="px-4 py-2.5 bg-deco-valencia text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-crimson transition-colors"
+            >
+              {c.prefaceLinkLabel} (Página Dedicada) →
+            </Link>
+          </footer>
         </article>
       </main>
 
