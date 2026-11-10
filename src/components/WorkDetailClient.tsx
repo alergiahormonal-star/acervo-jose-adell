@@ -12,6 +12,7 @@ import {
   getLocalizedWorksList,
 } from '@/data/acervo-trilingue';
 import { SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
 export default function WorkDetailClient({
   work: rawWork,
@@ -37,7 +38,7 @@ export default function WorkDetailClient({
 
   const homeHref = lang === 'es' ? '/' : `/${lang}/`;
   const prefix = `/${lang}`;
-  const canonicalUrl = `https://acervo-jose-adell.mbossois.workers.dev/${lang}/obra/${work.slug}/`;
+  const canonicalUrl = `${SITE_URL}/${lang}/obra/${work.slug}/`;
 
   const citations: Record<'ABNT' | 'APA' | 'CHICAGO', string> = {
     ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano y Archivo Digital José Adell y Fons, Obra nº ${work.id} (Cuaderno Original, p. ${work.pages.join(', ')}). Disponible en: ${canonicalUrl}`,

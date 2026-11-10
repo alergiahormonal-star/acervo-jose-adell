@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import OriginalNotebookClient from '@/components/OriginalNotebookClient';
 import { SUPPORTED_LANGS, SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
 export function generateStaticParams() {
   const params: { locale: SiteLang; num: string }[] = [];
@@ -28,11 +29,11 @@ export function generateMetadata({
     title: `Pág. ${pageNum} / 89 — ${t.notebookTitle}`,
     description: `${t.notebookSubtitle} (Facsímil original pág. ${pageNum}).`,
     alternates: {
-      canonical: `https://acervo-jose-adell.mbossois.workers.dev/${lang}/pagina/${pageNum}/`,
+      canonical: `${SITE_URL}/${lang}/pagina/${pageNum}/`,
       languages: {
-        'es-ES': `https://acervo-jose-adell.mbossois.workers.dev/es/pagina/${pageNum}/`,
-        'ca-valencia': `https://acervo-jose-adell.mbossois.workers.dev/va/pagina/${pageNum}/`,
-        'pt-BR': `https://acervo-jose-adell.mbossois.workers.dev/pt/pagina/${pageNum}/`,
+        'es-ES': `${SITE_URL}/es/pagina/${pageNum}/`,
+        'ca-valencia': `${SITE_URL}/va/pagina/${pageNum}/`,
+        'pt-BR': `${SITE_URL}/pt/pagina/${pageNum}/`,
       },
     },
   };

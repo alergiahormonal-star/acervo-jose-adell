@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import HomeExperience from '@/components/HomeExperience';
 import { SUPPORTED_LANGS, SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
 export function generateStaticParams(): { locale: SiteLang }[] {
   return SUPPORTED_LANGS.map((locale) => ({ locale }));
@@ -20,12 +21,12 @@ export function generateMetadata({
     title: `${t.brandTitle} (1868–1927)`,
     description: t.heroLead,
     alternates: {
-      canonical: `https://acervo-jose-adell.mbossois.workers.dev/${lang}/`,
+      canonical: `${SITE_URL}/${lang}/`,
       languages: {
-        'es-ES': 'https://acervo-jose-adell.mbossois.workers.dev/es/',
-        'ca-valencia': 'https://acervo-jose-adell.mbossois.workers.dev/va/',
-        'pt-BR': 'https://acervo-jose-adell.mbossois.workers.dev/pt/',
-        'x-default': 'https://acervo-jose-adell.mbossois.workers.dev/',
+        'es-ES': `${SITE_URL}/es/`,
+        'ca-valencia': `${SITE_URL}/va/`,
+        'pt-BR': `${SITE_URL}/pt/`,
+        'x-default': `${SITE_URL}/`,
       },
     },
   };

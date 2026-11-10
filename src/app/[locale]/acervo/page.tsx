@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ArchiveCatalogSection from '@/components/ArchiveCatalogSection';
 import { SUPPORTED_LANGS, SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
 export function generateStaticParams(): { locale: SiteLang }[] {
   return SUPPORTED_LANGS.map((locale) => ({ locale }));
@@ -22,11 +23,11 @@ export function generateMetadata({
     title: `${t.navArchive} | ${t.brandTitle}`,
     description: t.catalogSubtitle,
     alternates: {
-      canonical: `https://acervo-jose-adell.mbossois.workers.dev/${lang}/acervo/`,
+      canonical: `${SITE_URL}/${lang}/acervo/`,
       languages: {
-        'es-ES': 'https://acervo-jose-adell.mbossois.workers.dev/es/acervo/',
-        'ca-valencia': 'https://acervo-jose-adell.mbossois.workers.dev/va/acervo/',
-        'pt-BR': 'https://acervo-jose-adell.mbossois.workers.dev/pt/acervo/',
+        'es-ES': `${SITE_URL}/es/acervo/`,
+        'ca-valencia': `${SITE_URL}/va/acervo/`,
+        'pt-BR': `${SITE_URL}/pt/acervo/`,
       },
     },
   };

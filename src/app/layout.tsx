@@ -1,26 +1,27 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { getMemorialJsonLd } from '@/lib/schema-jsonld';
+import { SITE_URL } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://acervo-jose-adell.mbossois.workers.dev'),
+  metadataBase: new URL(SITE_URL),
   title: 'Memorial Humano y Archivo Completo José Adell y Fons (1868–1927)',
   description:
     'La vida conmovedora, la familia, la sonrisa, el buril de maestro grabador y las 72 obras y 89 páginas originales de José Adell y Fons ("Pepe Adell", Vinaròs, Comunidad Valenciana, España, 1868 – Salvador de Bahía, Brasil, 1927).',
   alternates: {
-    canonical: 'https://acervo-jose-adell.mbossois.workers.dev/',
+    canonical: `${SITE_URL}/`,
     languages: {
-      'es-ES': 'https://acervo-jose-adell.mbossois.workers.dev/',
-      'ca-valencia': 'https://acervo-jose-adell.mbossois.workers.dev/va/',
-      'pt-BR': 'https://acervo-jose-adell.mbossois.workers.dev/pt/',
-      'x-default': 'https://acervo-jose-adell.mbossois.workers.dev/',
+      'es-ES': `${SITE_URL}/`,
+      'ca-valencia': `${SITE_URL}/va/`,
+      'pt-BR': `${SITE_URL}/pt/`,
+      'x-default': `${SITE_URL}/`,
     },
   },
   openGraph: {
     title: 'Memorial Humano y Archivo Completo José Adell y Fons (1868–1927)',
     description:
       'Conozca las historias humanas de Pepe Adell, la carta de adiós de Adolfo Morales de los Ríos, el duelo por Doña Emilia y sus 72 obras en Castellano, Valencià y Português.',
-    url: 'https://acervo-jose-adell.mbossois.workers.dev/',
+    url: `${SITE_URL}/`,
     siteName: 'Memorial José Adell y Fons',
     locale: 'es_ES',
     type: 'website',

@@ -8,6 +8,7 @@ import PageScanViewer from '@/components/PageScanViewer';
 import { PERSONALITIES_LIST } from '@/data/personalidades';
 import { getLocalizedWorksList } from '@/data/acervo-trilingue';
 import { SUPPORTED_LANGS, SiteLang, UI_STRINGS } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
 export function generateStaticParams() {
   const params: { locale: SiteLang; slug: string }[] = [];
@@ -35,11 +36,11 @@ export function generateMetadata({
     title: `${person.name} y José Adell y Fons | ${loc.role}`,
     description: loc.bio,
     alternates: {
-      canonical: `https://acervo-jose-adell.mbossois.workers.dev/${lang}/personalidade/${person.slug}/`,
+      canonical: `${SITE_URL}/${lang}/personalidade/${person.slug}/`,
       languages: {
-        'es-ES': `https://acervo-jose-adell.mbossois.workers.dev/es/personalidade/${person.slug}/`,
-        'ca-valencia': `https://acervo-jose-adell.mbossois.workers.dev/va/personalidade/${person.slug}/`,
-        'pt-BR': `https://acervo-jose-adell.mbossois.workers.dev/pt/personalidade/${person.slug}/`,
+        'es-ES': `${SITE_URL}/es/personalidade/${person.slug}/`,
+        'ca-valencia': `${SITE_URL}/va/personalidade/${person.slug}/`,
+        'pt-BR': `${SITE_URL}/pt/personalidade/${person.slug}/`,
       },
     },
   };

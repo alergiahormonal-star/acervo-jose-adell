@@ -5,6 +5,7 @@ import StoryDetailView from '@/components/StoryDetailView';
 import { HUMAN_STORIES } from '@/data/historias-humanas';
 import { getLocalizedStories } from '@/data/historias-trilingues';
 import { SUPPORTED_LANGS, SiteLang } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
 export function generateStaticParams() {
   const params: { locale: SiteLang; slug: string }[] = [];
@@ -31,11 +32,11 @@ export function generateMetadata({
     title: `${story.title} | José Adell y Fons`,
     description: story.subtitle,
     alternates: {
-      canonical: `https://acervo-jose-adell.mbossois.workers.dev/${lang}/historia/${story.slug}/`,
+      canonical: `${SITE_URL}/${lang}/historia/${story.slug}/`,
       languages: {
-        'es-ES': `https://acervo-jose-adell.mbossois.workers.dev/es/historia/${story.slug}/`,
-        'ca-valencia': `https://acervo-jose-adell.mbossois.workers.dev/va/historia/${story.slug}/`,
-        'pt-BR': `https://acervo-jose-adell.mbossois.workers.dev/pt/historia/${story.slug}/`,
+        'es-ES': `${SITE_URL}/es/historia/${story.slug}/`,
+        'ca-valencia': `${SITE_URL}/va/historia/${story.slug}/`,
+        'pt-BR': `${SITE_URL}/pt/historia/${story.slug}/`,
       },
     },
   };

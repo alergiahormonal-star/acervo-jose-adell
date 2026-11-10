@@ -1,5 +1,7 @@
+import { SITE_URL } from '@/lib/site-config';
+
 export function getMemorialJsonLd() {
-  const BASE = 'https://acervo-jose-adell.mbossois.workers.dev';
+  const BASE = SITE_URL;
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -75,11 +77,11 @@ export function getMemorialJsonLd() {
       {
         '@type': ['Collection', 'ArchiveComponent'],
         '@id': `${BASE}/#acervo-completo`,
-        name: 'Memorial Humano & Acervo Completo José Adell y Fons (1868–1927)',
-        url: `${BASE}/acervo/`,
-        inLanguage: ['pt-BR', 'es'],
+        name: 'Memorial Humano y Archivo Completo José Adell y Fons (1868–1927)',
+        url: `${BASE}/es/acervo/`,
+        inLanguage: ['es-ES', 'ca-valencia', 'pt-BR'],
         about: { '@id': `${BASE}/#jose-adell-y-fons` },
-        numberOfItems: 56,
+        numberOfItems: 72,
         temporalCoverage: '1885/1927',
         spatialCoverage: [
           'Vinaròs, Espanha',

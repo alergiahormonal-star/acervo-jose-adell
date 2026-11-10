@@ -3,8 +3,9 @@ import { CATALOG_WORKS } from '@/data/acervo-completo';
 import { HUMAN_STORIES } from '@/data/historias-humanas';
 import { PERSONALITIES_LIST } from '@/data/personalidades';
 import { SUPPORTED_LANGS } from '@/lib/i18n-ui';
+import { SITE_URL } from '@/lib/site-config';
 
-const BASE_URL = 'https://acervo-jose-adell.mbossois.workers.dev';
+const BASE_URL = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
