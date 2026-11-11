@@ -40,7 +40,6 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
   const prefix = `/${lang}`;
   const homeHref = lang === 'es' ? '/' : `/${lang}/`;
 
-  // Inicializar modo de leitura (Pergaminho / Noturno) e atalho Ctrl+K / Cmd+K
   useEffect(() => {
     try {
       const saved = localStorage.getItem('memoria-adell-theme');
@@ -48,9 +47,7 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
         document.documentElement.classList.add('dark');
         setDarkMode(true);
       }
-    } catch {
-      // ignore storage restrictions
-    }
+    } catch {}
 
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
@@ -93,12 +90,11 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
     }
   };
 
-  // Rótulos enxutos de uma linha só para Desktop (evita quebra dupla em notebooks 1280px–1440px)
   const navItems =
     lang === 'va'
       ? [
           { href: homeHref, shortLabel: 'L’Ànima de Pepe', fullLabel: t.navHome },
-          { href: `${prefix}/prefacio/`, shortLabel: 'Prefaci', fullLabel: 'Prefaci (Dr. Marcello Bossois)' },
+          { href: `${prefix}/prefacio/`, shortLabel: 'Prefaci (Dr. Marcello Bossois)', fullLabel: 'Prefaci (Dr. Marcello Bossois)' },
           { href: `${prefix}/trineto-de-pepe-adell/`, shortLabel: 'Trineto de Pepe Adell', fullLabel: 'Trineto de Pepe Adell' },
           { href: `${homeHref}#historias`, shortLabel: '6 Històries', fullLabel: t.navStories },
           { href: `${homeHref}#familia`, shortLabel: 'Família', fullLabel: t.navFamily },
@@ -109,7 +105,7 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
       : lang === 'pt'
       ? [
           { href: homeHref, shortLabel: 'A Alma de Pepe', fullLabel: t.navHome },
-          { href: `${prefix}/prefacio/`, shortLabel: 'Prefácio', fullLabel: 'Prefácio (Dr. Marcello Bossois)' },
+          { href: `${prefix}/prefacio/`, shortLabel: 'Prefácio (Dr. Marcello Bossois)', fullLabel: 'Prefácio (Dr. Marcello Bossois)' },
           { href: `${prefix}/trineto-de-pepe-adell/`, shortLabel: 'Trineto de Pepe Adell', fullLabel: 'Trineto de Pepe Adell' },
           { href: `${homeHref}#historias`, shortLabel: '6 Histórias', fullLabel: t.navStories },
           { href: `${homeHref}#familia`, shortLabel: 'Família', fullLabel: t.navFamily },
@@ -119,7 +115,7 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
         ]
       : [
           { href: homeHref, shortLabel: 'El Alma de Pepe', fullLabel: t.navHome },
-          { href: `${prefix}/prefacio/`, shortLabel: 'Prefacio', fullLabel: 'Prefacio (Dr. Marcello Bossois)' },
+          { href: `${prefix}/prefacio/`, shortLabel: 'Prefacio (Dr. Marcello Bossois)', fullLabel: 'Prefacio (Dr. Marcello Bossois)' },
           { href: `${prefix}/trineto-de-pepe-adell/`, shortLabel: 'Trineto de Pepe Adell', fullLabel: 'Trineto de Pepe Adell' },
           { href: `${homeHref}#historias`, shortLabel: '6 Historias', fullLabel: t.navStories },
           { href: `${homeHref}#familia`, shortLabel: 'Familia', fullLabel: t.navFamily },
@@ -167,7 +163,7 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
 
   return (
     <>
-      {/* Barra Ultrafina de Progresso de Leitura em Ouro Brunido */}
+      {/* Barra Ultrafina de Progresso de Leitura */}
       <div
         aria-hidden="true"
         className="fixed top-0 left-0 right-0 h-[3px] z-[70] bg-transparent pointer-events-none"
@@ -178,154 +174,163 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
         />
       </div>
 
-      {/* FAIXA SUPERIOR INSTITUCIONAL (Desktop — Rola suavemente e libera a tela) */}
-      <div className="hidden lg:block bg-[#151310] text-[#E8E0CF] border-b border-[#D4AF37]/35 text-[11px] font-sans">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 min-w-0">
-            <SpainAndValenciaFlags size="sm" />
-            <span className="uppercase tracking-[0.18em] text-[#D4AF37] font-semibold truncate">
-              {t.brandTop}
-            </span>
-          </div>
+      {/* MASTHEAD DESKTOP (Não-sticky: exibe a marca completa, busca, tema e idiomas com elegância e rola suavemente liberando toda a tela!) */}
+      <div className="hidden lg:block bg-parchment-card border-b border-deco-burnished/50">
+        <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between gap-6">
+          <Link href={homeHref} className="flex items-center gap-3.5 group min-w-0">
+            <div className="w-11 h-11 shrink-0 rounded-[2px] border-2 border-deco-gold bg-deco-crimson text-[#FAF7F0] flex items-center justify-center font-insignia text-lg shadow-sm group-hover:bg-deco-valencia transition-colors">
+              JA
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <SpainAndValenciaFlags size="sm" />
+                <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-deco-gold font-bold truncate">
+                  {t.brandTop}
+                </span>
+              </div>
+              <span className="font-display text-2xl xl:text-[1.7rem] font-bold text-charcoal tracking-tight block leading-tight mt-0.5">
+                {t.brandTitle}
+              </span>
+            </div>
+          </Link>
 
-          <div className="flex items-center gap-2.5 shrink-0">
-            {/* Busca Global Instantânea (Ctrl+K) */}
+          <div className="flex items-center gap-2 font-sans text-xs shrink-0">
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 hover:bg-white/15 border border-[#D4AF37]/45 text-[#F4ECD8] transition-colors rounded-[2px]"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-parchment-elevated hover:border-deco-gold border border-deco-burnished/60 text-charcoal transition-colors rounded-[2px]"
               title={`${searchBtnLabel} (Ctrl+K)`}
             >
               <span>🔍</span>
               <span className="font-semibold">{searchBtnLabel}</span>
-              <kbd className="px-1.5 py-0.5 text-[9px] bg-black/50 border border-white/20 text-[#D4AF37] font-mono">
+              <kbd className="px-1.5 py-0.5 text-[10px] bg-parchment-card border border-deco-burnished/50 text-deco-gold font-mono">
                 Ctrl K
               </kbd>
             </button>
 
-            {/* Modo Pergaminho / Noturno */}
             <button
               type="button"
               onClick={toggleTheme}
-              className="px-2.5 py-1 bg-white/5 hover:bg-white/15 border border-white/20 text-[#E8E0CF] font-semibold transition-colors rounded-[2px]"
+              className="px-2.5 py-1.5 bg-parchment-elevated hover:border-deco-gold border border-deco-burnished/60 text-charcoal font-semibold transition-colors rounded-[2px]"
               title="Alternar modo de leitura"
             >
               {themeBtnLabel}
             </button>
 
-            <span className="text-white/25">|</span>
-
-            {/* Seletor Oficial de Idiomas */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 pl-1">
               <Link
                 href={buildLocalizedHref(pathname, 'es')}
                 title="Castellano (Español)"
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 border font-bold transition-all rounded-[2px] ${
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 border font-bold transition-all rounded-[2px] ${
                   lang === 'es'
-                    ? 'bg-deco-crimson text-white border-[#D4AF37] shadow-sm'
-                    : 'bg-white/5 text-[#E8E0CF] border-white/20 hover:border-[#D4AF37]'
+                    ? 'bg-deco-crimson text-white border-deco-gold shadow-sm'
+                    : 'bg-parchment text-charcoal border-deco-burnished/50 hover:border-deco-gold'
                 }`}
               >
                 <SpainFlag className="w-4 h-3" />
-                <span>Castellano</span>
+                <span>ES</span>
               </Link>
 
               <Link
                 href={buildLocalizedHref(pathname, 'va')}
                 title="Valencià (Comunitat Valenciana)"
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 border font-bold transition-all rounded-[2px] ${
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 border font-bold transition-all rounded-[2px] ${
                   lang === 'va'
-                    ? 'bg-deco-valencia text-white border-[#D4AF37] shadow-sm'
-                    : 'bg-white/5 text-[#E8E0CF] border-white/20 hover:border-[#D4AF37]'
+                    ? 'bg-deco-valencia text-white border-deco-gold shadow-sm'
+                    : 'bg-parchment text-charcoal border-deco-burnished/50 hover:border-deco-gold'
                 }`}
               >
                 <ValenciaFlag className="w-4 h-3" />
-                <span>Valencià</span>
+                <span>VA</span>
               </Link>
 
               <Link
                 href={buildLocalizedHref(pathname, 'pt')}
                 title="Português (Brasil)"
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 border font-bold transition-all rounded-[2px] ${
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 border font-bold transition-all rounded-[2px] ${
                   lang === 'pt'
-                    ? 'bg-[#1D4E38] text-white border-[#D4AF37] shadow-sm'
-                    : 'bg-white/5 text-[#E8E0CF] border-white/20 hover:border-[#D4AF37]'
+                    ? 'bg-[#1D4E38] text-white border-deco-gold shadow-sm'
+                    : 'bg-parchment text-charcoal border-deco-burnished/50 hover:border-deco-gold'
                 }`}
               >
                 <BrazilFlag className="w-4 h-3" />
-                <span>Português</span>
+                <span>PT</span>
               </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* BARRA DE NAVEGAÇÃO PRINCIPAL STICKY (Compacta: 1 única linha no Desktop e no Celular!) */}
-      <header className="sticky top-0 z-50 w-full max-w-full border-b border-deco-burnished/75 bg-parchment/95 backdrop-blur-md shadow-md">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
-          {/* Marca Compacta e Impecável */}
-          <Link
-            href={homeHref}
-            className="flex items-center gap-2 sm:gap-3 min-w-0 group shrink"
-          >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-[2px] border-2 border-deco-gold bg-deco-crimson text-[#FAF7F0] flex items-center justify-center font-insignia text-sm sm:text-base shadow-sm group-hover:bg-deco-valencia transition-colors">
-              JA
-            </div>
-
-            <div className="min-w-0">
-              <div className="flex items-center gap-1.5 lg:hidden">
-                <SpainFlag className="w-4 h-2.5" />
-                <ValenciaFlag className="w-4 h-2.5" />
-                <span className="font-sans text-[9px] uppercase tracking-wider text-deco-gold font-bold truncate">
-                  Vinaròs • Rio • Bahia
-                </span>
-              </div>
-              <span className="font-display text-base sm:text-xl xl:text-2xl font-bold text-charcoal tracking-tight block truncate leading-tight">
-                {t.brandTitle}
-              </span>
-            </div>
-          </Link>
-
-          {/* Navegação Desktop em Linha Única (Sem quebras duplas!) */}
+      {/* BARRA DE NAVEGAÇÃO STICKY ULTRAFINA (Apenas 48px no Desktop e 56px no Celular — libera toda a tela para o conteúdo abaixo!) */}
+      <header className="sticky top-0 z-50 w-full max-w-full border-b border-deco-burnished/80 bg-parchment/95 backdrop-blur-md shadow-sm">
+        {/* Visão Desktop: 1 única linha limpa e espaçosa com todos os links */}
+        <div className="hidden lg:flex max-w-7xl mx-auto px-6 h-12 items-center justify-between gap-2">
           <nav
             aria-label="Navegación principal"
-            className="hidden lg:flex items-center gap-1 xl:gap-2 font-sans text-[11px] xl:text-xs font-semibold tracking-wide shrink-0"
+            className="flex items-center justify-between w-full font-sans text-xs font-semibold tracking-wide"
           >
-            {navItems.map((item) => {
-              const active = isRouteActive(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  title={item.fullLabel}
-                  className={`whitespace-nowrap px-2 xl:px-2.5 py-1.5 transition-all border-b-2 ${
-                    active
-                      ? 'text-deco-crimson border-deco-crimson font-bold bg-deco-goldLight/20'
-                      : 'text-charcoal hover:text-deco-crimson border-transparent hover:border-deco-gold'
-                  }`}
-                >
-                  {item.shortLabel}
-                </Link>
-              );
-            })}
+            <div className="flex items-center gap-1 xl:gap-3">
+              {navItems.map((item) => {
+                const active = isRouteActive(item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    title={item.fullLabel}
+                    className={`whitespace-nowrap px-2.5 py-1.5 transition-all border-b-2 ${
+                      active
+                        ? 'text-deco-crimson border-deco-crimson font-bold bg-deco-goldLight/25'
+                        : 'text-charcoal hover:text-deco-crimson border-transparent hover:border-deco-gold'
+                    }`}
+                  >
+                    {item.shortLabel}
+                  </Link>
+                );
+              })}
+            </div>
+
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label={searchBtnLabel}
               title={`${searchBtnLabel} (Ctrl+K)`}
-              className="ml-1 w-8 h-8 flex items-center justify-center border border-deco-burnished/60 bg-parchment-card hover:border-deco-gold text-charcoal rounded-[2px] transition-colors"
+              className="px-2.5 py-1 text-[11px] font-bold text-deco-crimson hover:text-deco-valencia flex items-center gap-1 shrink-0"
             >
-              🔍
+              <span>🔍</span>
+              <span className="hidden xl:inline">{searchBtnLabel}</span>
             </button>
           </nav>
+        </div>
 
-          {/* Controles Mobile Compactos (Sem estourar bordas em telas 320px–430px) */}
-          <div className="flex lg:hidden items-center gap-1 shrink-0 font-sans text-[11px]">
+        {/* Visão Celular: 1 única linha compacta (56px) sem jamais estourar as bordas */}
+        <div className="flex lg:hidden items-center justify-between gap-2 px-3 sm:px-5 h-14 w-full max-w-full">
+          <Link
+            href={homeHref}
+            className="flex items-center gap-2 min-w-0 flex-1"
+          >
+            <div className="w-8 h-8 shrink-0 rounded-[2px] border border-deco-gold bg-deco-crimson text-[#FAF7F0] flex items-center justify-center font-insignia text-xs shadow-sm">
+              JA
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1">
+                <SpainFlag className="w-3.5 h-2.5" />
+                <ValenciaFlag className="w-3.5 h-2.5" />
+                <span className="font-sans text-[8px] uppercase tracking-wider text-deco-gold font-bold truncate">
+                  Vinaròs • Rio • Bahia
+                </span>
+              </div>
+              <span className="font-display text-[15px] sm:text-lg font-bold text-charcoal block truncate leading-tight">
+                {t.brandTitle}
+              </span>
+            </div>
+          </Link>
+
+          <div className="flex items-center gap-1 shrink-0 font-sans text-[10px]">
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label={searchBtnLabel}
-              className="w-8 h-8 flex items-center justify-center border border-deco-burnished/60 bg-parchment-card text-charcoal rounded-[2px]"
+              className="w-7 h-7 flex items-center justify-center border border-deco-burnished/60 bg-parchment-card text-charcoal rounded-[2px]"
             >
               🔍
             </button>
@@ -369,14 +374,14 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menu"
               aria-expanded={mobileOpen}
-              className="w-8 h-8 flex items-center justify-center border border-deco-gold bg-[#181613] text-[#F9E7B2] font-bold rounded-[2px]"
+              className="w-7 h-7 flex items-center justify-center border border-deco-gold bg-[#181613] text-[#F9E7B2] font-bold rounded-[2px]"
             >
               {mobileOpen ? '✕' : '☰'}
             </button>
           </div>
         </div>
 
-        {/* Gaveta Mobile Refinada */}
+        {/* Gaveta Mobile */}
         {mobileOpen && (
           <nav
             aria-label="Menu móvel"
@@ -421,16 +426,16 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
       </header>
 
       {/* PLACA DE DESTAQUE EM TODAS AS PÁGINAS — Frase de Pepe Adell
-          (Fora do sticky para liberar espaço vertical ao rolar + zero estouro de borda no celular!) */}
-      <div className="w-full max-w-full overflow-hidden bg-gradient-to-r from-[#161411] via-[#2A1716] to-[#161411] border-b-2 border-[#D4AF37]/75 text-[#EFE9DA] shadow-md">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 text-center space-y-1">
-          <p className="font-display text-sm sm:text-base lg:text-lg italic font-semibold text-[#F9E7B2] leading-snug break-words">
+          (Não-sticky, contida dentro das margens em 100% dos celulares e com espaço generoso abaixo!) */}
+      <div className="w-full max-w-full overflow-hidden bg-gradient-to-r from-[#161411] via-[#2A1716] to-[#161411] border-b-2 border-[#D4AF37]/75 text-[#EFE9DA] shadow-sm">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-3.5 text-center space-y-1">
+          <p className="font-display text-[13px] sm:text-base lg:text-[17px] italic font-semibold text-[#F9E7B2] leading-snug break-words">
             {featuredQuote}
           </p>
           <div>
             <Link
               href={`${prefix}/obra/carta-abierta-gaspar-thous-actitud-castelar-1893/`}
-              className="inline-block font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#D4AF37] font-bold hover:text-white underline-offset-4 hover:underline break-words max-w-full"
+              className="inline-block font-sans text-[9.5px] sm:text-[11px] uppercase tracking-[0.08em] sm:tracking-[0.15em] text-[#D4AF37] font-bold hover:text-white underline-offset-4 hover:underline break-words max-w-full"
             >
               {quoteAttribution}
             </Link>
@@ -438,14 +443,12 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
         </div>
       </div>
 
-      {/* Modal de Busca Global */}
       <GlobalSearchModal
         lang={lang}
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
       />
 
-      {/* Medalhão Flutuante Voltar ao Topo */}
       {showBackTop && (
         <button
           type="button"
