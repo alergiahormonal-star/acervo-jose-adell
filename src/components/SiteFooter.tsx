@@ -78,7 +78,7 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
             </span>
             <a
               href={CORRESPONDENCE_MAILTO}
-              className="inline-block font-mono text-sm font-bold text-[#F9E7B2] hover:text-white underline underline-offset-4"
+              className="inline-block font-mono text-xs sm:text-sm font-bold text-[#F9E7B2] hover:text-white underline underline-offset-4 break-all"
             >
               {CORRESPONDENCE_EMAIL_DISPLAY}
             </a>
@@ -168,7 +168,7 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
           {correspondenceTitle}{' '}
           <a
             href={CORRESPONDENCE_MAILTO}
-            className="font-mono font-bold underline hover:text-white"
+            className="font-mono font-bold underline hover:text-white break-all"
           >
             {CORRESPONDENCE_EMAIL_DISPLAY}
           </a>

@@ -94,7 +94,7 @@ export default function WorkDetailClient({
         </ol>
       </nav>
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 space-y-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 pt-10 pb-14 sm:pt-12 sm:pb-16 space-y-10">
         {/* Cabeçalho da Obra */}
         <article className="deco-frame p-6 sm:p-8 shadow-md">
           <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-deco-burnished/40 font-sans text-xs">

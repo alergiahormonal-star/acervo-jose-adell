@@ -179,7 +179,7 @@ export default function ArchiveCatalogSection({
           return (
             <article
               key={work.id}
-              className="deco-frame flex flex-col justify-between overflow-hidden group hover:shadow-xl transition-shadow"
+              className="deco-frame deco-card-hover flex flex-col justify-between overflow-hidden group transition-all"
             >
               <div>
                 <Link
@@ -235,7 +235,7 @@ export default function ArchiveCatalogSection({
                     <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
                       {t.workExcerptTitle}
                     </span>
-                    <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-56 overflow-y-auto pr-1">
+                    <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-56 overflow-y-auto custom-scrollbar pr-1">
                       {work.excerpt
                         .split(/\n\n+/)
                         .filter(Boolean)

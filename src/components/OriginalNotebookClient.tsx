@@ -45,7 +45,7 @@ export default function OriginalNotebookClient({
     <div className="min-h-screen bg-parchment text-charcoal flex flex-col">
       <SiteHeader lang={lang} />
 
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-10 space-y-8">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 pt-10 pb-14 sm:pt-12 sm:pb-16 space-y-8">
         <div className="text-center max-w-3xl mx-auto">
           <span className="font-sans text-xs uppercase tracking-[0.25em] text-deco-gold font-bold">
             {t.notebookKicker}

@@ -203,7 +203,7 @@ export default function PersonalitiesAndTheatroSection({
             return (
               <article
                 key={p.id}
-                className="deco-frame flex flex-col justify-between p-5 hover:shadow-xl transition-shadow"
+                className="deco-frame deco-card-hover flex flex-col justify-between p-5 transition-all"
               >
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 border-b border-deco-burnished/40 pb-3">
@@ -247,7 +247,7 @@ export default function PersonalitiesAndTheatroSection({
                       <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
                         {t.workExcerptTitle} (Nº {personWork.id})
                       </span>
-                      <div className="font-serif text-xs text-charcoal leading-relaxed space-y-1.5 max-h-36 overflow-y-auto pr-1">
+                      <div className="font-serif text-xs text-charcoal leading-relaxed space-y-1.5 max-h-36 overflow-y-auto custom-scrollbar pr-1">
                         {personWork.excerpt
                           .split(/\n\n+/)
                           .filter(Boolean)

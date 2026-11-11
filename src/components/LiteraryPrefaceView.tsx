@@ -59,7 +59,7 @@ export default function LiteraryPrefaceView({
         </ol>
       </nav>
 
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 space-y-10">
+      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 pt-10 pb-14 sm:pt-12 sm:pb-16 space-y-10">
         <article className="deco-frame p-6 sm:p-12 shadow-2xl space-y-8">
           {/* Cabeçalho Solene do Prefácio Histórico-Literário */}
           <header className="space-y-4 border-b-2 border-deco-burnished pb-6 text-center">

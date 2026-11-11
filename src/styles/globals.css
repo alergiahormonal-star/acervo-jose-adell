@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  /* Paleta Principal: Pergaminho Clássico & Art Déco Valenciano */
+  /* Paleta Principal: Pergaminho Clássico de Museu & Art Déco Valenciano */
   --bg-parchment: #F6F2E9;
-  --bg-parchment-elevated: #EFE9DA;
-  --bg-card: #FAF7F0;
-  --text-charcoal: #1C1B18;
-  --text-muted: #524E46;
+  --bg-parchment-elevated: #EDE6D6;
+  --bg-card: #FCF9F2;
+  --text-charcoal: #1A1815;
+  --text-muted: #554F45;
 
   /* Acentos Art Déco & Buril de Gravador */
-  --gold-medal: #B8860B;
+  --gold-medal: #A87908;
   --gold-burnished: #C5A059;
   --gold-light: #E6D2A8;
   --blue-valencia: #1B365D;
@@ -27,26 +27,45 @@
 }
 
 .dark {
-  /* Modo Noturno: Azul Noite Mediterrâneo */
-  --bg-parchment: #0F1722;
-  --bg-parchment-elevated: #162232;
-  --bg-card: #1A283B;
-  --text-charcoal: #F2ECE1;
-  --text-muted: #B0BAC9;
+  /* Modo Noturno de Leitura: Azul Noite Mediterrâneo & Ouro Antigo */
+  --bg-parchment: #0E151F;
+  --bg-parchment-elevated: #152030;
+  --bg-card: #192638;
+  --text-charcoal: #F3EDE2;
+  --text-muted: #B6C0CF;
 
-  --gold-medal: #D4AF37;
-  --gold-burnished: #C5A059;
-  --gold-light: #4A3C1E;
-  --blue-valencia: #3B669E;
-  --crimson-republic: #B23A3A;
+  --gold-medal: #D9B44A;
+  --gold-burnished: #B8934A;
+  --gold-light: #3D3118;
+  --blue-valencia: #2C5282;
+  --crimson-republic: #9E2A2B;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.25rem;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--bg-parchment);
+  background-image:
+    radial-gradient(ellipse at top, rgba(197, 160, 89, 0.08), transparent 65%),
+    radial-gradient(ellipse at bottom, rgba(122, 28, 28, 0.04), transparent 60%);
   color: var(--text-charcoal);
   font-family: var(--font-serif-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
+  overflow-x: clip;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: rgba(197, 160, 89, 0.32);
+  color: var(--text-charcoal);
 }
 
 /* Moldura Dupla Art Déco (Buril de Gravador em Metal) */
@@ -54,15 +73,26 @@ body {
   position: relative;
   border: 1px solid var(--gold-burnished);
   background-color: var(--bg-card);
-  box-shadow: inset 0 0 0 4px var(--bg-parchment), inset 0 0 0 5px var(--gold-burnished);
+  box-shadow:
+    0 10px 30px -12px rgba(24, 22, 19, 0.14),
+    inset 0 0 0 4px var(--bg-parchment),
+    inset 0 0 0 5px rgba(197, 160, 89, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.dark .deco-frame {
+  box-shadow:
+    0 14px 34px -12px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 4px var(--bg-parchment),
+    inset 0 0 0 5px rgba(184, 147, 74, 0.45);
 }
 
 .deco-frame::before,
 .deco-frame::after {
   content: '';
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   border: 2px solid var(--gold-medal);
   pointer-events: none;
 }
@@ -79,6 +109,15 @@ body {
   right: 4px;
   border-left: none;
   border-top: none;
+}
+
+/* Card Interativo com Elevação Suave */
+.deco-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 38px -12px rgba(24, 22, 19, 0.22),
+    inset 0 0 0 4px var(--bg-parchment),
+    inset 0 0 0 5px var(--gold-medal);
 }
 
 /* Divisor Editorial com Florão Valenciano */
@@ -103,6 +142,25 @@ body {
   );
 }
 
+/* Barra de Rolagem Elegante para Transcrições e Painéis */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 89, 0.65);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--crimson-republic);
+}
+
 /* Filtros Visuais para Leitura de Fac-símiles do Século XIX */
 .facsimile-high-contrast {
   filter: contrast(165%) brightness(102%) grayscale(30%);
@@ -114,4 +172,22 @@ body {
 
 .facsimile-invert-manuscript {
   filter: invert(92%) hue-rotate(180deg) contrast(140%);
+}
+
+/* Impressão Limpa para Pesquisadores e Familiares */
+@media print {
+  header,
+  footer,
+  nav[aria-label='Breadcrumb'],
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .deco-frame {
+    box-shadow: none !important;
+    border: 1px solid #999 !important;
+  }
 }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ArchiveCatalogSection from '@/components/ArchiveCatalogSection';
+import InteractiveTimelineSection from '@/components/InteractiveTimelineSection';
 import PersonalitiesAndTheatroSection from '@/components/PersonalitiesAndTheatroSection';
 import MarcelloLegacyHomeSection from '@/components/MarcelloLegacyHomeSection';
 import { SpainAndValenciaFlags } from '@/components/Flags';
@@ -35,18 +36,18 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
 
       <main className="flex-1">
         {/* ==================== HERO HUMANO EM CASTELLANO / VALENCIÀ / PORTUGUÊS ==================== */}
-        <section className="relative overflow-hidden border-b-2 border-deco-burnished bg-deco-sunburst py-12 sm:py-20 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <section className="relative overflow-hidden border-b-2 border-deco-burnished bg-deco-sunburst pt-10 pb-14 sm:pt-14 sm:pb-20 lg:pt-18 lg:pb-24 px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-7 space-y-6">
               {/* Emblema Oficial com as Bandeiras da Espanha e da Comunidade Valenciana Juntas */}
-              <div className="inline-flex flex-wrap items-center gap-3 px-4 py-2 border border-deco-gold bg-parchment-card shadow-sm">
+              <div className="inline-flex flex-wrap items-center gap-3 px-4 py-2 border border-deco-gold bg-parchment-card shadow-sm max-w-full">
                 <SpainAndValenciaFlags size="md" />
-                <span className="font-sans text-xs uppercase tracking-[0.18em] text-deco-crimson font-bold">
+                <span className="font-sans text-[11px] sm:text-xs uppercase tracking-[0.16em] text-deco-crimson font-bold break-words">
                   {t.heroBadge}
                 </span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-6xl font-bold text-charcoal leading-[1.06]">
+              <h1 className="font-display text-3xl sm:text-5xl xl:text-[3.5rem] font-bold text-charcoal leading-[1.08]">
                 {t.heroTitle}
               </h1>
 
@@ -199,8 +200,11 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
           </div>
         </section>
 
+        {/* ==================== CRONOLOGIA INTERATIVA DE DOIS CONTINENTES (1868–1927) ==================== */}
+        <InteractiveTimelineSection lang={lang} />
+
         {/* ==================== AS 6 GRANDES HISTÓRIAS HUMANAS ==================== */}
-        <section id="historias" className="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
+        <section id="historias" className="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="font-sans text-xs uppercase tracking-[0.25em] text-deco-crimson font-bold">
               {t.storiesKicker}
@@ -224,7 +228,7 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
               return (
                 <article
                   key={story.id}
-                  className="deco-frame overflow-hidden flex flex-col justify-between hover:shadow-2xl transition-all group"
+                  className="deco-frame deco-card-hover overflow-hidden flex flex-col justify-between transition-all group"
                 >
                   <div>
                     <Link
@@ -263,7 +267,7 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                           <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
                             {t.workExcerptTitle} (Nº {primaryWork.id} — {primaryWork.date})
                           </span>
-                          <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-44 overflow-y-auto pr-1">
+                          <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-44 overflow-y-auto custom-scrollbar pr-1">
                             {primaryWork.excerpt
                               .split(/\n\n+/)
                               .filter(Boolean)

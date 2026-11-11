@@ -49,7 +49,7 @@ export default function MarcelloLegacyReportView({
         </ol>
       </nav>
 
-      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-10 space-y-10">
+      <main className="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 pt-10 pb-14 sm:pt-12 sm:pb-16 space-y-10">
         {/* Card do Idealizador do Site — Trineto de Pepe Adell */}
         <article className="deco-frame p-6 sm:p-10 shadow-xl space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-deco-burnished/40 pb-4">
