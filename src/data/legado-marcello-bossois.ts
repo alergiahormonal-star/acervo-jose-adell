@@ -24,6 +24,13 @@ export interface LiteraryPrefaceContent {
   correspondenceEmail: string;
 }
 
+export interface AuthorConvictionBox {
+  kicker: string;
+  title: string;
+  body: string;
+  attribution: string;
+}
+
 export interface TrinetoIdealizadorContent {
   linkLabel: string;
   prefaceLinkLabel: string;
@@ -32,6 +39,7 @@ export interface TrinetoIdealizadorContent {
   subtitle: string;
   photoCaption: string;
   paragraphs: string[];
+  convictionBox: AuthorConvictionBox;
   quote: string;
   quoteAuthor: string;
   readMoreLinkLabel: string;
@@ -57,9 +65,17 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
     photoCaption:
       'Dr. Marcello Bossois de Melo Ferreira (trineto de Pepe Adell) y su esposa, la Dra. Patricia Frozi Schlinkert.',
     paragraphs: [
-      'Este sitio y Memorial Histórico de José Adell y Fons («Pepe Adell», 1868–1927) fue idealizado y elaborado por su trineto (tataranieto), el Dr. Marcello Bossois de Melo Ferreira — ciudadano español y brasileño, carioca de nacimiento y valenciano de sangre —, con el propósito de custodiar, digitalizar y compartir con el mundo las 89 páginas originales y las 72 obras legadas por su antepasado entre Vinaròs, Valencia, Barcelona, Madrid, Río de Janeiro y Bahía.',
+      'Este sitio y Memorial Histórico de José Adell y Fons («Pepe Adell», 1868–1927) fue idealizado y elaborado por su trineto (tataranieto), el Dr. Marcello Bossois de Melo Ferreira — ciudadano español y brasileño, carioca de nacimiento y valenciano de sangre —, con el propósito de custodiar, digitalizar y compartir con el mundo las 89 páginas originales y las 73 obras legadas por su antepasado entre Vinaròs, Valencia, Barcelona, Madrid, Río de Janeiro y Bahía.',
       'Médico e investigador, hijo del Dr. Vanuzio Ferreira y de la Dra. Lúcia Bossois (eslabón directo del linaje Adell–Bossois) y casado con la Dra. Patricia Frozi Schlinkert, el Dr. Marcello Bossois reunió este acervo familiar centenario y redactó especialmente para esta obra el Prefacio Histórico-Literario que narra la vida de Pepe Adell.',
     ],
+    convictionBox: {
+      kicker: 'Convicción Política e Histórica • Visión Personal del Autor',
+      title: 'Monarquía Parlamentaria y el Legado Moral Republicano de Pepe Adell',
+      body:
+        'Monárquico convicto y defensor del sistema de monarquía parlamentaria, el Dr. Marcello Bossois se declara, al mismo tiempo, profundamente orgulloso de las convicciones éticas y humanistas que permeaban el carácter de su tatarabuelo (trineto en linaje directo), Pepe Adell, en relación con los ideales republicanos. No obstante, en opinión del Dr. Marcello Bossois, la República se ha mostrado en la práctica —principalmente el modelo republicano brasileño— como un modelo fallido, que ha traído profunda desigualdad social y todo tipo de medidas antidemocráticas y draconianas, difiriendo radicalmente de los nobles ideales republicanos soñados y defendidos por sus precursores históricos, como Pepe Adell.',
+      attribution:
+        '— Posicionamiento personal del Dr. Marcello Bossois de Melo Ferreira (Trineto de Pepe Adell e Idealizador de este Memorial)',
+    },
     quote:
       '«¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!»',
     quoteAuthor: '— Pepe Adell (José Adell y Fons, 12 de octubre de 1893)',
@@ -113,7 +129,15 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
           paragraphs: [
             'Pero la grandeza de un hombre se mide, sobre todo, en la hora desnuda del dolor. En febrero de 1903, la muerte arrebató en Río de Janeiro, a los treinta y dos años de edad, a su amadísima esposa y compañera de luchas, Doña Emilia Vallespí de Adell. Cuarenta carruajes acompañaron el féretro hasta el cementerio de São Francisco Xavier bajo una lluvia de lágrimas y coronas. Quedaba Pepe Adell viudo en tierra americana con sus pequeños hijos —Josefina, Alberto y Pepín— abrazados a su levita negra. Muchos habrían sucumbido a la amargura; él, en cambio, transformó el luto en amor redoblado hacia sus hijos, hacia los huérfanos y hacia las sociedades de beneficencia.',
             'Cuando el 12 de mayo de 1927 entregó su alma en Salvador de Bahía, a los cincuenta y nueve años de edad, la prensa de España y del Brasil se vistió de duelo. Fue entonces cuando el viejo maestro Adolfo Morales de los Ríos escribió aquella carta de despedida que ningún descendiente puede leer sin que se le empañen los ojos: recordaba cómo en la Rua da Ajuda todos reían y esperaban siempre lo mejor de la vida porque seguían la máxima íntima de Pepe Adell: «Más vale hablar de cosas risueñas, que escribir sobre lágrimas».',
-            'Como trineto suyo —uniendo en mis propias venas la sangre valenciana y española con el corazón carioca y brasileño—, entrego hoy al público este archivo sagrado. Que quien recorra estas setenta y dos obras y estas ochenta y nueve páginas originales sienta que Pepe Adell no pertenece al pasado: vive en cada conciencia que defiende la justicia sin rencor, el arte con excelencia y la vida con una sonrisa.',
+          ],
+        },
+        {
+          roman: 'V',
+          title: 'Entre la Corona Parlamentaria y el Sueño Puro del Republicano: La Mirada de un Trineto Monárquico',
+          paragraphs: [
+            'Cabe aquí, por deber de lealtad a la historia y a la conciencia, una confesión franca de quien firma estas páginas. Escribo este prefacio en mi condición de monárquico convicto, creyendo firmemente en el sistema de la monarquía parlamentaria como arquitectura institucional de equilibrio, continuidad de Estado, moderación de poderes y salvaguarda de las libertades públicas. Y, sin embargo —sin que en ello exista contradicción moral alguna, sino la más alta reverencia filial—, siento un inmenso e inquebrantable orgullo por las convicciones que permeaban el carácter íntegro de mi tatarabuelo, Pepe Adell, respecto a sus ideales republicanos. El republicanismo que ardía en el pecho de aquel joven valenciano de Vinaròs no era el de la ambición partidista ni el de los privilegios de casta: era la sed pura de igualdad ante la ley, de instrucción popular, de compasión hacia los humildes y de rectitud insobornable.',
+            'Es justamente a la luz de la nobleza moral de precursores como Pepe Adell que resulta imposible callar ante la desnaturalización histórica posterior. En mi opinión personal —como médico, ciudadano y observador de la realidad histórica, Dr. Marcello Bossois—, la República se ha mostrado en la práctica, y muy principalmente el modelo republicano brasileño, como un modelo fallido que ha traído profunda desigualdad social y todo tipo de medidas antidemocráticas y draconianas, difiriendo enormemente de los ideales republicanos puros, éticos y libertarios que alentaron a sus precursores como Pepe Adell. Donde aquellos soñadores del siglo XIX proyectaban ciudadanía plena, garantías individuales y justicia sin distinción de cuna, se instalaron con frecuencia oligarquías, arbitrariedades estatales y abismos sociales que niegan la esencia misma de aquello que mi antepasado defendía con la pluma y con su propia sangre.',
+            'Como trineto suyo —uniendo en mis propias venas la sangre valenciana y española con el corazón carioca y brasileño—, entrego hoy al público este archivo sagrado. Que quien recorra estas setenta y tres obras y estas ochenta y nueve páginas originales comprenda por qué los hombres de bien, ya bajo la inspiración de la monarquía parlamentaria, ya en la memoria honrada de aquel idealismo histórico, se encuentran en la misma trinchera moral esculpida por Pepe Adell: la certeza de que solo a la fuerza de los principios —y jamás al arbitrio de los hombres— está reservada la verdadera victoria.',
           ],
         },
       ],
@@ -136,9 +160,17 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
     photoCaption:
       'Dr. Marcello Bossois de Melo Ferreira (trineto de Pepe Adell) i la seua esposa, la Dra. Patricia Frozi Schlinkert.',
     paragraphs: [
-      'Aquest lloc web i Memorial Històric de José Adell y Fons («Pepe Adell», 1868–1927) fou idealitzat i elaborat pel seu «trineto» (rebesnet), el Dr. Marcello Bossois de Melo Ferreira — ciutadà espanyol i brasiler, carioca de naixement i valencià de sang —, amb la missió de preservar, digitalitzar i oferir al públic les 89 pàgines originals i les 72 obres llegades pel patriarca familiar entre Vinaròs, València, Barcelona, Madrid, Rio de Janeiro i Bahia.',
+      'Aquest lloc web i Memorial Històric de José Adell y Fons («Pepe Adell», 1868–1927) fou idealitzat i elaborat pel seu «trineto» (rebesnet), el Dr. Marcello Bossois de Melo Ferreira — ciutadà espanyol i brasiler, carioca de naixement i valencià de sang —, amb la missió de preservar, digitalitzar i oferir al públic les 89 pàgines originals i les 73 obres llegades pel patriarca familiar entre Vinaròs, València, Barcelona, Madrid, Rio de Janeiro i Bahia.',
       'Metge i investigador, fill del Dr. Vanuzio Ferreira i de la Dra. Lúcia Bossois (baula directa de la nissaga Adell–Bossois) i casat amb la Dra. Patricia Frozi Schlinkert, el Dr. Marcello Bossois reuní aquest fons familiar centenari i redactà especialment per a aquesta obra el Prefaci Històric-Literari que narra la vida de Pepe Adell.',
     ],
+    convictionBox: {
+      kicker: 'Convicció Política i Històrica • Visió Personal de l’Autor',
+      title: 'Monarquia Parlamentària i el Llegat Moral Republicà de Pepe Adell',
+      body:
+        'Monàrquic convençut i defensor del sistema de monarquia parlamentària, el Dr. Marcello Bossois es declara, al mateix temps, profundament orgullós de les conviccions ètiques i humanistes que amaraven el caràcter del seu rebesavi, Pepe Adell, en relació amb els ideals republicans. Tanmateix, en opinió del Dr. Marcello Bossois, la República s’ha mostrat en la pràctica —principalment el model republicà brasiler— com un model fallit, que ha portat profunda desigualtat social i tota mena de mesures antidemocràtiques i draconianes, diferint radicalment dels nobles ideals republicans somiats i defensats pels seus precursors històrics, com Pepe Adell.',
+      attribution:
+        '— Posicionament personal del Dr. Marcello Bossois de Melo Ferreira (Trineto de Pepe Adell i Idealitzador d’aquest Memorial)',
+    },
     quote:
       '«Quan comprendran tots que a la força dels principis, i no a la força dels hòmens, està reservada la victòria!» («¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!»)',
     quoteAuthor: '— Pepe Adell (José Adell y Fons, 12 d’octubre de 1893)',
@@ -192,7 +224,15 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
           paragraphs: [
             'Però la grandesa d’un home es mesura, sobretot, en l’hora nua del dolor. El febrer de 1903, la mort arrabassà a Rio de Janeiro, als trenta-dos anys d’edat, la seua estimadíssima esposa i companya de lluites, Doña Emilia Vallespí de Adell. Quaranta carruatges acompanyaren el fèretre fins al cementeri de São Francisco Xavier sota una pluja de llàgrimes i corones. Quedava Pepe Adell vidu en terra americana amb els seus fills menuts —Josefina, Alberto i Pepín— abraçats a la seua levita negra. Molts haurien sucumbit a l’amargor; ell, en canvi, transformà el dol en amor redoblat cap als seus fills, cap als orfes i cap a les societats de beneficència.',
             'Quan el 12 de maig de 1927 lliurà la seua ànima a Salvador de Bahia, als cinquanta-nou anys d’edat, la premsa d’Espanya i del Brasil es vestí de dol. Fou aleshores quan el vell mestre Adolfo Morales de los Ríos escrigué aquella carta de comiat que cap descendent pot llegir sense que se li entelen els ulls: recordava com a la Rua da Ajuda tots reien i esperaven sempre el millor de la vida perquè seguien la màxima íntima de Pepe Adell: «Més val parlar de coses rialleres que escriure sobre llàgrimes».',
-            'Com a trineto (rebesnet) seu —unint en les meues pròpies venes la sang valenciana i espanyola amb el cor carioca i brasiler—, lliure hui al públic aquest arxiu sagrat. Que qui recórrega aquestes setanta-dues obres i aquestes huitanta-nou pàgines originals senta que Pepe Adell no pertany al passat: viu en cada consciència que defensa la justícia sense rancor, l’art amb excel·lència i la vida amb un somriure.',
+          ],
+        },
+        {
+          roman: 'V',
+          title: 'Entre la Corona Parlamentària i el Somni Pur del Republicà: La Mirada d’un Trineto Monàrquic',
+          paragraphs: [
+            'Cal ací, per deure de lleialtat a la història i a la consciència, una confessió franca de qui signa aquestes pàgines. Escric aquest prefaci en la meua condició de monàrquic convençut, creient fermament en el sistema de la monarquia parlamentària com a arquitectura institucional d’equilibri, continuïtat d’Estat, moderació de poders i salvaguarda de les llibertats públiques. I, tanmateix —sense que hi haja cap contradicció moral, sinó la més alta reverència filial—, sent un immens i indestructible orgull per les conviccions que amaraven el caràcter íntegre del meu rebesavi, Pepe Adell, respecte als seus ideals republicans. El republicanisme que cremava en el pit d’aquell jove valencià de Vinaròs no era el de l’ambició partidista ni el dels privilegis de casta: era la set pura d’igualtat davant la llei, d’instrucció popular, de compassió envers els humils i de rectitud insubornable.',
+            'És justament a la llum de la noblesa moral de precursors com Pepe Adell que resulta impossible callar davant la desnaturalització històrica posterior. En la meua opinió personal —com a metge, ciutadà i observador de la realitat històrica, Dr. Marcello Bossois—, la República s’ha mostrat en la pràctica, i molt principalment el model republicà brasiler, com un model fallit que ha portat profunda desigualtat social i tota mena de mesures antidemocràtiques i draconianes, diferint enormement dels ideals republicans purs, ètics i llibertaris que encoratjaren els seus precursors com Pepe Adell. On aquells somiadors del segle XIX projectaven ciutadania plena, garanties individuals i justícia sense distinció de bressol, s’hi instal·laren sovint oligarquies, arbitrarietats estatals i abismes socials que neguen l’essència mateixa d’allò que el meu rebesavi defensava amb la ploma i amb la seua pròpia sang.',
+            'Com a trineto (rebesnet) seu —unint en les meues pròpies venes la sang valenciana i espanyola amb el cor carioca i brasiler—, lliure hui al públic aquest arxiu sagrat. Que qui recórrega aquestes setanta-tres obres i aquestes huitanta-nou pàgines originals comprenga per què els hòmens de bé, ja siga sota la inspiració de la monarquia parlamentària, ja siga en la memòria honrada d’aquell idealisme històric, es troben en la mateixa trinxera moral esculpida per Pepe Adell: la certesa que només a la força dels principis —i mai a l’arbitri dels hòmens— està reservada la veritable victòria.',
           ],
         },
       ],
@@ -215,9 +255,17 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
     photoCaption:
       'Dr. Marcello Bossois de Melo Ferreira (trineto de Pepe Adell) e sua esposa, a Dra. Patricia Frozi Schlinkert.',
     paragraphs: [
-      'Este site e Memorial Histórico de José Adell y Fons (“Pepe Adell”, 1868–1927) foi idealizado e elaborado por seu trineto, o Dr. Marcello Bossois de Melo Ferreira — cidadão espanhol e brasileiro, carioca de nascimento e valenciano de sangue —, com o propósito de preservar, digitalizar e compartilhar com o público as 89 páginas originais e as 72 obras legadas por seu trisavô entre Vinaròs, Valência, Barcelona, Madrid, Rio de Janeiro e Bahia.',
+      'Este site e Memorial Histórico de José Adell y Fons (“Pepe Adell”, 1868–1927) foi idealizado e elaborado por seu trineto, o Dr. Marcello Bossois de Melo Ferreira — cidadão espanhol e brasileiro, carioca de nascimento e valenciano de sangue —, com o propósito de preservar, digitalizar e compartilhar com o público as 89 páginas originais e as 73 obras legadas por seu trisavô entre Vinaròs, Valência, Barcelona, Madrid, Rio de Janeiro e Bahia.',
       'Médico e pesquisador, filho do Dr. Vanuzio Ferreira e da Dra. Lúcia Bossois (elo direto da linhagem Adell–Bossois) e casado com a Dra. Patricia Frozi Schlinkert, o Dr. Marcello Bossois reuniu este acervo familiar centenário e redigiu especialmente para esta obra o Prefácio Histórico-Literário que resume a trajetória humana, intelectual e artística de Pepe Adell.',
     ],
+    convictionBox: {
+      kicker: 'Convicção Política e Histórica • Visão Pessoal do Autor',
+      title: 'Monarquia Parlamentarista e o Legado Moral Republicano de Pepe Adell',
+      body:
+        'Monarquista convicto e defensor do sistema de monarquia parlamentarista, o Dr. Marcello Bossois declara-se, ao mesmo tempo, profundamente orgulhoso das convicções éticas e humanistas que permeavam o caráter de seu trisavô, Pepe Adell, em relação aos ideais republicanos. Contudo, na opinião do Dr. Marcello Bossois, a República tem se mostrado na prática — principalmente o modelo republicano brasileiro — um modelo falido, que tem trazido profunda desigualdade social e todo o tipo de medidas antidemocráticas e draconianas, diferindo radicalmente dos nobres ideais republicanos sonhados e defendidos por seus precursores históricos, como Pepe Adell.',
+      attribution:
+        '— Posicionamento pessoal do Dr. Marcello Bossois de Melo Ferreira (Trineto de Pepe Adell e Idealizador deste Memorial)',
+    },
     quote:
       '“Quando compreenderão todos que à força dos princípios, e não à força dos homens, está reservada a vitória!” («¡Cuándo comprenderán todos que á la fuerza de los principios y no á la fuerza de los hombres, está reservada la victoria!»)',
     quoteAuthor: '— Pepe Adell (José Adell y Fons, 12 de outubro de 1893)',
@@ -271,7 +319,15 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
           paragraphs: [
             'Mas a grandeza de um homem mede-se, sobretudo, na hora desnuda da dor. Em fevereiro de 1903, a morte arrebatou no Rio de Janeiro, aos trinta e dois anos de idade, sua amadíssima esposa e companheira de lutas, Doña Emilia Vallespí de Adell. Quarenta carruagens acompanharam o féretro até o cemitério de São Francisco Xavier sob uma chuva de lágrimas e coroas. Ficava Pepe Adell viúvo em terra americana com seus filhos pequenos — Josefina, Alberto e Pepín — abraçados à sua sobrecasaca negra. Muitos teriam sucumbido à amargura; ele, ao contrário, transformou o luto em amor redobrado pelos filhos, pelos órfãos e pelas sociedades de beneficência.',
             'Quando, em 12 de maio de 1927, entregou sua alma em Salvador da Bahia, aos cinquenta e nove anos de idade, a imprensa da Espanha e do Brasil vestiu-se de luto. Foi então que o velho mestre Adolfo Morales de los Ríos escreveu aquela carta de despedida que nenhum descendente pode ler sem que os olhos se marejem: recordava como na Rua da Ajuda todos riam e esperavam sempre o melhor da vida porque seguiam a máxima íntima de Pepe Adell: “Mais vale falar de coisas risonhas do que escrever sobre lágrimas”.',
-            'Como seu trineto — unindo em minhas próprias veias o sangue valenciano e espanhol ao coração carioca e brasileiro —, entrego hoje ao público este arquivo sagrado. Que quem percorrer estas setenta e duas obras e estas oitenta e nove páginas originais sinta que Pepe Adell não pertence ao passado: vive em cada consciência que defende a justiça sem rancor, a arte com excelência e a vida com um sorriso.',
+          ],
+        },
+        {
+          roman: 'V',
+          title: 'Entre a Coroa Parlamentar e o Sonho Puro do Republicano: O Olhar de um Trineto Monarquista',
+          paragraphs: [
+            'Cabe aqui, por dever de lealdade à história e à consciência, uma confissão franca de quem assina estas páginas. Escrevo este prefácio na condição de monarquista convicto, acreditando profundamente no sistema da monarquia parlamentarista como arquitetura institucional de equilíbrio, continuidade de Estado, moderação de poderes e salvaguarda das liberdades públicas. E, no entanto — sem que nisso resida qualquer contradição moral, mas sim a mais alta reverência filial —, sinto um imenso e inabalável orgulho das convicções que permeavam o caráter íntegro de meu trisavô, Pepe Adell, em relação aos seus ideais republicanos. O republicanismo que ardia no peito daquele jovem valenciano de Vinaròs não era o da ambição partidária nem o dos privilégios de casta: era a sede pura de igualdade perante a lei, de instrução popular, de compaixão pelos humildes e de retidão incorruptível.',
+            'É justamente à luz da nobreza moral de precursores como Pepe Adell que se torna impossível calar diante do desvirtuamento histórico que se seguiu. Na minha opinião pessoal — como médico, cidadão e observador da realidade histórica, Dr. Marcello Bossois —, a República tem se mostrado na prática, e principalmente o modelo republicano brasileiro, um modelo falido, que tem trazido profunda desigualdade social e todo o tipo de medidas antidemocráticas e draconianas, diferindo imensamente dos ideais republicanos puros, éticos e libertários acalentados por seus precursores como Pepe Adell. Onde aqueles sonhadores do século XIX projetavam cidadania plena, garantias individuais e justiça sem distinção de berço, instalaram-se com frequência oligarquias, arbítrios estatais e abismos sociais que negam a própria essência daquilo que meu trisavô defendia com a pena e com o próprio sangue.',
+            'Como seu trineto — unindo em minhas próprias veias o sangue valenciano e espanhol ao coração carioca e brasileiro —, entrego hoje ao público este arquivo sagrado. Que quem percorrer estas setenta e três obras e estas oitenta e nove páginas originais compreenda por que os homens de bem, quer sob a inspiração da monarquia parlamentarista, quer na memória honrada daquele idealismo histórico, encontram-se na mesma trincheira moral esculpida por Pepe Adell: a certeza de que só à força dos princípios — e jamais ao arbítrio dos homens — está reservada a verdadeira vitória.',
           ],
         },
       ],

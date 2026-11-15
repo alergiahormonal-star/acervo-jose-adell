@@ -98,6 +98,22 @@ export default function LiteraryPrefaceView({
             </footer>
           </blockquote>
 
+          {/* Nota de Convicção Histórica e Política do Autor (Dr. Marcello Bossois) */}
+          <section className="p-5 sm:p-6 bg-parchment-elevated border-2 border-deco-crimson shadow-md space-y-2.5">
+            <span className="font-sans text-xs uppercase tracking-[0.18em] text-deco-crimson font-bold block">
+              👑 {c.convictionBox.kicker}
+            </span>
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-charcoal leading-snug">
+              {c.convictionBox.title}
+            </h2>
+            <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+              {c.convictionBox.body}
+            </p>
+            <p className="font-sans text-xs font-bold text-deco-crimson pt-1">
+              {c.convictionBox.attribution}
+            </p>
+          </section>
+
           {/* Capítulos do Prefácio Literário */}
           <div className="space-y-10">
             {p.chapters.map((chapter) => (

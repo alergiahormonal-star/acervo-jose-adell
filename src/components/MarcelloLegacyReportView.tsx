@@ -121,6 +121,22 @@ export default function MarcelloLegacyReportView({
             </div>
           </div>
 
+          {/* Visão Histórica e Política do Trineto — Convicção Pessoal do Dr. Marcello Bossois */}
+          <section className="p-5 sm:p-6 bg-parchment-elevated border-2 border-deco-crimson shadow-md space-y-2.5">
+            <span className="font-sans text-xs uppercase tracking-[0.18em] text-deco-crimson font-bold block">
+              👑 {c.convictionBox.kicker}
+            </span>
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-charcoal leading-snug">
+              {c.convictionBox.title}
+            </h2>
+            <p className="font-serif text-base text-charcoal leading-relaxed">
+              {c.convictionBox.body}
+            </p>
+            <p className="font-sans text-xs font-bold text-deco-crimson pt-1">
+              {c.convictionBox.attribution}
+            </p>
+          </section>
+
           <blockquote className="p-4 sm:p-5 border-l-4 border-deco-crimson bg-parchment-elevated shadow-sm">
             <p className="font-display text-lg sm:text-xl italic text-charcoal leading-snug">
               {c.quote}
@@ -183,7 +199,7 @@ export default function MarcelloLegacyReportView({
               href={prefacioHref}
               className="px-4 py-2.5 bg-deco-valencia text-parchment font-bold uppercase tracking-wider border border-deco-gold hover:bg-deco-crimson transition-colors"
             >
-              {c.prefaceLinkLabel} (Página Dedicada) →
+              {c.readPrefaceBtnLabel}
             </Link>
           </footer>
         </article>
