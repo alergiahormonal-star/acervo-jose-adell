@@ -894,6 +894,17 @@ export const WORKS_ES: Record<string, WorkTranslation> = {
     transcription: "«En 1865 publicó Emilio Castelar en su periódico La Democracia aquel famoso artículo titulado “El Rasgo”, denunciando que el patrimonio cedido por la Corona pertenecía á la Nación. Destituido de su cátedra de Historia en la Universidad Central, la protesta estudiantil fue ahogada en sangre en la trágica Noche de San Daniel.\n\nCondenado á muerte tras el 22 de junio de 1866 por el soberbio dictador Narváez, que creía extirpar una idea con mandar sus apóstoles al cadalso, tuvo que abandonar el suelo de la patria con la mente llena de esperanzas y el corazón de amarguras, para volver triunfante en 1868 á iluminar las Cortes Constituyentes.»",
     note: "Transcripción en castellano de la crónica histórica firmada por José Adell en La Unión Española en junio de 1892 (págs. 11 y 12).",
   },
+  '73': {
+    title: "«Homenage á la Comisión Patriótica» (La Unión Española, Año IV, Nº 190)",
+    humanTitle: "José Adell al frente de la Comisión Patriótica de 1895 en defensa de Cuba ante la Primera Revolución e injerencia de EE. UU.",
+    date: "19 de Octubre de 1895",
+    periodical: "La Unión Española",
+    city: "Río de Janeiro",
+    signature: "D. José Adell (Líder de la Comisión) • Grabado de A. Castaño",
+    summary: "Portada histórica grabada de La Unión Española (Río de Janeiro, 19 de octubre de 1895) en homenaje a la Comisión Patriótica de apoyo financiero e institucional encabezada por D. José Adell durante la Primera Revolución de Independencia de Cuba (1895–1898, con participación de EE. UU., distinta de la revolución comunista de 1959). Los españoles advertían entonces que aquel separatismo no se basaba en principios democráticos y republicanos, sino en oligarquías e intereses políticos y económicos oscuros que convertirían a Cuba en tierra de jugatina y contravención.",
+    transcription: "«LA UNIÓN ESPAÑOLA [Sello de registro: R]\nAÑO IV — Nº 190 — RÍO DE JANEIRO, 19 OCTUBRE 1895.\n\nMedallones retratados en la portada (de arriba abajo y de izquierda a derecha):\n1. D. BENITO MARTÍNEZ — 2. D. CASIANO FERNÁNDEZ — 3. D. LUÍS DE LA FUENTE — 4. Dr. RICARDO MENESES — 5. D. JOSÉ ADELL — 6. D. GASPAR DE LOS R. THOUS — 7. D. FIDEL VERGARA — 8. D. P. SIEIRO GARRIDO — 9. D. LUÍS SUÁREZ — 10. D. FRANCISCO BRANDARIZ — 11. D. VICENTE DO PAZO — 12. D. EZEQUIEL C. AREAS.\n\nFirma artística del grabado: A. Castaño.\nPie conmemorativo: HOMENAGE Á LA COMISIÓN PATRIÓTICA.»",
+    note: "Transcripción íntegra en castellano de la portada grabada original de La Unión Española (Año IV, Nº 190, Río de Janeiro, 19 de octubre de 1895), con el retrato auténtico de José Adell a los 27 años.",
+  },
 };
 
 export const WORKS_VA: Record<string, WorkTranslation> = {
@@ -1689,6 +1700,17 @@ export const WORKS_VA: Record<string, WorkTranslation> = {
     transcription: "«El 1865 publicà Emilio Castelar al seu periòdic La Democracia aquell famós article titulat “El Rasgo”, denunciant que el patrimoni cedit per la Corona pertanyia a la Nació. Destituït de la seua càtedra d’Història a la Universitat Central, la protesta estudiantil fou ofegada en sang en la tràgica Nit de Sant Daniel.\n\nCondemnat a mort després del 22 de juny de 1866 pel superb dictador Narváez, que creia extirpar una idea enviant els seus apòstols al patíbul, hagué d’abandonar el sòl de la pàtria amb la ment plena d’esperances i el cor d’amargors, per tornar triomfant el 1868 a il·luminar les Corts Constituents.»",
     note: "Transcripció en valencià de la crònica històrica signada per José Adell a La Unión Española el juny de 1892 (pàgs. 11 i 12).",
   },
+  '73': {
+    title: "«Homenatge a la Comissió Patriòtica» (La Unión Española, Any IV, Núm. 190)",
+    humanTitle: "José Adell al capdavant de la Comissió Patriòtica de 1895 en defensa de Cuba davant la Primera Revolució i la participació dels EUA",
+    date: "19 d’Octubre de 1895",
+    periodical: "La Unión Española",
+    city: "Rio de Janeiro",
+    signature: "D. José Adell (Líder de la Comissió) • Gravat d’A. Castaño",
+    summary: "Portada històrica gravada de La Unión Española (Rio de Janeiro, 19 d’octubre de 1895) en homenatge a la Comissió Patriòtica de suport financer i institucional encapçalada per D. José Adell durant la Primera Revolució d’Independència de Cuba (1895–1898, amb participació dels EUA, distinta de la revolució comunista de 1959). Els espanyols advertien aleshores que aquell moviment separatista no es basava en principis democràtics i republicans, sinó en oligarquies i interessos polítics i econòmics obscurs que convertirien Cuba en terra de joc i contravenció.",
+    transcription: "«LA UNIÓN ESPAÑOLA [Segell de registre: R]\nANY IV — NÚM. 190 — RIO DE JANEIRO, 19 D’OCTUBRE DE 1895.\n\nMedallons retratats a la portada (de dalt a baix i d’esquerra a dreta):\n1. D. BENITO MARTÍNEZ — 2. D. CASIANO FERNÁNDEZ — 3. D. LUÍS DE LA FUENTE — 4. Dr. RICARDO MENESES — 5. D. JOSÉ ADELL — 6. D. GASPAR DE LOS R. THOUS — 7. D. FIDEL VERGARA — 8. D. P. SIEIRO GARRIDO — 9. D. LUÍS SUÁREZ — 10. D. FRANCISCO BRANDARIZ — 11. D. VICENTE DO PAZO — 12. D. EZEQUIEL C. AREAS.\n\nSignatura artística del gravat: A. Castaño.\nPeu commemoratiu: HOMENATGE A LA COMISSIÓ PATRIÒTICA (HOMENAGE A LA COMISION PATRIOTICA).»",
+    note: "Transcripció íntegra en valencià de la portada gravada original de La Unión Española (Any IV, núm. 190, Rio de Janeiro, 19 d’octubre de 1895), amb el retrat autèntic de José Adell als 27 anys.",
+  },
 };
 
 export const WORKS_PT: Record<string, WorkTranslation> = {
@@ -2483,6 +2505,17 @@ export const WORKS_PT: Record<string, WorkTranslation> = {
     summary: "Narra o episódio dramático em que Emilio Castelar perdeu sua cátedra universitária após publicar o célebre artigo El Rasgo contra a corte de Isabel II, foi condenado à morte pelo ditador Narváez após o levante de 22 de junho de 1866 e retornou do exílio para brilhar nas Cortes Constituintes de 1869.",
     transcription: "«Em 1865 publicou Emilio Castelar em seu jornal La Democracia aquele famoso artigo intitulado “El Rasgo”, denunciando que o patrimônio cedido pela Coroa pertencia à Nação. Destituído de sua cátedra de História na Universidade Central, o protesto estudantil foi afogado em sangue na trágica Noite de São Daniel.\n\nCondenado à morte após 22 de junho de 1866 pelo soberbo ditador Narváez, que acreditava extirpar uma ideia mandando seus apóstolos ao cadafalso, teve de abandonar o solo da pátria com a mente cheia de esperanças e o coração de amarguras, para voltar triunfante em 1868 a iluminar as Cortes Constituintes.»",
     note: "Transcrição em português da crônica histórica assinada por José Adell em La Unión Española em junho de 1892 (págs. 11 e 12).",
+  },
+  '73': {
+    title: "«Homenage á la Comisión Patriótica» (La Unión Española, Ano IV, Nº 190)",
+    humanTitle: "A Comissão Patriótica de 1895 encabeçada por José Adell na defesa de Cuba diante da Primeira Revolução e da participação dos EUA",
+    date: "19 de Outubro de 1895",
+    periodical: "La Unión Española",
+    city: "Rio de Janeiro",
+    signature: "D. José Adell (Líder da Comissão) • Gravura de A. Castaño",
+    summary: "Capa histórica gravada de La Unión Española (Rio de Janeiro, 19 de outubro de 1895) homenageando a Comissão Patriótica de apoio financeiro e institucional encabeçada por D. José Adell durante a Primeira Revolução de Independência de Cuba (1895–1898, com participação dos EUA, distinta da revolução comunista de Fidel Castro em 1959). Os espanhóis da época viam que aquele movimento separatista não era fundado em princípios democráticos e republicanos, mas ligado a oligarquias e interesses políticos e econômicos escusos que levariam Cuba a se tornar um país de jogatina e contravenção.",
+    transcription: "«LA UNIÓN ESPAÑOLA [Carimbo de registro: R]\nANO IV — Nº 190 — RIO DE JANEIRO, 19 DE OUTUBRO DE 1895.\n\nMedalhões retratados na capa (de cima para baixo e da esquerda para a direita):\n1. D. BENITO MARTÍNEZ — 2. D. CASIANO FERNÁNDEZ — 3. D. LUÍS DE LA FUENTE — 4. Dr. RICARDO MENESES — 5. D. JOSÉ ADELL — 6. D. GASPAR DE LOS R. THOUS — 7. D. FIDEL VERGARA — 8. D. P. SIEIRO GARRIDO — 9. D. LUÍS SUÁREZ — 10. D. FRANCISCO BRANDARIZ — 11. D. VICENTE DO PAZO — 12. D. EZEQUIEL C. AREAS.\n\nAssinatura artística da gravura: A. Castaño.\nLegenda comemorativa: HOMENAGEM À COMISSÃO PATRIÓTICA (HOMENAGE A LA COMISION PATRIOTICA).»",
+    note: "Transcrição integral em português da capa litográfica original de La Unión Española (Ano IV, Nº 190, Rio de Janeiro, 19 de outubro de 1895), preservando o retrato autêntico de José Adell aos 27 anos.",
   },
 };
 

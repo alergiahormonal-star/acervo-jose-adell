@@ -169,12 +169,18 @@ export default function ArchiveCatalogSection({
         </div>
       </div>
 
-      {/* Grade das 72 Obras */}
+      {/* Grade das Obras */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredWorks.map((work) => {
           const catMeta = catDict[work.category];
-          const thumbUrl = `/paginas/pagina-${padPage(work.pages[0])}.webp`;
+          const thumbUrl = work.customImage || `/paginas/pagina-${padPage(work.pages[0] || 1)}.webp`;
           const workHref = `/${lang}/obra/${work.slug}/`;
+          const specialPageLabel =
+            lang === 'va'
+              ? 'Portada Núm. 190'
+              : lang === 'pt'
+              ? 'Capa Nº 190'
+              : 'Portada Nº 190';
 
           return (
             <article
@@ -206,7 +212,7 @@ export default function ArchiveCatalogSection({
                   <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-sans text-white/95">
                     <span className="font-semibold">{work.date}</span>
                     <span className="px-2 py-0.5 bg-black/60 rounded-sm">
-                      Pág. {work.pages.join(', ')}
+                      {work.pages.length > 0 ? `Pág. ${work.pages.join(', ')}` : specialPageLabel}
                     </span>
                   </div>
                 </Link>

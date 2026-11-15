@@ -64,6 +64,7 @@ export interface CatalogWork {
   excerpt: string;
   excerptTranslation: string;
   featured?: boolean;
+  customImage?: string;
 }
 
 export const CATALOG_WORKS: CatalogWork[] = [
@@ -1460,5 +1461,26 @@ export const CATALOG_WORKS: CatalogWork[] = [
       'Condenado á muerte por el soberbio dictador Narváez que creía extirpar una idea con mandar sus apóstoles al cadalso, tuvo que abandonar el suelo de la patria con la mente llena de esperanzas y el corazón de amarguras.',
     excerptTranslation:
       'Condenado à morte pelo soberbo ditador Narváez, que acreditava extirpar uma ideia mandando seus apóstolos ao cadafalso, teve de abandonar o solo pátrio com a mente cheia de esperanças e o coração de amarguras.',
+  },
+  {
+    id: '73',
+    slug: 'homenaje-comision-patriotica-cuba-1895',
+    title: 'Homenage á la Comisión Patriótica (La Unión Española, Año IV, Nº 190)',
+    humanTitle: 'A Comissão Patriótica de 1895 encabeçada por José Adell na defesa de Cuba diante da Primeira Revolução e da intervenção dos EUA',
+    date: '19 de Outubro de 1895',
+    year: 1895,
+    periodical: 'La Unión Española',
+    city: 'Rio de Janeiro',
+    signature: 'D. José Adell (Líder da Comissão) / Gravura de A. Castaño',
+    category: 'cuba-filipinas-imprensa',
+    pages: [],
+    featured: true,
+    customImage: '/destaques/comision-patriotica-1895.webp',
+    summary:
+      'Portada histórica gravada de La Unión Española (Ano IV, Nº 190, Rio de Janeiro, 19 de outubro de 1895) homenageando os 12 integrantes da Comissão Patriótica Espanhola encabeçada por D. José Adell no apoio financeiro e institucional em defesa de Cuba e seus territórios durante a Primeira Revolução de Independência de Cuba (1895–1898, com participação dos EUA — distinta da revolução comunista de 1959), alertando contra a entrega da ilha a oligarquias, interesses escusos, jogatina e contravenção.',
+    excerpt:
+      'LA UNIÓN ESPAÑOLA — AÑO IV — Nº 190 — RIO DE JANEIRO, 19 OCTUBRE 1895.\n\nIntegrantes retratados: D. Benito Martínez, D. Casiano Fernández, D. Luís de la Fuente, Dr. Ricardo Meneses, D. José Adell, D. Gaspar de los R. Thous, D. Fidel Vergara, D. P. Sieiro Garrido, D. Luís Suárez, D. Francisco Brandariz, D. Vicente do Pazo, D. Ezequiel C. Areas.\n\nHOMENAGE Á LA COMISIÓN PATRIÓTICA. (Gravura assinada por A. Castaño).',
+    excerptTranslation:
+      'Capa litográfica original de La Unión Española (19.10.1895) preservando o retrato autêntico de Pepe Adell aos 27 anos ao lado dos onze companheiros da Comissão Patriótica.',
   },
 ];

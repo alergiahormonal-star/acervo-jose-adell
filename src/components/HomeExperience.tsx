@@ -5,6 +5,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ArchiveCatalogSection from '@/components/ArchiveCatalogSection';
+import ComisionPatrioticaSection from '@/components/ComisionPatrioticaSection';
 import InteractiveTimelineSection from '@/components/InteractiveTimelineSection';
 import PersonalitiesAndTheatroSection from '@/components/PersonalitiesAndTheatroSection';
 import MarcelloLegacyHomeSection from '@/components/MarcelloLegacyHomeSection';
@@ -97,6 +98,16 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
               </blockquote>
 
               <div className="flex flex-wrap gap-3 pt-2 font-sans text-xs">
+                <a
+                  href="#comision-patriotica-1895"
+                  className="px-6 py-3.5 bg-[#181613] text-[#F9E7B2] font-bold uppercase tracking-widest border-2 border-deco-gold hover:bg-deco-crimson hover:text-white transition-colors shadow-md"
+                >
+                  {lang === 'va'
+                    ? '🇪🇸 Comissió Patriòtica de 1895 (Cuba) ↓'
+                    : lang === 'pt'
+                    ? '🇪🇸 Comissão Patriótica de 1895 (Cuba) ↓'
+                    : '🇪🇸 Comisión Patriótica de 1895 (Cuba) ↓'}
+                </a>
                 <Link
                   href={`${prefix}/prefacio/`}
                   className="px-6 py-3.5 bg-deco-crimson text-parchment font-bold uppercase tracking-widest border border-deco-gold hover:bg-deco-valencia transition-colors shadow-md"
@@ -128,29 +139,50 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
               </div>
             </div>
 
-            {/* Moldura com Bandeiras + Assinatura Autógrafa Real + Dados Vitais */}
+            {/* Moldura com Retrato Autêntico de 1895 + Assinatura Autógrafa Real + Dados Vitais */}
             <div className="lg:col-span-5">
               <div className="deco-frame p-6 sm:p-7 shadow-2xl space-y-5">
                 <div className="flex items-center justify-center gap-3 pb-2 border-b border-deco-burnished/30">
                   <SpainAndValenciaFlags size="lg" />
                 </div>
 
-                <div className="text-center border-b border-deco-burnished/40 pb-4">
-                  <span className="font-sans text-[10px] uppercase tracking-[0.22em] text-deco-gold font-bold block mb-1">
-                    {t.signatureCaption}
-                  </span>
-                  <div className="bg-[#EFE6D2] border border-deco-burnished/40 p-3 mt-2">
+                {/* Retrato Autêntico Gravado em 1895 + Assinatura Autógrafa */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-b border-deco-burnished/40 pb-4 items-center">
+                  <Link
+                    href={`${prefix}/comision-patriotica-1895/`}
+                    className="text-center bg-[#EFE6D2] border border-deco-burnished/50 p-2.5 hover:border-deco-crimson transition-colors group"
+                  >
                     <img
-                      src="/destaques/assinatura-jose-adell.webp"
-                      alt="José Adell — Firma autógrafa"
-                      className="max-h-24 mx-auto object-contain"
+                      src="/destaques/retrato-pepe-adell-1895.webp"
+                      alt="D. José Adell — Retrato grabado en La Unión Española (19.10.1895)"
+                      className="max-h-36 mx-auto object-contain group-hover:scale-105 transition-transform"
                     />
+                    <span className="font-sans text-[9px] uppercase tracking-[0.14em] text-deco-crimson font-bold block mt-1.5">
+                      {lang === 'va'
+                        ? 'D. José Adell (1895 • 27 anys)'
+                        : lang === 'pt'
+                        ? 'D. José Adell (1895 • 27 anos)'
+                        : 'D. José Adell (1895 • 27 años)'}
+                    </span>
+                  </Link>
+
+                  <div className="text-center space-y-1.5">
+                    <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-deco-gold font-bold block">
+                      {t.signatureCaption}
+                    </span>
+                    <div className="bg-[#EFE6D2] border border-deco-burnished/40 p-2.5">
+                      <img
+                        src="/destaques/assinatura-jose-adell.webp"
+                        alt="José Adell — Firma autógrafa"
+                        className="max-h-20 mx-auto object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-center font-sans">
                   <div className="p-3 bg-parchment border border-deco-burnished/30">
-                    <span className="block font-display text-3xl font-bold text-deco-crimson">72</span>
+                    <span className="block font-display text-3xl font-bold text-deco-crimson">73</span>
                     <span className="text-[10px] uppercase tracking-wider text-charcoal-muted font-semibold">
                       {t.statWorks}
                     </span>
@@ -199,6 +231,9 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
             </div>
           </div>
         </section>
+
+        {/* ==================== PUBLICAÇÃO HISTÓRICA: COMISSÃO PATRIÓTICA DE 1895 (LA UNIÓN ESPAÑOLA) ==================== */}
+        <ComisionPatrioticaSection lang={lang} />
 
         {/* ==================== CRONOLOGIA INTERATIVA DE DOIS CONTINENTES (1868–1927) ==================== */}
         <InteractiveTimelineSection lang={lang} />

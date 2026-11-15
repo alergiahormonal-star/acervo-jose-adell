@@ -94,33 +94,36 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
     lang === 'va'
       ? [
           { href: homeHref, shortLabel: 'L’Ànima de Pepe', fullLabel: t.navHome },
-          { href: `${prefix}/prefacio/`, shortLabel: 'Prefaci (Dr. Marcello Bossois)', fullLabel: 'Prefaci (Dr. Marcello Bossois)' },
+          { href: `${prefix}/comision-patriotica-1895/`, shortLabel: 'Comissió 1895 (Cuba)', fullLabel: 'Comissió Patriòtica de 1895 — Defensa de Cuba' },
+          { href: `${prefix}/prefacio/`, shortLabel: 'Prefaci', fullLabel: 'Prefaci (Dr. Marcello Bossois)' },
           { href: `${prefix}/trineto-de-pepe-adell/`, shortLabel: 'Trineto de Pepe Adell', fullLabel: 'Trineto de Pepe Adell' },
           { href: `${homeHref}#historias`, shortLabel: '6 Històries', fullLabel: t.navStories },
           { href: `${homeHref}#familia`, shortLabel: 'Família', fullLabel: t.navFamily },
-          { href: `${homeHref}#personalidades`, shortLabel: 'Personalitats i Theatro', fullLabel: 'Personalitats i Theatro Municipal' },
-          { href: `${prefix}/acervo/`, shortLabel: '72 Obres', fullLabel: t.navArchive },
+          { href: `${homeHref}#personalidades`, shortLabel: 'Personalitats', fullLabel: 'Personalitats i Theatro Municipal' },
+          { href: `${prefix}/acervo/`, shortLabel: '73 Obres', fullLabel: t.navArchive },
           { href: `${prefix}/caderno-original/`, shortLabel: '89 Pàgines', fullLabel: t.navNotebook },
         ]
       : lang === 'pt'
       ? [
           { href: homeHref, shortLabel: 'A Alma de Pepe', fullLabel: t.navHome },
-          { href: `${prefix}/prefacio/`, shortLabel: 'Prefácio (Dr. Marcello Bossois)', fullLabel: 'Prefácio (Dr. Marcello Bossois)' },
+          { href: `${prefix}/comision-patriotica-1895/`, shortLabel: 'Comissão 1895 (Cuba)', fullLabel: 'Comissão Patriótica de 1895 — Defesa de Cuba' },
+          { href: `${prefix}/prefacio/`, shortLabel: 'Prefácio', fullLabel: 'Prefácio (Dr. Marcello Bossois)' },
           { href: `${prefix}/trineto-de-pepe-adell/`, shortLabel: 'Trineto de Pepe Adell', fullLabel: 'Trineto de Pepe Adell' },
           { href: `${homeHref}#historias`, shortLabel: '6 Histórias', fullLabel: t.navStories },
           { href: `${homeHref}#familia`, shortLabel: 'Família', fullLabel: t.navFamily },
-          { href: `${homeHref}#personalidades`, shortLabel: 'Personalidades & Theatro', fullLabel: 'Personalidades & Theatro Municipal' },
-          { href: `${prefix}/acervo/`, shortLabel: '72 Obras', fullLabel: t.navArchive },
+          { href: `${homeHref}#personalidades`, shortLabel: 'Personalidades', fullLabel: 'Personalidades & Theatro Municipal' },
+          { href: `${prefix}/acervo/`, shortLabel: '73 Obras', fullLabel: t.navArchive },
           { href: `${prefix}/caderno-original/`, shortLabel: '89 Páginas', fullLabel: t.navNotebook },
         ]
       : [
           { href: homeHref, shortLabel: 'El Alma de Pepe', fullLabel: t.navHome },
-          { href: `${prefix}/prefacio/`, shortLabel: 'Prefacio (Dr. Marcello Bossois)', fullLabel: 'Prefacio (Dr. Marcello Bossois)' },
+          { href: `${prefix}/comision-patriotica-1895/`, shortLabel: 'Comisión 1895 (Cuba)', fullLabel: 'Comisión Patriótica de 1895 — Defensa de Cuba' },
+          { href: `${prefix}/prefacio/`, shortLabel: 'Prefacio', fullLabel: 'Prefacio (Dr. Marcello Bossois)' },
           { href: `${prefix}/trineto-de-pepe-adell/`, shortLabel: 'Trineto de Pepe Adell', fullLabel: 'Trineto de Pepe Adell' },
           { href: `${homeHref}#historias`, shortLabel: '6 Historias', fullLabel: t.navStories },
           { href: `${homeHref}#familia`, shortLabel: 'Familia', fullLabel: t.navFamily },
-          { href: `${homeHref}#personalidades`, shortLabel: 'Personalidades y Theatro', fullLabel: 'Personalidades y Theatro Municipal' },
-          { href: `${prefix}/acervo/`, shortLabel: '72 Obras', fullLabel: t.navArchive },
+          { href: `${homeHref}#personalidades`, shortLabel: 'Personalidades', fullLabel: 'Personalidades y Theatro Municipal' },
+          { href: `${prefix}/acervo/`, shortLabel: '73 Obras', fullLabel: t.navArchive },
           { href: `${prefix}/caderno-original/`, shortLabel: '89 Páginas', fullLabel: t.navNotebook },
         ];
 
@@ -269,7 +272,7 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
             aria-label="Navegación principal"
             className="flex items-center justify-between w-full font-sans text-xs font-semibold tracking-wide"
           >
-            <div className="flex items-center gap-1 xl:gap-3">
+            <div className="flex items-center gap-0.5 xl:gap-2">
               {navItems.map((item) => {
                 const active = isRouteActive(item.href);
                 return (
@@ -277,7 +280,7 @@ export default function SiteHeader({ lang = 'es' }: { lang?: SiteLang }) {
                     key={item.href}
                     href={item.href}
                     title={item.fullLabel}
-                    className={`whitespace-nowrap px-2.5 py-1.5 transition-all border-b-2 ${
+                    className={`whitespace-nowrap px-2 py-1.5 text-[11px] xl:text-xs transition-all border-b-2 ${
                       active
                         ? 'text-deco-crimson border-deco-crimson font-bold bg-deco-goldLight/25'
                         : 'text-charcoal hover:text-deco-crimson border-transparent hover:border-deco-gold'

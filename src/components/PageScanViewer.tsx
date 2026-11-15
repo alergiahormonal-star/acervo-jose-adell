@@ -54,7 +54,13 @@ export default function PageScanViewer({
   const pathname = usePathname();
   const t = UI_STRINGS[lang];
   const padPage = (n: number) => String(n).padStart(2, '0');
-  const currentImgUrl = `/paginas/pagina-${padPage(selectedPage)}.webp`;
+  const currentImgUrl = work?.customImage || `/paginas/pagina-${padPage(selectedPage)}.webp`;
+  const customDocSubLabel =
+    lang === 'va'
+      ? 'Edició especial il·lustrada original • La Unión Española (19.10.1895)'
+      : lang === 'pt'
+      ? 'Edição especial ilustrada original • La Unión Española (19.10.1895)'
+      : 'Edición especial ilustrada original • La Unión Española (19.10.1895)';
 
   const allLocalizedWorks = useMemo(() => getLocalizedWorksList(lang), [lang]);
 
@@ -140,7 +146,7 @@ export default function PageScanViewer({
               {t.viewerOriginalBadge}
             </span>
             <span className="text-charcoal-muted text-[11px]">
-              Pág. {selectedPage} — {t.viewerPageOf}
+              {work?.customImage ? customDocSubLabel : `Pág. ${selectedPage} — ${t.viewerPageOf}`}
             </span>
           </div>
 
@@ -409,7 +415,7 @@ export default function PageScanViewer({
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-bold text-[#F9E7B2] truncate">
-              📜 {title} — Pág. {selectedPage} / 89
+              📜 {title} {work?.customImage ? '' : `— Pág. ${selectedPage} / 89`}
             </span>
             <div className="flex items-center gap-2">
               <a
@@ -418,14 +424,18 @@ export default function PageScanViewer({
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 border border-[#D4AF37] text-[#F9E7B2] hover:bg-[#D4AF37] hover:text-black font-bold"
               >
-                Abrir arquivo original ↗
+                {lang === 'va'
+                  ? 'Obrir imatge original ↗'
+                  : lang === 'pt'
+                  ? 'Abrir arquivo original ↗'
+                  : 'Abrir imagen original ↗'}
               </a>
               <button
                 type="button"
                 onClick={() => setLightboxOpen(false)}
                 className="px-3 py-1.5 bg-deco-crimson text-white font-bold border border-[#D4AF37]"
               >
-                ✕ Fechar
+                {lang === 'va' ? '✕ Tancar' : lang === 'pt' ? '✕ Fechar' : '✕ Cerrar'}
               </button>
             </div>
           </div>

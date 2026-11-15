@@ -40,23 +40,27 @@ export default function WorkDetailClient({
   const prefix = `/${lang}`;
   const canonicalUrl = `${SITE_URL}/${lang}/obra/${work.slug}/`;
 
+  const pageRefEs = work.pages.length > 0 ? `Cuaderno Original, p. ${work.pages.join(', ')}` : 'Portada Especial Año IV, Nº 190';
+  const pageRefVa = work.pages.length > 0 ? `Quadern Original, p. ${work.pages.join(', ')}` : 'Portada Especial Any IV, núm. 190';
+  const pageRefPt = work.pages.length > 0 ? `Caderno Original, p. ${work.pages.join(', ')}` : 'Capa Especial Ano IV, Nº 190';
+
   const citations: Record<'ABNT' | 'APA' | 'CHICAGO', string> =
     lang === 'va'
       ? {
-          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humà i Arxiu Digital José Adell y Fons, Obra núm. ${work.id} (Quadern Original, p. ${work.pages.join(', ')}). Disponible a: ${canonicalUrl}`,
-          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pàgs. ${work.pages.join(', ')}). ${canonicalUrl}`,
-          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Històric José Adell y Fons, doc. #${work.id}, pàgs. ${work.pages.join(', ')}.`,
+          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humà i Arxiu Digital José Adell y Fons, Obra núm. ${work.id} (${pageRefVa}). Disponible a: ${canonicalUrl}`,
+          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, ${pageRefVa}). ${canonicalUrl}`,
+          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Històric José Adell y Fons, doc. #${work.id}, ${pageRefVa}.`,
         }
       : lang === 'pt'
       ? {
-          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano e Acervo Digital José Adell y Fons, Obra nº ${work.id} (Caderno Original, p. ${work.pages.join(', ')}). Disponível em: ${canonicalUrl}`,
-          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pp. ${work.pages.join(', ')}). ${canonicalUrl}`,
-          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, pp. ${work.pages.join(', ')}.`,
+          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano e Acervo Digital José Adell y Fons, Obra nº ${work.id} (${pageRefPt}). Disponível em: ${canonicalUrl}`,
+          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, ${pageRefPt}). ${canonicalUrl}`,
+          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, ${pageRefPt}.`,
         }
       : {
-          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano y Archivo Digital José Adell y Fons, Obra nº ${work.id} (Cuaderno Original, p. ${work.pages.join(', ')}). Disponible en: ${canonicalUrl}`,
-          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, pp. ${work.pages.join(', ')}). ${canonicalUrl}`,
-          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, pp. ${work.pages.join(', ')}.`,
+          ABNT: `ADELL Y FONS, José [${work.signature}]. ${work.title}. ${work.periodical}, ${work.city}, ${work.date}. Memorial Humano y Archivo Digital José Adell y Fons, Obra nº ${work.id} (${pageRefEs}). Disponible en: ${canonicalUrl}`,
+          APA: `Adell y Fons, J. (${work.year}). ${work.title}. ${work.periodical} (${work.city}). Memorial José Adell y Fons (Obra #${work.id}, ${pageRefEs}). ${canonicalUrl}`,
+          CHICAGO: `Adell y Fons, José. "${work.title}." ${work.periodical} (${work.city}), ${work.date}. Memorial Histórico José Adell y Fons, doc. #${work.id}, ${pageRefEs}.`,
         };
 
   const handleCopy = () => {
@@ -112,18 +116,31 @@ export default function WorkDetailClient({
                 📍 {work.city}
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-1.5 text-charcoal-muted">
-              <span>{lang === 'va' ? 'Pàgs.:' : 'Págs.:'}</span>
-              {work.pages.map((p) => (
-                <Link
-                  key={p}
-                  href={`${prefix}/pagina/${p}/`}
-                  className="px-2 py-0.5 border border-deco-burnished/50 font-bold text-charcoal hover:border-deco-crimson"
-                >
-                  {p}
-                </Link>
-              ))}
-            </div>
+            {work.pages.length > 0 ? (
+              <div className="flex flex-wrap items-center gap-1.5 text-charcoal-muted">
+                <span>{lang === 'va' ? 'Pàgs.:' : 'Págs.:'}</span>
+                {work.pages.map((p) => (
+                  <Link
+                    key={p}
+                    href={`${prefix}/pagina/${p}/`}
+                    className="px-2 py-0.5 border border-deco-burnished/50 font-bold text-charcoal hover:border-deco-crimson"
+                  >
+                    {p}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <Link
+                href={`${prefix}/comision-patriotica-1895/`}
+                className="px-3 py-1 bg-deco-crimson text-white font-bold uppercase tracking-wider hover:bg-deco-valencia transition-colors"
+              >
+                {lang === 'va'
+                  ? 'Obrir Dossier dels 12 Integrants →'
+                  : lang === 'pt'
+                  ? 'Abrir Dossiê dos 12 Integrantes →'
+                  : 'Abrir Dossier de los 12 Integrantes →'}
+              </Link>
+            )}
           </div>
 
           <p className="font-sans text-xs uppercase tracking-widest text-deco-gold font-bold mb-1">

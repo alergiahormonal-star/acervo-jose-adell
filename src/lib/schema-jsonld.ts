@@ -82,7 +82,7 @@ export function getMemorialJsonLd() {
         inLanguage: ['es-ES', 'ca-valencia', 'pt-BR'],
         about: { '@id': `${BASE}/#jose-adell-y-fons` },
         creator: { '@id': `${BASE}/#dr-marcello-bossois` },
-        numberOfItems: 72,
+        numberOfItems: 73,
         temporalCoverage: '1885/1927',
         spatialCoverage: [
           'Vinaròs, Espanha',

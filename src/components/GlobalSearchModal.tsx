@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { getLocalizedWorksList } from '@/data/acervo-trilingue';
+import { COMISION_MEMBERS } from '@/data/comision-patriotica-1895';
 import { getLocalizedStories } from '@/data/historias-trilingues';
 import { PERSONALITIES_LIST } from '@/data/personalidades';
 import { SiteLang } from '@/lib/i18n-ui';
@@ -91,6 +92,19 @@ export default function GlobalSearchModal({
       .slice(0, 4);
   }, [storiesList, trimmed]);
 
+  const matchedComision = useMemo(() => {
+    if (!trimmed) return [];
+    return COMISION_MEMBERS.filter((m) => {
+      const loc = m[lang];
+      return (
+        m.engravedName.toLowerCase().includes(trimmed) ||
+        m.fullName.toLowerCase().includes(trimmed) ||
+        loc.roleTitle.toLowerCase().includes(trimmed) ||
+        loc.bio.toLowerCase().includes(trimmed)
+      );
+    }).slice(0, 6);
+  }, [trimmed, lang]);
+
   if (!isOpen) return null;
 
   const ui =
@@ -98,36 +112,39 @@ export default function GlobalSearchModal({
       ? {
           title: 'Cerca Intel·ligent a tot el Memorial i Transcripcions',
           placeholder:
-            'Busqueu per paraula a les 72 transcripcions, nom, periòdic, any o núm. de pàgina (1–89)...',
+            'Busqueu per paraula a les 73 transcripcions, nom, Comissió Patriòtica 1895 o núm. de pàgina (1–89)...',
           close: 'Tancar (Esc)',
           jumpPage: `Obrir directament la Pàgina Original núm.`,
           worksHeader: trimmed ? 'Obres i Transcripcions Trobades' : 'Obres Destacades de l’Arxiu',
+          comisionHeader: 'Comissió Patriòtica de 1895 (Defensa de Cuba)',
           peopleHeader: 'Personalitats Relacionades',
           storiesHeader: 'Històries Biogràfiques',
-          empty: 'Cap resultat trobat. Proveu amb Vinaròs, Emilia, Morales, Bartual, Castelar o un número de l’1 al 89.',
+          empty: 'Cap resultat trobat. Proveu amb Cuba, Comissió Patriòtica, Vinaròs, Emilia, Morales, Bartual o un número de l’1 al 89.',
         }
       : lang === 'pt'
       ? {
           title: 'Busca Inteligente em Todo o Memorial e Transcrições',
           placeholder:
-            'Busque qualquer palavra nas 72 transcrições, nome, jornal, ano ou nº de página (1–89)...',
+            'Busque qualquer palavra nas 73 transcrições, nome, Comissão Patriótica 1895 ou nº de página (1–89)...',
           close: 'Fechar (Esc)',
           jumpPage: 'Abrir diretamente a Página Original nº',
           worksHeader: trimmed ? 'Obras e Transcrições Encontradas' : 'Obras em Destaque no Acervo',
+          comisionHeader: 'Comissão Patriótica de 1895 (Defesa de Cuba)',
           peopleHeader: 'Personalidades Relacionadas',
           storiesHeader: 'Histórias Biográficas',
-          empty: 'Nenhum resultado encontrado. Tente buscar por Vinaròs, Emilia, Morales, Bartual, Castelar ou um número de 1 a 89.',
+          empty: 'Nenhum resultado encontrado. Tente buscar por Cuba, Comissão Patriótica, Vinaròs, Emilia, Morales, Bartual ou um número de 1 a 89.',
         }
       : {
           title: 'Búsqueda Inteligente en Todo el Memorial y Transcripciones',
           placeholder:
-            'Busque cualquier palabra en las 72 transcripciones, nombre, periódico, año o nº de página (1–89)...',
+            'Busque cualquier palabra en las 73 transcripciones, nombre, Comisión Patriótica 1895 o nº de página (1–89)...',
           close: 'Cerrar (Esc)',
           jumpPage: 'Abrir directamente la Página Original nº',
           worksHeader: trimmed ? 'Obras y Transcripciones Encontradas' : 'Obras Destacadas del Archivo',
+          comisionHeader: 'Comisión Patriótica de 1895 (Defensa de Cuba)',
           peopleHeader: 'Personalidades Relacionadas',
           storiesHeader: 'Historias Biográficas',
-          empty: 'Sin resultados. Pruebe con Vinaròs, Emilia, Morales, Bartual, Castelar o un número del 1 al 89.',
+          empty: 'Sin resultados. Pruebe con Cuba, Comisión Patriótica, Vinaròs, Emilia, Morales, Bartual o un número del 1 al 89.',
         };
 
   return (
@@ -167,7 +184,7 @@ export default function GlobalSearchModal({
             className="w-full px-4 py-3.5 bg-parchment-card border-2 border-deco-burnished focus:border-deco-crimson focus:outline-none font-serif text-base text-charcoal shadow-inner"
           />
           <div className="flex flex-wrap gap-1.5 mt-2.5 font-sans text-[11px]">
-            {['Bartual', 'Emilia', 'Morales de los Ríos', 'Theatro Municipal', 'Vinaròs', 'Campos Sales', 'Castelar'].map(
+            {['Comisión Patriótica', 'Cuba', 'Bartual', 'Emilia', 'Morales de los Ríos', 'Theatro Municipal', 'Vinaròs', 'Campos Sales'].map(
               (chip) => (
                 <button
                   key={chip}
@@ -195,6 +212,38 @@ export default function GlobalSearchModal({
               </span>
               <span>→</span>
             </Link>
+          )}
+
+          {matchedComision.length > 0 && (
+            <div className="space-y-2">
+              <h4 className="font-sans text-[11px] uppercase tracking-widest text-deco-crimson font-bold">
+                🇪🇸 {ui.comisionHeader}
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {matchedComision.map((m) => (
+                  <Link
+                    key={m.id}
+                    href={`${prefix}/comision-patriotica-1895/`}
+                    onClick={onClose}
+                    className="p-3 bg-parchment border border-deco-burnished/40 hover:border-deco-crimson transition-colors flex items-center gap-3"
+                  >
+                    <img
+                      src={m.portrait}
+                      alt={m.fullName}
+                      className="w-10 h-12 object-contain border border-deco-burnished/40 bg-[#EFE6D2] shrink-0"
+                    />
+                    <div className="min-w-0">
+                      <span className="font-display text-base font-bold text-charcoal block truncate">
+                        {m.fullName}
+                      </span>
+                      <span className="font-sans text-[10px] text-deco-crimson font-semibold block truncate">
+                        {m[lang].roleTitle}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           )}
 
           {matchedPeople.length > 0 && (
@@ -265,7 +314,7 @@ export default function GlobalSearchModal({
                         Nº {w.id} • {w.periodical} ({w.date})
                       </span>
                       <span className="px-2 py-0.5 bg-parchment-elevated border border-deco-burnished/40 font-mono text-[10px]">
-                        Pág. {w.pages.join(', ')}
+                        {w.pages.length > 0 ? `Pág. ${w.pages.join(', ')}` : 'Nº 190 (1895)'}
                       </span>
                     </div>
                     <h5 className="font-display text-xl font-bold text-charcoal leading-snug">
@@ -280,6 +329,7 @@ export default function GlobalSearchModal({
             </div>
           ) : (
             !pageNumMatch &&
+            matchedComision.length === 0 &&
             matchedPeople.length === 0 &&
             matchedStories.length === 0 && (
               <p className="font-serif text-sm text-charcoal-muted text-center py-8">

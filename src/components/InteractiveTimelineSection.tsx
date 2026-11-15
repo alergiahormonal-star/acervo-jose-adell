@@ -12,6 +12,8 @@ interface MilestoneItem {
   description: string;
   pageNum: number;
   workSlug: string;
+  customImg?: string;
+  customDossierHref?: string;
 }
 
 const TIMELINE_DATA: Record<
@@ -77,6 +79,17 @@ const TIMELINE_DATA: Record<
           'Durante los tumultos callejeros de mayo de 1895 en Río de Janeiro, recibe una pedrada en la cabeza al defender serenamente la dignidad de la colonia española, regresando a escribir con la frente vendada y el ánimo intacto.',
         pageNum: 75,
         workSlug: 'sucesos-rio-agresion-pedrada-jose-adell-1895',
+      },
+      {
+        yearLabel: '1895 (Oct.) • Comisión Patriótica',
+        place: 'Río de Janeiro (19 de Octubre de 1895)',
+        title: 'Encabeza la Comisión Patriótica frente a la 1ª Revolución Cubana e injerencia de EE. UU.',
+        description:
+          'La Unión Española (Año IV, Nº 190) inmortaliza en primera plana a D. José Adell junto a los 12 integrantes de la Comisión Patriótica de apoyo financiero e institucional en defensa de Cuba frente a las oligarquías e intereses oscuros respaldados por Estados Unidos.',
+        pageNum: 0,
+        workSlug: 'homenaje-comision-patriotica-cuba-1895',
+        customImg: '/destaques/comision-patriotica-1895.webp',
+        customDossierHref: 'comision-patriotica-1895',
       },
       {
         yearLabel: '1900 • Joya Presidencial',
@@ -161,6 +174,17 @@ const TIMELINE_DATA: Record<
         workSlug: 'sucesos-rio-agresion-pedrada-jose-adell-1895',
       },
       {
+        yearLabel: '1895 (Oct.) • Comissió Patriòtica',
+        place: 'Rio de Janeiro (19 d’Octubre de 1895)',
+        title: 'Encapçala la Comissió Patriòtica davant la 1a Revolució Cubana i la participació dels EUA',
+        description:
+          'La Unión Española (Any IV, núm. 190) immortalitza en portada D. José Adell amb els 12 integrants de la Comissió Patriòtica de suport financer i institucional en defensa de Cuba davant les oligarquies i els interessos obscurs recolzats pels Estats Units.',
+        pageNum: 0,
+        workSlug: 'homenaje-comision-patriotica-cuba-1895',
+        customImg: '/destaques/comision-patriotica-1895.webp',
+        customDossierHref: 'comision-patriotica-1895',
+      },
+      {
         yearLabel: '1900 • Joia Presidencial',
         place: 'Palau del Catete, Rio de Janeiro',
         title: 'El burí elegit per al tinter d’or i brillants del President Campos Sales',
@@ -241,6 +265,17 @@ const TIMELINE_DATA: Record<
           'Nos tumultos de maio de 1895 no Rio de Janeiro, sofre uma pedrada na cabeça ao defender serenamente a colônia espanhola, voltando à redação com a fronte enfaixada e o espírito intacto.',
         pageNum: 75,
         workSlug: 'sucesos-rio-agresion-pedrada-jose-adell-1895',
+      },
+      {
+        yearLabel: '1895 (Out.) • Comissão Patriótica',
+        place: 'Rio de Janeiro (19 de Outubro de 1895)',
+        title: 'Encabeça a Comissão Patriótica contra a 1ª Revolução Cubana e a ingerência dos EUA',
+        description:
+          'La Unión Española (Ano IV, Nº 190) imortaliza em capa D. José Adell com os 12 integrantes da Comissão Patriótica de apoio financeiro e institucional na defesa de Cuba contra oligarquias e interesses escusos apoiados pelos Estados Unidos.',
+        pageNum: 0,
+        workSlug: 'homenaje-comision-patriotica-cuba-1895',
+        customImg: '/destaques/comision-patriotica-1895.webp',
+        customDossierHref: 'comision-patriotica-1895',
       },
       {
         yearLabel: '1900 • Joia Presidencial',
@@ -338,7 +373,7 @@ export default function InteractiveTimelineSection({
           <div className="lg:col-span-6 space-y-4">
             <div className="border border-deco-burnished bg-[#E5DEC9] p-2.5">
               <img
-                src={`/paginas/pagina-${padPage(current.pageNum)}.webp`}
+                src={current.customImg || `/paginas/pagina-${padPage(current.pageNum)}.webp`}
                 alt={current.title}
                 loading="lazy"
                 className="w-full max-h-80 object-cover object-top shadow-md mx-auto"
@@ -348,7 +383,8 @@ export default function InteractiveTimelineSection({
             {matchedWork && (
               <div className="p-4 bg-parchment-elevated border-l-4 border-deco-crimson space-y-2">
                 <span className="font-sans text-[10px] uppercase tracking-widest text-deco-crimson font-bold block">
-                  {t.workExcerptTitle} (Pág. {current.pageNum})
+                  {t.workExcerptTitle}{' '}
+                  {current.pageNum > 0 ? `(Pág. ${current.pageNum})` : '(Nº 190 • 19.10.1895)'}
                 </span>
                 <div className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2 max-h-44 overflow-y-auto custom-scrollbar pr-1">
                   {matchedWork.excerpt
@@ -390,12 +426,25 @@ export default function InteractiveTimelineSection({
                   {data.openWorkBtn}
                 </Link>
               )}
-              <Link
-                href={`${prefix}/pagina/${current.pageNum}/`}
-                className="px-4 py-3 bg-parchment text-charcoal font-bold uppercase tracking-wider border border-deco-burnished hover:border-deco-gold transition-colors"
-              >
-                {data.openPageBtn} (Pág. {current.pageNum}) →
-              </Link>
+              {current.customDossierHref ? (
+                <Link
+                  href={`${prefix}/${current.customDossierHref}/`}
+                  className="px-4 py-3 bg-parchment text-charcoal font-bold uppercase tracking-wider border border-deco-burnished hover:border-deco-gold transition-colors"
+                >
+                  {lang === 'va'
+                    ? 'Vore els 12 Integrants →'
+                    : lang === 'pt'
+                    ? 'Ver os 12 Integrantes →'
+                    : 'Ver los 12 Integrantes →'}
+                </Link>
+              ) : (
+                <Link
+                  href={`${prefix}/pagina/${current.pageNum}/`}
+                  className="px-4 py-3 bg-parchment text-charcoal font-bold uppercase tracking-wider border border-deco-burnished hover:border-deco-gold transition-colors"
+                >
+                  {data.openPageBtn} (Pág. {current.pageNum}) →
+                </Link>
+              )}
             </div>
           </div>
         </div>

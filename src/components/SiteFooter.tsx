@@ -97,6 +97,19 @@ export default function SiteFooter({ lang = 'es' }: { lang?: SiteLang }) {
             </li>
             <li>
               <Link
+                href={`${prefix}/comision-patriotica-1895/`}
+                className="text-[#F9E7B2] font-bold hover:text-white underline-offset-4 hover:underline"
+              >
+                → 🇪🇸{' '}
+                {lang === 'pt'
+                  ? 'Comissão Patriótica de 1895 — Defesa de Cuba (12 Integrantes)'
+                  : lang === 'va'
+                  ? 'Comissió Patriòtica de 1895 — Defensa de Cuba (12 Integrants)'
+                  : 'Comisión Patriótica de 1895 — Defensa de Cuba (12 Integrantes)'}
+              </Link>
+            </li>
+            <li>
+              <Link
                 href={`${prefix}/prefacio/`}
                 className="text-[#F9E7B2] font-bold hover:text-white underline-offset-4 hover:underline"
               >
