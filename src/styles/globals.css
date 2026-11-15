@@ -9,8 +9,8 @@
   --bg-parchment: #F6F2E9;
   --bg-parchment-elevated: #EDE6D6;
   --bg-card: #FCF9F2;
-  --text-charcoal: #1A1815;
-  --text-muted: #554F45;
+  --text-charcoal: #12100E;
+  --text-muted: #3B362E;
 
   /* Acentos Art Déco & Buril de Gravador */
   --gold-medal: #A87908;
@@ -31,8 +31,8 @@
   --bg-parchment: #0E151F;
   --bg-parchment-elevated: #152030;
   --bg-card: #192638;
-  --text-charcoal: #F3EDE2;
-  --text-muted: #B6C0CF;
+  --text-charcoal: #F7F3EA;
+  --text-muted: #D8E0EE;
 
   --gold-medal: #D9B44A;
   --gold-burnished: #B8934A;
@@ -68,56 +68,58 @@ body {
   color: var(--text-charcoal);
 }
 
-/* Moldura Dupla Art Déco (Buril de Gravador em Metal) */
-.deco-frame {
-  position: relative;
-  border: 1px solid var(--gold-burnished);
-  background-color: var(--bg-card);
-  box-shadow:
-    0 10px 30px -12px rgba(24, 22, 19, 0.14),
-    inset 0 0 0 4px var(--bg-parchment),
-    inset 0 0 0 5px rgba(197, 160, 89, 0.55);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
+@layer components {
+  /* Moldura Dupla Art Déco (Buril de Gravador em Metal) */
+  .deco-frame {
+    position: relative;
+    border: 1px solid var(--gold-burnished);
+    background-color: var(--bg-card);
+    box-shadow:
+      0 10px 30px -12px rgba(24, 22, 19, 0.14),
+      inset 0 0 0 4px var(--bg-parchment),
+      inset 0 0 0 5px rgba(197, 160, 89, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
 
-.dark .deco-frame {
-  box-shadow:
-    0 14px 34px -12px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 4px var(--bg-parchment),
-    inset 0 0 0 5px rgba(184, 147, 74, 0.45);
-}
+  .dark .deco-frame {
+    box-shadow:
+      0 14px 34px -12px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 4px var(--bg-parchment),
+      inset 0 0 0 5px rgba(184, 147, 74, 0.45);
+  }
 
-.deco-frame::before,
-.deco-frame::after {
-  content: '';
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border: 2px solid var(--gold-medal);
-  pointer-events: none;
-}
+  .deco-frame::before,
+  .deco-frame::after {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border: 2px solid var(--gold-medal);
+    pointer-events: none;
+  }
 
-.deco-frame::before {
-  top: 4px;
-  left: 4px;
-  border-right: none;
-  border-bottom: none;
-}
+  .deco-frame::before {
+    top: 4px;
+    left: 4px;
+    border-right: none;
+    border-bottom: none;
+  }
 
-.deco-frame::after {
-  bottom: 4px;
-  right: 4px;
-  border-left: none;
-  border-top: none;
-}
+  .deco-frame::after {
+    bottom: 4px;
+    right: 4px;
+    border-left: none;
+    border-top: none;
+  }
 
-/* Card Interativo com Elevação Suave */
-.deco-card-hover:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 18px 38px -12px rgba(24, 22, 19, 0.22),
-    inset 0 0 0 4px var(--bg-parchment),
-    inset 0 0 0 5px var(--gold-medal);
+  /* Card Interativo com Elevação Suave */
+  .deco-card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 18px 38px -12px rgba(24, 22, 19, 0.22),
+      inset 0 0 0 4px var(--bg-parchment),
+      inset 0 0 0 5px var(--gold-medal);
+  }
 }
 
 /* Divisor Editorial com Florão Valenciano */

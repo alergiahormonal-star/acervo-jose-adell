@@ -85,7 +85,7 @@ export default function ComisionPatrioticaSection({
             {c.heroTitle}
           </HeadingTag>
 
-          <p className="font-serif text-base sm:text-lg text-charcoal-muted leading-relaxed">
+          <p className="font-serif text-base sm:text-xl text-charcoal leading-relaxed">
             {c.heroSubtitle}
           </p>
 
@@ -108,16 +108,16 @@ export default function ComisionPatrioticaSection({
         </div>
 
         {/* ==================== ALERTA HISTÓRICO: 1ª REVOLUÇÃO DE INDEPENDÊNCIA (1895–1898 COM OS EUA) VS. 1959 ==================== */}
-        <div className="deco-frame p-5 sm:p-7 bg-[#181613] text-[#EFE9DA] border-2 border-deco-gold shadow-xl space-y-3">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-[#D4AF37]/40 pb-3">
-            <h3 className="font-sans text-xs sm:text-sm uppercase tracking-[0.15em] text-[#D4AF37] font-bold">
+        <div className="deco-frame p-5 sm:p-7 bg-parchment-elevated border-l-8 border-l-deco-crimson shadow-lg space-y-3">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-deco-burnished/60 pb-3">
+            <h3 className="font-sans text-xs sm:text-sm uppercase tracking-[0.12em] text-deco-crimson font-bold">
               {c.chronologicalClarificationTitle}
             </h3>
-            <span className="font-mono text-[11px] px-2.5 py-0.5 bg-deco-crimson text-white font-bold shrink-0 self-start md:self-auto">
+            <span className="font-mono text-xs px-3 py-1 bg-deco-crimson text-white font-bold shrink-0 self-start md:self-auto">
               1895 – 1898 • CUBA &amp; EUA
             </span>
           </div>
-          <p className="font-serif text-sm sm:text-base text-[#EAE2D0] leading-relaxed">
+          <p className="font-serif text-base sm:text-lg text-charcoal font-medium leading-relaxed">
             {c.chronologicalClarificationText}
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function ComisionPatrioticaSection({
                 </p>
               </div>
 
-              <blockquote className="p-4 bg-parchment-card border border-deco-burnished/40 font-serif text-xs sm:text-sm text-charcoal leading-relaxed space-y-2.5">
+              <blockquote className="p-4 bg-parchment-card border border-deco-burnished/60 font-serif text-sm sm:text-base text-charcoal font-medium leading-relaxed space-y-2.5">
                 {c.transcriptionBlocks.map((block, bIdx) => (
                   <p key={bIdx} className="whitespace-pre-line">
                     {block}
@@ -271,7 +271,7 @@ export default function ComisionPatrioticaSection({
                     <h4 className="font-display text-xl sm:text-2xl font-bold text-charcoal leading-snug">
                       {blk.title}
                     </h4>
-                    <div className="font-serif text-sm sm:text-base text-charcoal leading-relaxed space-y-3">
+                    <div className="font-serif text-base sm:text-lg text-charcoal leading-relaxed space-y-3">
                       {blk.paragraphs.map((p, pIdx) => (
                         <p key={pIdx}>{p}</p>
                       ))}
@@ -282,7 +282,7 @@ export default function ComisionPatrioticaSection({
             </div>
 
             {/* Nota sobre o Artista A. Castaño */}
-            <div className="p-4 sm:p-5 border border-deco-burnished/60 bg-parchment-card font-serif text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+            <div className="p-4 sm:p-5 border border-deco-burnished/60 bg-parchment-card font-serif text-sm sm:text-base text-charcoal leading-relaxed">
               <strong className="font-sans text-xs uppercase tracking-wider text-deco-valencia block mb-1">
                 {c.illustratorBoxTitle}
               </strong>
@@ -300,7 +300,7 @@ export default function ComisionPatrioticaSection({
             <h3 className="font-display text-3xl sm:text-4xl font-bold text-charcoal">
               {c.rosterTitle}
             </h3>
-            <p className="font-serif text-sm sm:text-base text-charcoal-muted leading-relaxed">
+            <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
               {c.rosterSubtitle}
             </p>
           </div>
@@ -363,7 +363,7 @@ export default function ComisionPatrioticaSection({
                     </div>
 
                     {/* Pequena Bio Documentada */}
-                    <p className="font-serif text-xs sm:text-sm text-charcoal leading-relaxed">
+                    <p className="font-serif text-sm sm:text-base text-charcoal leading-relaxed">
                       {loc.bio}
                     </p>
                   </div>
