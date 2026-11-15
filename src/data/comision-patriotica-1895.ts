@@ -28,6 +28,27 @@ export interface ComisionHistoricalBlock {
   paragraphs: string[];
 }
 
+export interface NeocolonialBullet {
+  lead: string;
+  text: string;
+}
+
+export interface NeocolonialPillar {
+  number: string;
+  title: string;
+  intro?: string;
+  bullets: NeocolonialBullet[];
+}
+
+export interface NeocolonialDossier {
+  kicker: string;
+  title: string;
+  intro: string;
+  pillars: NeocolonialPillar[];
+  closingSynthesisTitle: string;
+  closingSynthesisText: string;
+}
+
 export interface ComisionLocaleContent {
   navShort: string;
   navFull: string;
@@ -36,6 +57,7 @@ export interface ComisionLocaleContent {
   badge: string;
   heroTitle: string;
   heroSubtitle: string;
+  chronologicalBadge: string;
   chronologicalClarificationTitle: string;
   chronologicalClarificationText: string;
   leaderHighlightTitle: string;
@@ -52,6 +74,7 @@ export interface ComisionLocaleContent {
   essaySectionKicker: string;
   essaySectionTitle: string;
   historicalBlocks: ComisionHistoricalBlock[];
+  neocolonialDossier: NeocolonialDossier;
   rosterKicker: string;
   rosterTitle: string;
   rosterSubtitle: string;
@@ -172,17 +195,17 @@ export const COMISION_MEMBERS: ComisionMember[] = [
     internalHrefSlug: 'prefacio',
     es: {
       roleTitle: 'Periodista Republicano, Redactor Jefe de «La Unión Española» y Líder de esta Lucha Patriótica',
-      bio: 'Hijo autodidacta de Vinaròs (Castellón), secretario de redacción en Barcelona a los 17 años, pensador republicano humanista y maestro grabador en metales. José Adell encabezó intelectual, periodística e institucionalmente esta lucha en Río de Janeiro: tras recibir una pedrada en la cabeza durante las manifestaciones callejeras pro-insurrectos y rebatir con altura doctrinal a Lúcio de Mendonça en septiembre de 1895, unió a toda la colonia española en la Comisión Patriótica, advirtiendo con lucidez que el movimiento separatista en Cuba —empujado por la injerencia de los Estados Unidos y de oligarquías mercantiles— no traería una república democrática, sino subordinación a intereses políticos y económicos oscuros. Este medallón conserva su auténtico retrato grabado a los 27 años.',
+      bio: 'Hijo autodidacta de Vinaròs (Castellón), secretario de redacción en Barcelona a los 17 años, pensador republicano humanista y maestro grabador en metales. José Adell encabezó intelectual, periodística e institucionalmente la Comisión Patriótica en Río de Janeiro para la última fase de la Revolución de Independencia de Cuba, marcada por la interferencia directa de los Estados Unidos: tras recibir una pedrada en la cabeza en las manifestaciones callejeras y rebatir con altura doctrinal a Lúcio de Mendonça, unió a la colonia española advirtiendo que aquel movimiento —capturado por Washington y por oligarquías azucareras— frustraría la verdadera soberanía y entregaría la isla al capital extranjero, al contrabando y al imperio de los casinos durante la República Neocolonial (1902–1958). Este medallón conserva su auténtico retrato grabado.',
       webSourceNote: 'Figura central de este Memorial (73 obras y 89 páginas originales preservadas, 1885–1927).',
     },
     va: {
       roleTitle: 'Periodista Republicà, Redactor en Cap de «La Unión Española» i Líder d’aquesta Lluita Patriòtica',
-      bio: 'Fill autodidacte de Vinaròs (Castelló), secretari de redacció a Barcelona als 17 anys, pensador republicà humanista i mestre gravador en metalls. José Adell encapçalà intel·lectualment, periodísticament i institucionalment aquesta lluita a Rio de Janeiro: després de rebre una pedrada al cap durant els aldarulls al carrer i debatre amb Lúcio de Mendonça el setembre de 1895, uní tota la colònia espanyola en la Comissió Patriòtica, advertint que la Primera Revolució d’Independència cubana —impulsada per la ingerència dels Estats Units i d’oligarquies mercantils— no portaria una república democràtica, sinó interessos polítics i econòmics obscurs. Aquest medalló conserva el seu retrat autèntic gravat als 27 anys.',
+      bio: 'Fill autodidacte de Vinaròs (Castelló), secretari de redacció a Barcelona als 17 anys, pensador republicà humanista i mestre gravador en metalls. José Adell encapçalà intel·lectualment, periodísticament i institucionalment la Comissió Patriòtica a Rio de Janeiro per a l’última fase de la Revolució d’Independència de Cuba, marcada per la interferència directa dels Estats Units: després de rebre una pedrada al cap i debatre amb Lúcio de Mendonça, uní la colònia espanyola advertint que aquell moviment —tutelat per Washington i per oligarquies sucreres— frustraria la sobirania real i lliuraria l’illa al capital estranger, al contraban i a la màfia dels casinos durant la República Neocolonial (1902–1958). Aquest medalló conserva el seu retrat autèntic gravat.',
       webSourceNote: 'Figura central d’aquest Memorial (73 obres i 89 pàgines originals preservades, 1885–1927).',
     },
     pt: {
       roleTitle: 'Jornalista Republicano, Redator-Chefe de «La Unión Española» e Líder que Encabeçou esta Luta',
-      bio: 'Filho autodidata de Vinaròs (Castellón), secretário de redação em Barcelona aos 17 anos, pensador republicano humanista e mestre gravador em metais. José Adell encabeçou intelectual, jornalística e institucionalmente esta luta histórica no Rio de Janeiro: poucas semanas após ser ferido na cabeça nos tumultos de rua pró-insurretos e travar seu célebre debate com o Ministro Lúcio de Mendonça (setembro de 1895), uniu toda a comunidade espanhola na Comissão Patriótica, alertando com clarividência que aquela Primeira Revolução Cubana de Independência — alimentada pela intervenção dos Estados Unidos e por oligarquias — não geraria uma república democrática, mas entregaria a ilha a interesses políticos e econômicos escusos, à jogatina e à contravenção. Este medalhão preserva seu retrato autêntico aos 27 anos.',
+      bio: 'Filho autodidata de Vinaròs (Castellón), secretário de redação em Barcelona aos 17 anos, pensador republicano humanista e mestre gravador em metais. José Adell encabeçou intelectual, jornalística e institucionalmente a Comissão Patriótica no Rio de Janeiro voltada à última fase da Revolução de Independência de Cuba, quando houve a interferência direta dos Estados Unidos: após ser ferido na cabeça nos tumultos de rua e debater com o Ministro Lúcio de Mendonça, uniu a comunidade espanhola alertando com clarividência que aquele movimento — tutelado pelos EUA e por oligarquias açucareiras — frustraria a independência real e conduziria Cuba à República Neocolonial (1902–1958), dominada por capital estrangeiro, contrabando, máfia e cassinos. Este medalhão preserva seu retrato autêntico.',
       webSourceNote: 'Figura central deste Memorial (73 obras e 89 páginas originais preservadas, 1885–1927).',
     },
   },
@@ -363,25 +386,26 @@ export const COMISION_MEMBERS: ComisionMember[] = [
 
 export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent> = {
   es: {
-    navShort: 'Comisión Patriótica (Cuba 1895)',
-    navFull: 'Comisión Patriótica de 1895 — Defensa de Cuba',
+    navShort: 'Comisión Patriótica (Cuba)',
+    navFull: 'Comisión Patriótica — Última Fase de la Revolución e Interferencia de EE. UU.',
     metaTitle:
-      'La Unión Española y la Comisión Patriótica de 1895: José Adell al Frente de la Defensa de Cuba ante la Primera Revolución e Intervención de EE. UU.',
+      'La Unión Española y la Comisión Patriótica: José Adell en Defensa de Cuba en la Última Fase de la Revolución con Interferencia Directa de EE. UU.',
     metaDescription:
-      'Publicación histórica de La Unión Española (Río de Janeiro, 19 de octubre de 1895): cómo José Adell encabezó la Comisión Patriótica de apoyo financiero e institucional frente a la Primera Revolución de Independencia de Cuba (1895–1898) y la injerencia de Estados Unidos, con los retratos y biografías de sus 12 integrantes.',
-    badge: '🇪🇸 Documento Histórico Excepcional • La Unión Española • Río de Janeiro, 19 de Octubre de 1895',
+      'Publicación histórica de La Unión Española (Río de Janeiro): cómo José Adell encabezó la Comisión Patriótica para la última fase de la Revolución de Independencia de Cuba cuando hubo interferencia directa de los EE. UU., anticipando la República Neocolonial (1902–1958), la Enmienda Platt, las oligarquías, la Ley Seca y el imperio mafioso de los casinos.',
+    badge: '🇪🇸 Documento Histórico • La Unión Española • Última Fase de la Revolución e Interferencia Directa de EE. UU.',
     heroTitle:
-      'La Comisión Patriótica de 1895: José Adell al Frente de la Unión Española en Defensa de Cuba frente a las Oligarquías y la Injerencia de los Estados Unidos',
+      'La Comisión Patriótica en la Última Fase de la Revolución Cubana: José Adell al Frente de la Unión Española ante la Interferencia Directa de los EE. UU.',
     heroSubtitle:
-      'En octubre de 1895, durante la Primera Revolución Cubana —la Guerra de Independencia de 1895–1898 que contó con la decisiva participación de los Estados Unidos—, la comunidad española de Río de Janeiro se unió financiera e institucionalmente bajo el liderazgo periodístico y moral de D. José Adell. Los españoles de aquella época advertían con clarividencia que aquel movimiento separatista no nacía sobre verdaderos principios democráticos y republicanos, sino atado a oligarquías e intereses políticos y económicos oscuros que terminarían convirtiendo a la isla en un enclave de tutelaje extranjero, casas de juego y contravención.',
+      'Constituida para la última y decisiva fase de la Revolución de Independencia de Cuba —marcada por la interferencia directa de los Estados Unidos de América, que culminó en 1898—, la Comisión Patriótica de Río de Janeiro unió financiera e institucionalmente a la comunidad española bajo el liderazgo de D. José Adell. Los españoles de aquella época advertían con impresionante lucidez que aquel movimiento no engendraría una república soberana y democrática, sino la llamada República Neocolonial (1902–1958): una estructura tutelada por Washington (vía Enmienda Platt) al servicio de oligarquías locales, capital extranjero, contrabando, crimen organizado y turismo mafioso de casinos.',
+    chronologicalBadge: 'ÚLTIMA FASE (1895–1898) • INTERFERENCIA DIRECTA DE EE. UU.',
     chronologicalClarificationTitle:
-      '📌 Precisión Histórica Fundamental: La Primera Revolución de Independencia (1895–1898) con Participación de EE. UU. — No la Segunda Revolución de 1959',
+      '📌 Marco Histórico Fundamental: La Última Fase de la Revolución de Independencia con Interferencia Directa de EE. UU. (1895–1898) y el Origen de la «República Neocolonial» (1902–1958)',
     chronologicalClarificationText:
-      'Este documento histórico de octubre de 1895 se refiere estrictamente a la Primera Revolución Cubana —el conflicto separatista e independentista de 1895–1898 en el que intervinieron directa y militarmente los Estados Unidos de América—, y NO a la segunda revolución cubana (la revolución comunista encabezada por Fidel Castro más de seis décadas después, en 1959). Precisamente la intervención estadounidense de 1898 y la imposición de la Enmienda Platt (1901) confirmaron los temores de los españoles de 1895: durante la primera mitad del siglo XX, antes de 1959, Cuba quedó sometida a oligarquías azucareras, monopolios financieros, casinos de juego y redes de contrabando y contravención.',
+      'La Comisión Patriótica actuó específicamente para la última fase de la Revolución de Independencia cubana (tras las guerras anteriores de 1868–1878 y 1879–1880), cuando se produjo la interferencia directa —financiera, geopolítica y militar— de los Estados Unidos, muy anterior y distinta de la revolución comunista de Fidel Castro de 1959. En efecto, la independencia formal de 1898 fue frustrada por la tutela estadounidense mediante la Enmienda Platt, instaurando la República Neocolonial (1902–1958), dominada por oligarquías azucareras, monopolios norteamericanos, el contrabando de la Ley Seca (1920) y la alianza entre la Mafia estadounidense (Meyer Lansky y Lucky Luciano) y la dictadura de Fulgencio Batista: exactamente el abismo institucional contra el cual habían alertado José Adell y la colonia española.',
     leaderHighlightTitle: '★ D. José Adell Encabezó Esta Lucha Cívica y Patriótica en Río de Janeiro',
     leaderHighlightText:
-      'Republicano convencido, demócrata humanista y redactor jefe de La Unión Española en la Rua da Ajuda, José Adell y Fons («Pepe Adell», retratado en el quinto medallón a los 27 años) lideró la articulación intelectual e institucional de esta campaña semanas después de haber sufrido una pedrada en la cabeza defendiendo la dignidad española en las calles cariocas.',
-    originalScanBadge: '📰 Portada Grabada Original • La Unión Española (Año IV, Nº 190 • 19.10.1895)',
+      'Republicano convencido, demócrata humanista y redactor jefe de La Unión Española en la Rua da Ajuda, José Adell y Fons («Pepe Adell», retratado en el quinto medallón) lideró la articulación intelectual, periodística e institucional de esta movilización en la etapa decisiva del conflicto cubano, tras haber sufrido una pedrada en la cabeza defendiendo la dignidad española en las calles cariocas.',
+    originalScanBadge: '📰 Portada Grabada Original • La Unión Española (Año IV, Nº 190 • Río de Janeiro)',
     originalScanCaption:
       'Litografía histórica de primera plana firmada por A. Castaño con vista de la Bahía de Guanabara y los 12 medallones de la Comisión Patriótica Española de Río de Janeiro.',
     openFullDossierBtn: 'Abrir Dossier Histórico y las 12 Biografías →',
@@ -390,7 +414,7 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
     transcriptionHeading:
       '📜 Transcripción Íntegra del Documento Original (Situada Debajo del Grabado Original)',
     transcriptionSubnote:
-      'Transcripción diplomática y descriptiva en Castellano de todas las inscripciones visibles en la portada de La Unión Española (19 de octubre de 1895):',
+      'Transcripción diplomática y descriptiva en Castellano de todas las inscripciones visibles en la portada de La Unión Española:',
     transcriptionBlocks: [
       'CABECERA DEL PERIÓDICO: «LA UNIÓN ESPAÑOLA» [Sello circular de registro de archivo: «R»].',
       'DATACIÓN BAJO LA CABECERA: «AÑO IV — Nº 190 — RÍO DE JANEIRO, 19 OCTUBRE 1895».',
@@ -398,69 +422,127 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
       'PIE CONMEMORATIVO DE PORTADA: «HOMENAGE Á LA COMISIÓN PATRIÓTICA».',
     ],
     transcriptionSignatureLine:
-      'Firma del artista grabador al pie del medallón central inferior: «A. Castaño» (La Unión Española, Río de Janeiro, 19 de octubre de 1895).',
-    essaySectionKicker: 'Análisis Histórico y Geopolítico • Octubre de 1895 – 1898',
+      'Firma del artista grabador al pie del medallón central inferior: «A. Castaño» (La Unión Española, Río de Janeiro).',
+    essaySectionKicker: 'Análisis Histórico y Geopolítico • De la Interferencia de EE. UU. (1895–1898) a la República Neocolonial (1902–1958)',
     essaySectionTitle:
-      'La Primera Revolución de Independencia de Cuba, la Intervención de los Estados Unidos y la Visión Profética de los Españoles de 1895',
+      'La Última Fase de la Revolución Cubana con Interferencia Directa de EE. UU. y la Profecía Confirmada de los Españoles',
     historicalBlocks: [
       {
-        kicker: 'I. El Contexto de 1895–1898 y la Participación de los Estados Unidos',
-        title: 'Por qué el separatismo de 1895 no respondía a un ideal republicano puro, sino a la geopolítica estadounidense y oligárquica',
+        kicker: 'I. La Última Fase de la Revolución y la Interferencia Directa de los Estados Unidos',
+        title: 'Una contienda capturada por la intervención norteamericana y las oligarquías, lejos de los principios republicanos puros',
         paragraphs: [
-          'Cuando el 24 de febrero de 1895 estalló la insurrección armada en Cuba —conocida históricamente como la Primera Revolución Cubana o Guerra de Independencia de Cuba (1895–1898), muy anterior y distinta de la revolución comunista de Fidel Castro de 1959—, el conflicto estuvo desde su raíz atravesado por poderosos intereses externos radicados en los Estados Unidos. Juntas financieras en Nueva York, trusts azucareros, sindicatos navieros y la llamada «prensa amarilla» de William Randolph Hearst y Joseph Pulitzer financiaron expediciones filibusteras, armaron partidas y prepararon el terreno para la intervención militar directa de Washington en 1898 tras la explosión del acorazado USS Maine en La Habana.',
-          'Para los españoles lúcidos de aquella época —y de modo muy especial para republicanos demócratas como José Adell y Fons, que amaban la libertad fundada en la ley, el sufragio y la instrucción pública—, resultaba evidente que aquel movimiento insurreccional no estaba cimentado sobre auténticos principios democráticos y republicanos. Veían con nitidez que detrás de la retórica separatista operaban oligarquías criollas y consorcios norteamericanos interesados en arrancar la isla de la soberanía española para convertirla en una factoría subordinada a intereses políticos y económicos espurios.',
+          'La Comisión Patriótica Española desplegó su esfuerzo financiero e institucional para la última y definitiva fase del ciclo insurreccional cubano (1895–1898), cuando se consumó la interferencia directa de los Estados Unidos de América. A diferencia de los alzamientos anteriores del siglo XIX, esta fase final estuvo decisivamente dirigida y capitalizada desde el exterior por juntas financieras en Nueva York, grandes consorcios azucareros, campañas de la prensa sensacionalista estadounidense y, finalmente, por la invasión militar directa de Washington en 1898.',
+          'Para los españoles lúcidos de aquella hora —y de modo singular para un republicano íntegro como José Adell y Fons, defensor de la libertad cimentada en la ética, el sufragio y la ley—, resultaba cristalino que el desenlace impuesto por aquella injerencia extranjera no traería una república verdaderamente democrática ni soberana, sino el sometimiento de Cuba a intereses políticos y económicos oscuros.',
         ],
       },
       {
-        kicker: 'II. La Advertencia Confirmada por el Siglo XX (1902–1950)',
-        title: 'De la Enmienda Platt a la isla de los casinos, la jugatina y la contravención',
+        kicker: 'II. 1898 y la Tutela de la Enmienda Platt',
+        title: 'La independencia frustrada y el nacimiento de la «República Neocolonial» (1902–1958)',
         paragraphs: [
-          'El desenlace de la guerra de 1898 dio la razón histórica al diagnóstico formulado por la comunidad española en 1895. Tras el Tratado de París y la ocupación militar estadounidense (1898–1902), Washington impuso en la Constitución cubana la célebre Enmienda Platt (1901), reservándose el derecho de intervención armada, el control de las finanzas públicas y la cesión de bases navales como Guantánamo, mientras las mejores tierras pasaban a manos de latifundios y corporaciones extranjeras.',
-          'Despojada de las reformas autonómicas e institucionales que los sectores progresistas españoles habían defendido, la joven república tutelada cayó durante las primeras décadas del siglo XX bajo el peso del caudillismo oligárquico, la corrupción administrativa y la penetración de sindicatos internacionales del juego y del contrabando. Mucho antes de la ruptura de 1959, La Habana fue transformada en un paraíso de casinos, loterías fraudulentas, jugatina desenfrenada y contravención al servicio de mafias y élites venales: exactamente la degradación institucional que los patriotas españoles de 1895 habían querido evitar.',
+          'La historia confirmó punto por punto el diagnóstico de la Comisión Patriótica. La independencia formal alcanzada en 1898 quedó inmediatamente frustrada por la ocupación militar y la tutela institucional de los Estados Unidos mediante la imposición de la Enmienda Platt (1901), que otorgaba a Washington el derecho de intervención en la isla y subordinaba su economía y su política exterior.',
+          'Sobre esa tutela nació la llamada República Neocolonial (1902–1958): un orden político y económico diseñado para favorecer a las oligarquías locales aliadas al capital extranjero y que, a partir de la década de 1920 y hasta los años cincuenta, convirtió a La Habana en epicentro continental del contrabando, el crimen organizado norteamericano y el imperio de los casinos.',
         ],
       },
       {
-        kicker: 'III. Octubre de 1895 en Río de Janeiro',
-        title: 'José Adell al frente de la unión financiera e institucional de la colonia española',
+        kicker: 'III. La Unión de la Colonia Española en Río de Janeiro',
+        title: 'D. José Adell al frente del esfuerzo financiero e institucional de «La Unión Española»',
         paragraphs: [
-          'En Río de Janeiro, la causa de los insurrectos cubanos contaba con ruidosos simpatizantes en parte de la prensa local, hasta el punto de que en los tumultos callejeros de 1895 frente a las redacciones del Largo de São Francisco de Paula el propio José Adell resultó herido de una pedrada en la cabeza. Lejos de intimidarse, Pepe Adell volvió a su mesa en la casita colonial de la Rua da Ajuda —solar donde hoy se alza el Theatro Municipal— para rebatir con impecable cortesía y rigor histórico al magistrado brasileño Lúcio de Mendonça y encabezar la creación de la Comisión Patriótica Española.',
-          'El 19 de octubre de 1895, el periódico La Unión Española (Año IV, Nº 190) consagró su portada íntegra a homenajear a los doce integrantes de aquella Comisión Patriótica. En ella se fundieron en un solo abrazo cívico el republicano valenciano José Adell, el fundador tradicionalista Gaspar de los Reyes Thous, el médico sevillano Dr. Ricardo Meneses, el hotelero gallego Comendador Vicente do Pazo y los más respetados comerciantes e industriales españoles de Río de Janeiro, recaudando recursos financieros y sosteniendo institucionalmente la defensa de Cuba y de sus territorios.',
+          'En Río de Janeiro, tras haber sido herido de una pedrada en la cabeza durante las manifestaciones callejeras y haber sostenido con altura intelectual su célebre polémica con el magistrado brasileño Lúcio de Mendonça, Pepe Adell asumió desde su taller y redacción en la antigua Rua da Ajuda —solar donde hoy se alza el Theatro Municipal— el liderazgo cívico de la Comisión Patriótica.',
+          'En la histórica primera plana grabada por A. Castaño para La Unión Española se fundieron en un solo abrazo patriótico el republicano valenciano D. José Adell, el fundador tradicionalista D. Gaspar de los Reyes Thous, el médico sevillano Dr. Ricardo Meneses, el hotelero gallego Comendador D. Vicente do Pazo y los más destacados comerciantes e industriales españoles de Río de Janeiro en defensa de Cuba y de sus territorios.',
         ],
       },
     ],
+    neocolonialDossier: {
+      kicker: 'Evidencia Histórica Posterior • La «República Neocolonial» en Cuba (1902–1958)',
+      title: 'Cómo se Cumplió la Advertencia de la Comisión Patriótica: Los 3 Pilares de la Tutela de EE. UU., las Oligarquías y el Imperio de la Jugatina',
+      intro:
+        'La independencia formal de 1898 —resultante de aquella última fase revolucionaria con interferencia directa de los Estados Unidos— quedó frustrada por la tutela norteamericana (vía Enmienda Platt), engendrando entre 1902 y 1958 una estructura que favoreció a las oligarquías locales, al capital extranjero y, desde los años veinte, al crimen organizado y al turismo de casinos a través de tres pilares históricos principales:',
+      pillars: [
+        {
+          number: '01',
+          title: '1. Dominio de las Oligarquías y del Capital Extranjero',
+          bullets: [
+            {
+              lead: 'La «República de Generales y Doctores»:',
+              text: 'En los primeros años de la República Neocolonial, el poder quedó concentrado en manos de la élite latifundista azucarera y de políticos vinculados a los intereses comerciales norteamericanos, con elecciones frecuentemente marcadas por fraudes, clientelismo y corrupción administrativa.',
+            },
+            {
+              lead: 'Monocultivo, dependencia y «tiempo muerto»:',
+              text: 'Empresas de los Estados Unidos compraron gran parte de las tierras más fértiles, centrales azucareras, ferrocarriles y bancos. Cuba quedó atada a las cuotas de exportación de azúcar hacia EE. UU., enriqueciendo a una reducida élite local mientras la mayoría campesina vivía en condiciones precarias y sometida al desempleo estacional (el llamado «tiempo muerto» entre cosechas).',
+            },
+          ],
+        },
+        {
+          number: '02',
+          title: '2. La Ley Seca en EE. UU. (1920) y la Explosión de la Jugatina y el Contrabando',
+          intro:
+            'El papel de La Habana como centro de juegos, alcohol y contrabando cobró fuerza explosiva a partir de 1920, al entrar en vigor la Ley Seca (Prohibición) en los Estados Unidos:',
+          bullets: [
+            {
+              lead: 'Destino turístico sin restricciones a 145 km de Florida:',
+              text: 'Situada a apenas 145 km de las costas de Florida, La Habana se convirtió en el refugio inmediato para turistas estadounidenses en busca de alcohol, cabarés, prostitución y apuestas —actividades prohibidas entonces en territorio norteamericano—.',
+            },
+            {
+              lead: 'Plataforma internacional de contrabando:',
+              text: 'Cuba pasó a ser uno de los principales entrepuertos para el contrabando de ron y otras bebidas ilegales hacia la costa sur de los Estados Unidos, enriqueciendo a contrabandistas locales y a redes criminales norteamericanas.',
+            },
+          ],
+        },
+        {
+          number: '03',
+          title: '3. La Mafia Norteamericana y la Dictadura de Fulgencio Batista (1930–1950)',
+          intro:
+            'Entre las décadas de 1930 y 1950 —especialmente bajo la influencia y los gobiernos de Fulgencio Batista, autor del golpe de Estado de 1952—, el negocio de los casinos fue institucionalizado desde el poder:',
+          bullets: [
+            {
+              lead: 'Alianza directa con Meyer Lansky y Lucky Luciano:',
+              text: 'Jefes de la Mafia de los Estados Unidos, como Meyer Lansky y Lucky Luciano, sellaron acuerdos directos con Batista y autoridades cubanas, obteniendo exenciones fiscales, licencias de juego y protección policial a cambio de sobornos millonarios.',
+            },
+            {
+              lead: 'El Imperio de los Casinos y el lavado de dinero:',
+              text: 'En los años cincuenta, La Habana albergaba hoteles-casinos de lujo controlados por mafiosos —como el Hotel Nacional, el Riviera, el Capri y el Tropicana—, operando además como centro de lavado de dinero y ruta de tráfico de narcóticos hacia América del Norte.',
+            },
+          ],
+        },
+      ],
+      closingSynthesisTitle: '⚖️ Desenlace Histórico: De la Frustración de 1898 a la Ruptura de 1959',
+      closingSynthesisText:
+        'Ese contraste extremo —entre el lujo mafioso de los casinos de La Habana, los privilegios de la oligarquía y la pobreza profunda en el interior de la isla, sumado a la represión política de la dictadura de Fulgencio Batista— confirmó trágicamente lo que José Adell y la Comisión Patriótica Española habían advertido durante la última fase de la guerra de 1895–1898, y fue precisamente el combustible social y nacionalista que décadas más tarde alimentó la segunda ruptura: la Revolución Cubana de 1959 liderada por Fidel Castro.',
+    },
     rosterKicker: 'Nómina Histórica Completa • Los 12 Medallones del Grabado Original',
-    rosterTitle: 'Integrantes Participantes de la Comisión Patriótica Española (19 de Octubre de 1895)',
+    rosterTitle: 'Integrantes Participantes de la Comisión Patriótica Española',
     rosterSubtitle:
       'Relación íntegra de los doce miembros retratados en la primera plana de La Unión Española en el orden exacto de la litografía original, acompañada de sus datos biográficos documentados en archivos históricos y en la web.',
     leaderBadge: '★ Encabezó esta Lucha Histórica',
     memberOrderLabel: 'Medallón Nº',
     engravedRibbonLabel: 'Inscripción en el grabado:',
     viewInternalDossierLabel: 'Ver Dossier en el Memorial →',
-    illustratorBoxTitle: '🎨 Sobre el Autor del Grabado Original: A. Castaño (Río de Janeiro, 1895)',
+    illustratorBoxTitle: '🎨 Sobre el Autor del Grabado Original: A. Castaño (Río de Janeiro)',
     illustratorBoxText:
-      'Al pie del medallón central inferior aparece la rúbrica artística «A. Castaño», dibujante y litógrafo activo en la prensa ilustrada de Río de Janeiro a finales del siglo XIX. El artista enmarcó los doce retratos en óvalos entrelazados por palmeras, bambúes y flores tropicales brasileñas, abriendo a la izquierda una ventana marítima sobre la Bahía de Guanabara surcada por vapores transatlánticos: símbolo visual del puente inquebrantable entre la emigración española del Brasil y la defensa de Ultramar.',
+      'Al pie del medallón central inferior aparece la rúbrica artística «A. Castaño», dibujante y litógrafo activo en la prensa ilustrada de Río de Janeiro a finales del siglo XIX. El artista enmarcó los doce retratos en óvalos entrelazados por palmeras, bambúes y flores tropicales brasileñas, abriendo a la izquierda una ventana marítima sobre la Bahía de Guanabara surcada por vapores transatlánticos: símbolo visual del puente inquebrantable entre la emigración española del Brasil y la defensa de Cuba.',
   },
 
   va: {
-    navShort: 'Comissió Patriòtica (Cuba 1895)',
-    navFull: 'Comissió Patriòtica de 1895 — Defensa de Cuba',
+    navShort: 'Comissió Patriòtica (Cuba)',
+    navFull: 'Comissió Patriòtica — Última Fase de la Revolució i Interferència dels EUA',
     metaTitle:
-      'La Unión Española i la Comissió Patriòtica de 1895: José Adell al Capdavant de la Defensa de Cuba davant la Primera Revolució i la Intervenció dels EUA',
+      'La Unión Española i la Comissió Patriòtica: José Adell en Defensa de Cuba en l’Última Fase de la Revolució amb Interferència Directa dels EUA',
     metaDescription:
-      'Publicació històrica de La Unión Española (Rio de Janeiro, 19 d’octubre de 1895): com José Adell encapçalà la Comissió Patriòtica de suport financer i institucional davant la Primera Revolució d’Independència de Cuba (1895–1898) i la participació dels Estats Units, amb els retrats i biografies dels 12 integrants.',
-    badge: '🇪🇸 Document Històric Excepcional • La Unión Española • Rio de Janeiro, 19 d’Octubre de 1895',
+      'Publicació històrica de La Unión Española (Rio de Janeiro): com José Adell encapçalà la Comissió Patriòtica per a l’última fase de la Revolució d’Independència de Cuba quan hi hagué interferència directa dels EUA, anticipant la República Neocolonial (1902–1958), l’Esmena Platt, les oligarquies, la Llei Seca i l’imperi mafiós dels casinos.',
+    badge: '🇪🇸 Document Històric • La Unión Española • Última Fase de la Revolució i Interferència Directa dels EUA',
     heroTitle:
-      'La Comissió Patriòtica de 1895: José Adell al Capdavant de la Unió Espanyola en Defensa de Cuba enfront de les Oligarquies i la Ingerència dels Estats Units',
+      'La Comissió Patriòtica en l’Última Fase de la Revolució Cubana: José Adell al Capdavant de la Unió Espanyola davant la Interferència Directa dels EUA',
     heroSubtitle:
-      'A l’octubre de 1895, durant la Primera Revolució Cubana —la Guerra d’Independència de 1895–1898 que comptà amb la decisiva participació dels Estats Units—, la comunitat espanyola de Rio de Janeiro s’uní financerament i institucionalment sota el lideratge periodístic i moral de D. José Adell. Els espanyols d’aquella època veien amb clarividència que aquell moviment separatista no es basava en principis democràtics i republicans, sinó que estava lligat a oligarquies i a interessos polítics i econòmics obscurs que acabarien convertint l’illa en un territori de joc i contravenció.',
+      'Constituïda per a l’última i decisiva fase de la Revolució d’Independència de Cuba —marcada per la interferència directa dels Estats Units d’Amèrica, que culminà el 1898—, la Comissió Patriòtica de Rio de Janeiro uní financerament i institucionalment la comunitat espanyola sota el lideratge de D. José Adell. Els espanyols d’aquella època advertien amb clarividència que aquell moviment no engendraria una república sobirana i democràtica, sinó l’anomenada República Neocolonial (1902–1958): una estructura tutelada per Washington (via Esmena Platt) al servei d’oligarquies locals, capital estranger, contraban, crim organitzat i turisme mafiós de casinos.',
+    chronologicalBadge: 'ÚLTIMA FASE (1895–1898) • INTERFERÈNCIA DIRECTA DELS EUA',
     chronologicalClarificationTitle:
-      '📌 Precisió Històrica Fonamental: La Primera Revolució d’Independència (1895–1898) amb Participació dels EUA — No la Segona Revolució de 1959',
+      '📌 Marc Històric Fonamental: L’Última Fase de la Revolució d’Independència amb Interferència Directa dels EUA (1895–1898) i l’Origen de la «República Neocolonial» (1902–1958)',
     chronologicalClarificationText:
-      'Aquest document històric d’octubre de 1895 es refereix estrictament a la Primera Revolució Cubana —el moviment separatista i guerra d’independència de 1895–1898 en què participaren militarment i geopolíticament els Estats Units d’Amèrica—, i NO a la segona revolució cubana (la revolució comunista de Fidel Castro del 1959). Precisament la intervenció nord-americana del 1898 i l’Esmena Platt (1901) confirmaren els temors dels espanyols del 1895: durant la primera meitat del segle XX, Cuba quedà sotmesa a oligarquies sucreres, interessos financers estrangers, casinos de joc i xarxes de contraban i contravenció.',
+      'La Comissió Patriòtica actuà específicament per a l’última fase de la Revolució d’Independència cubana (després de les guerres anteriors de 1868–1878 i 1879–1880), quan es produí la interferència directa —financera, geopolítica i militar— dels Estats Units, molt anterior i distinta de la revolució comunista de Fidel Castro del 1959. En efecte, la independència formal de 1898 fou frustrada per la tutela nord-americana mitjançant l’Esmena Platt, instaurant la República Neocolonial (1902–1958), dominada per oligarquies sucreres, monopolis dels EUA, el contraban de la Llei Seca (1920) i l’aliança entre la Màfia nord-americana (Meyer Lansky i Lucky Luciano) i la dictadura de Fulgencio Batista: exactament l’abisme institucional contra el qual havien alertat José Adell i la colònia espanyola.',
     leaderHighlightTitle: '★ D. José Adell Encapçalà Aquesta Lluita Cívica i Patriòtica a Rio de Janeiro',
     leaderHighlightText:
-      'Republicà convençut, demòcrata humanista i redactor en cap de La Unión Española a la Rua da Ajuda, José Adell y Fons («Pepe Adell», retratat al cinqué medalló als 27 anys) liderà la mobilització intel·lectual i institucional de la colònia espanyola poques setmanes després d’haver patit una pedrada al cap defensant la dignitat espanyola als carrers de Rio.',
-    originalScanBadge: '📰 Portada Gravada Original • La Unión Española (Any IV, Núm. 190 • 19.10.1895)',
+      'Republicà convençut, demòcrata humanista i redactor en cap de La Unión Española a la Rua da Ajuda, José Adell y Fons («Pepe Adell», retratat al cinqué medalló) liderà la mobilització intel·lectual, periodística i institucional de la colònia espanyola en aquesta etapa decisiva del conflicte cubà, després d’haver patit una pedrada al cap defensant la dignitat espanyola als carrers de Rio.',
+    originalScanBadge: '📰 Portada Gravada Original • La Unión Española (Any IV, Núm. 190 • Rio de Janeiro)',
     originalScanCaption:
       'Litografia històrica de primera plana signada per A. Castaño amb vista de la Badia de Guanabara i els 12 medallons de la Comissió Patriòtica Espanyola de Rio de Janeiro.',
     openFullDossierBtn: 'Obrir Dossier Històric i les 12 Biografies →',
@@ -469,7 +551,7 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
     transcriptionHeading:
       '📜 Transcripció Íntegra del Document Original (Situada Sota el Gravat Original)',
     transcriptionSubnote:
-      'Transcripció completa en Valencià de totes les inscripcions visibles a la portada original de La Unión Española (19 d’octubre de 1895):',
+      'Transcripció completa en Valencià de totes les inscripcions visibles a la portada original de La Unión Española:',
     transcriptionBlocks: [
       'CAPÇALERA DEL PERIÒDIC: «LA UNIÓN ESPAÑOLA» [Segell circular de registre d’arxiu: «R»].',
       'DATACIÓ SOTA LA CAPÇALERA: «ANY IV — NÚM. 190 — RIO DE JANEIRO, 19 D’OCTUBRE DE 1895» («AÑO IV — Nº 190 — RIO DE JANEIRO, 19 OCTUBRE 1895»).',
@@ -477,69 +559,127 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
       'PEU COMMEMORATIU DE PORTADA: «HOMENATGE A LA COMISSIÓ PATRIÒTICA» («HOMENAGE A LA COMISION PATRIOTICA»).',
     ],
     transcriptionSignatureLine:
-      'Signatura de l’artista gravador al peu del medalló central inferior: «A. Castaño» (La Unión Española, Rio de Janeiro, 19 d’octubre de 1895).',
-    essaySectionKicker: 'Anàlisi Històrica i Geopolítica • Octubre de 1895 – 1898',
+      'Signatura de l’artista gravador al peu del medalló central inferior: «A. Castaño» (La Unión Española, Rio de Janeiro).',
+    essaySectionKicker: 'Anàlisi Històrica i Geopolítica • De la Interferència dels EUA (1895–1898) a la República Neocolonial (1902–1958)',
     essaySectionTitle:
-      'La Primera Revolució d’Independència de Cuba, la Participació dels Estats Units i la Visió Profètica dels Espanyols de 1895',
+      'L’Última Fase de la Revolució Cubana amb Interferència Directa dels EUA i la Profecia Confirmada dels Espanyols',
     historicalBlocks: [
       {
-        kicker: 'I. El Context de 1895–1898 i la Participació dels Estats Units',
-        title: 'Per què el moviment separatista de 1895 no es basava en principis democràtics i republicans purs',
+        kicker: 'I. L’Última Fase de la Revolució i la Interferència Directa dels Estats Units',
+        title: 'Una contesa capturada per la intervenció nord-americana i les oligarquies, lluny dels principis republicans purs',
         paragraphs: [
-          'Quan el febrer de 1895 esclatà la insurrecció armada a Cuba —coneguda històricament com la Primera Revolució Cubana o Guerra d’Independència de Cuba (1895–1898), totalment anterior i distinta de la revolució comunista de Fidel Castro del 1959—, el conflicte estigué des del primer moment marcat per l’ambició geopolítica i financera dels Estats Units. Trusts sucrers, sindicats financers de Nova York i la premsa sensacionalista nord-americana finançaren expedicions i empenyeren Washington cap a la intervenció militar directa de 1898 arran de l’explosió del cuirassat USS Maine a l’Havana.',
-          'Per als espanyols d’aquella època —i especialment per a republicans íntegres com el vinarossenc José Adell y Fons, defensor de la democràcia fonamentada en els principis, el sufragi i la llei—, el futur que aquell moviment independentista reservava a Cuba no reposava sobre ideals democràtics ni republicans sincers, sinó sobre oligarquies i interessos polítics i econòmics obscurs decidits a transformar l’illa en un enclavament subordinat al capital especulatiu.',
+          'La Comissió Patriòtica Espanyola desplegà el seu esforç financer i institucional per a l’última i definitiva fase del cicle insurreccional cubà (1895–1898), quan es consumà la interferència directa dels Estats Units d’Amèrica. A diferència dels alçaments anteriors del segle XIX, aquesta fase final estigué decisivament impulsada i capitalitzada des de l’exterior per juntes financeres a Nova York, grans trusts sucrers, campanyes de la premsa sensacionalista nord-americana i, finalment, per la invasió militar directa de Washington el 1898.',
+          'Per als espanyols lúcids d’aquella hora —i especialment per a republicans íntegres com el vinarossenc José Adell y Fons, defensor de la democràcia fonamentada en l’ètica, el sufragi i la llei—, era evident que el desenllaç imposat per aquella ingerència estrangera no portaria una república veritablement democràtica ni sobirana, sinó la subordinació de Cuba a interessos polítics i econòmics obscurs.',
         ],
       },
       {
-        kicker: 'II. L’Advertiment Confirmat pel Segle XX (1902–1950)',
-        title: 'De l’Esmena Platt a l’illa dels casinos, el joc i la contravenció',
+        kicker: 'II. 1898 i la Tutela de l’Esmena Platt',
+        title: 'La independència frustrada i el naixement de la «República Neocolonial» (1902–1958)',
         paragraphs: [
-          'El desenllaç del 1898 confirmà punt per punt aquella diagnosi. Després del Tractat de París i de l’ocupació militar nord-americana (1898–1902), els Estats Units imposaren a Cuba l’Esmena Platt (1901), tutelant la seua sobirania, les seues finances i bases navals com Guantánamo, mentre grans corporacions i oligarquies acaparaven la riquesa insular.',
-          'Durant les primeres dècades del segle XX —molt abans de 1959—, aquella república mediatitzada es convertí en epicentre hemisfèric de casinos, cases de joc, loteries venals, contraban i contravenció sota l’ombra de màfies i oligarquies corruptes: exactament la desfiguració moral i institucional que els espanyols de 1895 havien denunciat i combatut.',
+          'La història confirmà punt per punt aquella diagnosi. La independència formal assolida el 1898 quedà immediatament frustrada per l’ocupació militar i la tutela institucional dels Estats Units mitjançant la imposició de l’Esmena Platt (1901), que atorgava a Washington el dret d’intervenció a l’illa i subordinava la seua economia i la seua política exterior.',
+          'Sobre aquesta tutela nasqué l’anomenada República Neocolonial (1902–1958): una estructura política i econòmica que afavorí les oligarquies locals aliades al capital estranger i que, a partir de la dècada de 1920 i fins als anys cinquanta, convertí l’Havana en epicentre continental del contraban, el crim organitzat nord-americà i l’imperi dels casinos.',
         ],
       },
       {
-        kicker: 'III. Octubre de 1895 a Rio de Janeiro',
-        title: 'José Adell al capdavant de la unió financera i institucional de la comunitat espanyola',
+        kicker: 'III. La Unió de la Comunitat Espanyola a Rio de Janeiro',
+        title: 'D. José Adell al capdavant de l’esforç financer i institucional de «La Unión Española»',
         paragraphs: [
-          'A Rio de Janeiro, després de rebre una pedrada al cap durant els aldarulls al Largo de São Francisco de Paula i de mantindre la seua cèlebre polèmica amb el magistrat brasiler Lúcio de Mendonça el setembre de 1895, José Adell no es feu enrere: des del seu taller i redacció a la Rua da Ajuda —on hui s’alça el Theatro Municipal— encapçalà l’organització de la Comissió Patriòtica Espanyola.',
-          'El 19 d’octubre de 1895, La Unión Española (Any IV, núm. 190) dedicà la seua portada gravada per A. Castaño als dotze membres de la Comissió Patriòtica, reunint republicans com José Adell, tradicionalistes com Gaspar de los Reyes Thous, metges com el Dr. Ricardo Meneses i destacats comerciants i industrials com Benito Martínez, Casiano Fernández i el Comanador Vicente do Pazo en suport financer i institucional a la defensa de Cuba.',
+          'A Rio de Janeiro, després de rebre una pedrada al cap durant els aldarulls al Largo de São Francisco de Paula i de mantindre la seua cèlebre polèmica amb el magistrat brasiler Lúcio de Mendonça, José Adell assumí des del seu taller i redacció a l’antiga Rua da Ajuda —on hui s’alça el Theatro Municipal— el lideratge cívic de la Comissió Patriòtica.',
+          'A la històrica primera plana gravada per A. Castaño per a La Unión Española es fongueren en una sola abraçada patriòtica el republicà valencià D. José Adell, el fundador tradicionalista D. Gaspar de los Reyes Thous, el metge sevillà Dr. Ricardo Meneses, l’hoteler gallec Comanador D. Vicente do Pazo i destacats comerciants i industrials espanyols de Rio de Janeiro en defensa de Cuba i dels seus territoris.',
         ],
       },
     ],
+    neocolonialDossier: {
+      kicker: 'Evidència Històrica Posterior • La «República Neocolonial» a Cuba (1902–1958)',
+      title: 'Com es Complí l’Advertiment de la Comissió Patriòtica: Els 3 Pilars de la Tutela dels EUA, les Oligarquies i l’Imperi del Joc',
+      intro:
+        'La independència formal de 1898 —resultat d’aquella última fase revolucionària amb interferència directa dels Estats Units— fou frustrada per la tutela nord-americana (via Esmena Platt), creant entre 1902 i 1958 una estructura política i econòmica que afavorí oligarquies locals, el capital estranger i, a partir dels anys vint, el crim organitzat i el turisme de casinos a través de tres pilars principals:',
+      pillars: [
+        {
+          number: '01',
+          title: '1. Domini de les Oligarquies i del Capital Estranger',
+          bullets: [
+            {
+              lead: 'La «República dels Generals i Doctors»:',
+              text: 'En els primers anys de la República Neocolonial, el poder quedà concentrat en mans de l’elit latifundista sucrera i de polítics lligats als interessos comercials nord-americans, amb eleccions sovint marcades per fraus, clientelisme i corrupció administrativa.',
+            },
+            {
+              lead: 'Monocultiu, dependència i «tiempo muerto»:',
+              text: 'Empreses dels Estats Units compraren gran part de les terres més fèrtils, fàbriques de sucre («centrales»), ferrocarrils i bancs. Cuba esdevingué dependent de les quotes d’exportació de sucre per al mercat nord-americà, enriquint una petita elit local mentre la majoria rural vivia en condicions precàries i sotmesa a l’atur estacional (l’anomenat «tiempo muerto» entre collites).',
+            },
+          ],
+        },
+        {
+          number: '02',
+          title: '2. La Llei Seca als EUA (1920) i l’Explosió del Joc i el Contraban',
+          intro:
+            'El paper de l’Havana com a centre de jocs, alcohol i contraban prengué força explosiva a partir de 1920, quan entrà en vigor la Llei Seca (Prohibició) als Estats Units:',
+          bullets: [
+            {
+              lead: 'Destinació turística sense restriccions a 145 km de Florida:',
+              text: 'A només 145 km de Florida, l’Havana es convertí en el refugi immediat per a turistes nord-americans a la recerca d’alcohol, cabarets, prostitució i apostes —activitats prohibides als EUA—.',
+            },
+            {
+              lead: 'Ruta internacional de contraban:',
+              text: 'Cuba es transformà en un dels principals punts d’embarcament per al contraban de rom i altres begudes il·legals cap a la costa sud dels Estats Units, enriquint contrabandistes locals i xarxes criminals americanes.',
+            },
+          ],
+        },
+        {
+          number: '03',
+          title: '3. La Màfia Nord-americana i la Dictadura de Fulgencio Batista (1930–1950)',
+          intro:
+            'Entre les dècades de 1930 i 1950 —especialment sota la influència i els governs de Fulgencio Batista, qui encapçalà un colp d’Estat el 1952—, el negoci dels casinos fou institucionalitzat:',
+          bullets: [
+            {
+              lead: 'Aliança directa amb Meyer Lansky i Lucky Luciano:',
+              text: 'Caps del crim organitzat dels EUA, com Meyer Lansky i Lucky Luciano, signaren acords directes amb Batista i autoritats cubanes, rebent exempcions fiscals, llicències de joc i protecció policial a canvi de suborns milionaris.',
+            },
+            {
+              lead: 'L’Imperi dels Casinos i el blanqueig de capitals:',
+              text: 'En la dècada de 1950, l’Havana acollia hotels-casinos de luxe controlats per mafiosos —com l’Hotel Nacional, el Riviera, el Capri i el Tropicana—, a més de servir com a punt de blanqueig de diners i ruta de tràfic de narcòtics cap a l’Amèrica del Nord.',
+            },
+          ],
+        },
+      ],
+      closingSynthesisTitle: '⚖️ Desenllaç Històric: De la Frustració de 1898 a la Ruptura de 1959',
+      closingSynthesisText:
+        'Aquest contrast extrem —entre el luxe mafiós dels casinos de l’Havana, els privilegis de l’oligarquia i la pobresa profunda a l’interior de l’illa, sumat a la repressió política de la dictadura de Fulgencio Batista— confirmà tràgicament allò que José Adell i la Comissió Patriòtica Espanyola havien advertit durant l’última fase de la guerra de 1895–1898, i fou justament el combustible social i nacionalista que dècades més tard alimentà la Revolució Cubana de 1959 liderada per Fidel Castro.',
+    },
     rosterKicker: 'Nòmina Històrica Completa • Els 12 Medallons del Gravat Original',
-    rosterTitle: 'Integrants Participants de la Comissió Patriòtica Espanyola (19 d’Octubre de 1895)',
+    rosterTitle: 'Integrants Participants de la Comissió Patriòtica Espanyola',
     rosterSubtitle:
       'Relació íntegra dels dotze membres retratats a la primera plana de La Unión Española en l’ordre exacte de la imatge original, amb les seues notes biogràfiques documentades a l’arxiu i a la web.',
     leaderBadge: '★ Encapçalà aquesta Lluita Històrica',
     memberOrderLabel: 'Medalló Núm.',
     engravedRibbonLabel: 'Inscripció al gravat:',
     viewInternalDossierLabel: 'Vore Dossier al Memorial →',
-    illustratorBoxTitle: '🎨 Sobre l’Autor del Gravat Original: A. Castaño (Rio de Janeiro, 1895)',
+    illustratorBoxTitle: '🎨 Sobre l’Autor del Gravat Original: A. Castaño (Rio de Janeiro)',
     illustratorBoxText:
-      'Al peu del medalló central inferior figura la signatura «A. Castaño», dibuixant i litògraf actiu a la premsa il·lustrada de Rio de Janeiro a la fi del segle XIX. L’artista enllaçà els dotze retrats amb flora tropical brasilera i una vinyeta marítima de la Badia de Guanabara amb vapors transatlàntics, símbol del vincle entre la diàspora espanyola del Brasil i la defensa d’Ultramar.',
+      'Al peu del medalló central inferior figura la signatura «A. Castaño», dibuixant i litògraf actiu a la premsa il·lustrada de Rio de Janeiro a la fi del segle XIX. L’artista enllaçà els dotze retrats amb flora tropical brasilera i una vinyeta marítima de la Badia de Guanabara amb vapors transatlàntics, símbol del vincle entre la diàspora espanyola del Brasil i la defensa de Cuba.',
   },
 
   pt: {
-    navShort: 'Comissão Patriótica (Cuba 1895)',
-    navFull: 'Comissão Patriótica de 1895 — Defesa de Cuba',
+    navShort: 'Comissão Patriótica (Cuba)',
+    navFull: 'Comissão Patriótica — Última Fase da Revolução e Interferência dos EUA',
     metaTitle:
-      'La Unión Española e a Comissão Patriótica de 1895: José Adell à Frente da Defesa de Cuba na Primeira Revolução de Independência com Participação dos EUA',
+      'La Unión Española e a Comissão Patriótica: José Adell na Defesa de Cuba na Última Fase da Revolução com Interferência Direta dos EUA',
     metaDescription:
-      'Publicação histórica de La Unión Española (Rio de Janeiro, 19 de outubro de 1895): como José Adell encabeçou a Comissão Patriótica de apoio financeiro e institucional contra a Primeira Revolução de Independência de Cuba (1895–1898, com participação dos EUA), que levou Cuba a se tornar um país de jogatina e contravenção sob oligarquias e interesses escusos. Lista completa e biografias dos 12 integrantes.',
-    badge: '🇪🇸 Evento Histórico da Comunidade Espanhola • La Unión Española • Rio de Janeiro, 19 de Outubro de 1895',
+      'Publicação histórica de La Unión Española (Rio de Janeiro): como José Adell encabeçou a Comissão Patriótica na última fase da Revolução de Independência de Cuba quando houve interferência direta dos EUA, antecipando a República Neocolonial (1902–1958), a Emenda Platt, o domínio das oligarquias, a Lei Seca de 1920 e o império mafioso dos cassinos.',
+    badge: '🇪🇸 Evento Histórico da Comunidade Espanhola • La Unión Española • Última Fase da Revolução e Interferência Direta dos EUA',
     heroTitle:
-      'A Comissão Patriótica de 1895: José Adell à Frente da União Espanhola na Defesa de Cuba contra Oligarquias, Interesses Escusos e a Intervenção dos EUA',
+      'A Comissão Patriótica na Última Fase da Revolução Cubana: José Adell à Frente da União Espanhola diante da Interferência Direta dos EUA',
     heroSubtitle:
-      'Em 19 de outubro de 1895, diante da Primeira Revolução Cubana — a Revolução de Independência (1895–1898), que contou com a decisiva participação dos Estados Unidos —, a comunidade espanhola do Rio de Janeiro uniu-se em uma histórica Comissão Patriótica de apoio financeiro e institucional encabeçada por D. José Adell. Os espanhóis daquela época viam com impressionante lucidez que o futuro de Cuba sob aquele movimento separatista não se fundava em princípios democráticos e republicanos legítimos, mas sim em oligarquias e interesses políticos e econômicos escusos que acabariam transformando a ilha em um país de jogatina e contravenção.',
+      'Organizada para a última e decisiva fase da Revolução de Independência de Cuba — marcada pela interferência direta dos Estados Unidos da América, que culminou em 1898 —, a Comissão Patriótica do Rio de Janeiro uniu financeira e institucionalmente a comunidade espanhola sob a liderança de D. José Adell. Os espanhóis daquela época enxergavam com impressionante lucidez que aquele movimento não geraria uma república soberana e democrática, mas sim a chamada República Neocolonial (1902–1958): uma estrutura tutelada pelos EUA (via Emenda Platt) que entregou Cuba às oligarquias locais, ao capital estrangeiro, ao contrabando da Lei Seca e ao império mafioso dos cassinos e da contravenção.',
+    chronologicalBadge: 'ÚLTIMA FASE (1895–1898) • INTERFERÊNCIA DIRETA DOS EUA',
     chronologicalClarificationTitle:
-      '📌 Marco Histórico Essencial: Trata-se da Primeira Revolução Cubana — a Revolução de Independência (1895–1898) com Participação dos EUA — e NÃO da Segunda Revolução Comunista de Fidel Castro (1959)',
+      '📌 Marco Histórico Essencial: A Comissão Patriótica na Última Fase da Revolução com Interferência Direta dos EUA (1895–1898) e o Nascimento da «República Neocolonial» (1902–1958)',
     chronologicalClarificationText:
-      'É fundamental destacar que este episódio histórico de 1895 refere-se exclusivamente à Primeira Revolução Cubana — a guerra e revolução separatista de independência de 1895–1898, que teve a intervenção direta dos Estados Unidos da América —, e NÃO à segunda revolução cubana (a revolução comunista liderada por Fidel Castro mais de sessenta anos depois, em 1959). Foi justamente o desfecho dessa Primeira Revolução com a intervenção militar e econômica norte-americana de 1898 e a imposição da Emenda Platt (1901) que confirmou o alerta dos espanhóis de 1895: ao longo da primeira metade do século XX (antes de 1959), Cuba viu sua soberania capturada por oligarquias, monopólios estrangeiros, cassinos, jogatina institucionalizada e redes internacionais de contravenção.',
+      'A Comissão Patriótica atuou voltada especificamente para a última fase da Revolução de Independência de Cuba (após os conflitos anteriores do século XIX), quando houve a interferência direta — financeira, geopolítica e militar — dos Estados Unidos da América, episódio anterior e distinto da revolução comunista de Fidel Castro em 1959. A independência formal conquistada em 1898 foi frustrada pela tutela dos Estados Unidos via Emenda Platt, criando durante a chamada República Neocolonial (1902–1958) uma estrutura política e econômica que favoreceu oligarquias locais, o capital estrangeiro e, a partir da década de 1920, o crime organizado norte-americano (Meyer Lansky e Lucky Luciano em aliança com Fulgencio Batista) e o turismo de cassinos — confirmando integralmente o alerta histórico de José Adell e da comunidade espanhola.',
     leaderHighlightTitle: '★ D. José Adell Encabeçou Esta Luta Histórica no Rio de Janeiro',
     leaderHighlightText:
-      'Republicano convicto, humanista e redator-chefe de La Unión Española na Rua da Ajuda, José Adell y Fons (“Pepe Adell”, retratado no quinto medalhão aos 27 anos de idade) liderou intelectual, jornalística e institucionalmente a mobilização da colônia espanhola poucas semanas após ter sido ferido por uma pedrada na cabeça nos tumultos de rua do Rio de Janeiro.',
-    originalScanBadge: '📰 Capa Original Digitalizada • La Unión Española (Ano IV, Nº 190 • 19.10.1895)',
+      'Republicano convicto, humanista e redator-chefe de La Unión Española na Rua da Ajuda, José Adell y Fons (“Pepe Adell”, retratado no quinto medalhão) liderou intelectual, jornalística e institucionalmente a mobilização da colônia espanhola nesta etapa decisiva do conflito cubano, após ter sido ferido por uma pedrada na cabeça nos tumultos de rua do Rio de Janeiro.',
+    originalScanBadge: '📰 Capa Original Digitalizada • La Unión Española (Ano IV, Nº 190 • Rio de Janeiro)',
     originalScanCaption:
       'Litografia histórica de capa assinada por A. Castaño com vista da Baía de Guanabara e os 12 medalhões da Comissão Patriótica Espanhola do Rio de Janeiro.',
     openFullDossierBtn: 'Abrir Publicação Completa e as 12 Biografias →',
@@ -548,53 +688,110 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
     transcriptionHeading:
       '📜 Transcrição Completa do Documento Original (Posicionada Abaixo do Artigo Original)',
     transcriptionSubnote:
-      'Transcrição integral em Português de todos os textos, cabeçalhos e legendas gravados na capa original de La Unión Española (19 de outubro de 1895):',
+      'Transcrição integral em Português de todos os textos, cabeçalhos e legendas gravados na capa original de La Unión Española:',
     transcriptionBlocks: [
       'CABEÇALHO DO JORNAL: «LA UNIÓN ESPAÑOLA» [Carimbo circular de registro documental: «R»].',
       'DATAÇÃO SOB O CABEÇALHO: «ANO IV — Nº 190 — RIO DE JANEIRO, 19 DE OUTUBRO DE 1895» («AÑO IV — Nº 190 — RIO DE JANEIRO, 19 OCTUBRE 1895»).',
-      'COMPOSIÇÃO ICONOGRÁFICA CENTRAL (12 MEDALHÕES OVAIS ENTRE FLORA TROPICAL E VINHETA MARÍTIMA DA BAÍA DO RIO DE JANEIRO COM NAVIOS A VAPOR):\n• Primeira fileira (da esquerda para a direita): «D. BENITO MARTÍNEZ» — «D. CASIANO FERNÁNDEZ» — «D. LUÍS DE LA FUENTE».\n• Segunda fileira: «Dr. RICARDO MENESES» — «D. JOSÉ ADELL».\n• Terceira fileira (centro e direita, ao lado da paisagem naval): «D. GASPAR DE LOS R. THOUS» — «D. FIDEL VERGARA».\n• Quarta fileira: «D. P. SIEIRO GARRIDO» — «D. LUÍS SUÁREZ».\n• Fileira inferior (da esquerda para a direita): «D. FRANCISCO BRANDARIZ» — «D. VICENTE DO PAZO» — «D. EZEQUIEL C. AREAS».',
+      'COMPOSIÇÃO ICONOGRÁFICA CENTRAL (12 MEDALHÕES OVAIS ENTRE FLORA TROPICAL E VINHETA MARÍTIMA DA BAÍA DO RIO DE JANEIRO COM NAVIOS A VAPOR):\n• Primeira fileira (da esquerda para a direita): «D. BENITO MARTÍNEZ» — «D. CASIANO FERNÁNDEZ» — «D. LUÍS DE LA FUENTE».\n• Segunda fileira: «Dr. RICARDO MENESES» — «D. JOSÉ ADELL».\n• Terceira fileira (centro e direita, ao lado da paisagem naval): «D. GASPAR DE LOS R. THOUS» — «D. FIDEL VERGARA».\n• Quarta fileira (centro e direita): «D. P. SIEIRO GARRIDO» — «D. LUÍS SUÁREZ».\n• Fileira inferior (da esquerda para a direita): «D. FRANCISCO BRANDARIZ» — «D. VICENTE DO PAZO» — «D. EZEQUIEL C. AREAS».',
       'LEGENDA COMEMORATIVA DE RODAPÉ: «HOMENAGEM À COMISSÃO PATRIÓTICA» («HOMENAGE A LA COMISION PATRIOTICA»).',
     ],
     transcriptionSignatureLine:
-      'Assinatura do artista litógrafo junto ao medalhão central inferior: «A. Castaño» (La Unión Española, Rio de Janeiro, 19 de outubro de 1895).',
-    essaySectionKicker: 'Ensaio Histórico e Geopolítico • Outubro de 1895 – 1898',
+      'Assinatura do artista litógrafo junto ao medalhão central inferior: «A. Castaño» (La Unión Española, Rio de Janeiro).',
+    essaySectionKicker: 'Ensaio Histórico e Geopolítico • Da Interferência Direta dos EUA (1895–1898) à República Neocolonial (1902–1958)',
     essaySectionTitle:
-      'A Primeira Revolução de Independência de Cuba (1895–1898), a Participação dos EUA e a Clarividência da Comunidade Espanhola',
+      'A Última Fase da Revolução Cubana sob Interferência Direta dos EUA e a Clarividência Histórica da Comunidade Espanhola',
     historicalBlocks: [
       {
-        kicker: 'I. A Primeira Revolução Cubana (1895–1898) e a Ingerência dos Estados Unidos',
-        title: 'Um movimento capturado por oligarquias e interesses geopolíticos norte-americanos, e não por ideais republicanos puros',
+        kicker: 'I. A Última Fase da Revolução e a Interferência Direta dos Estados Unidos',
+        title: 'Por que o desfecho separatista não se apoiava em princípios republicanos puros, mas na intervenção dos EUA e em oligarquias',
         paragraphs: [
-          'Quando eclodiu a insurreição armada em Cuba em fevereiro de 1895 — historicamente denominada Primeira Revolução Cubana ou Guerra de Independência de Cuba (1895–1898), inteiramente distinta e mais de sessenta anos anterior à revolução comunista de Fidel Castro em 1959 —, o conflito foi desde o início alimentado pela ativa participação financeira, propagandística e geopolítica dos Estados Unidos. Grandes grupos açucareiros, sindicatos financeiros sediados em Nova York e a campanha inflamada da imprensa sensacionalista norte-americana (Hearst e Pulitzer) financiaram expedições armadas e pavimentaram a intervenção militar direta dos EUA em 1898, após a explosão do encouraçado USS Maine no porto de Havana.',
-          'Os espanhóis daquela época — sobretudo pensadores republicanos íntegros e humanistas como José Adell y Fons, que dedicou toda a vida à democracia fundada na ética, no voto livre e na educação — enxergavam com profunda clareza que o futuro reservado à ilha por aquele movimento separatista não se apoiava em verdadeiros princípios democráticos e republicanos. Ao contrário: percebiam tratar-se de uma engrenagem ligada a oligarquias locais e a grupos econômicos estrangeiros interessados em arrancar Cuba da Espanha para transformá-la em entreposto de interesses políticos e econômicos escusos.',
+          'A Comissão Patriótica Espanhola reuniu esforços financeiros e institucionais para a última e decisiva fase da Revolução de Independência de Cuba (1895–1898), momento histórico em que se consumou a interferência direta dos Estados Unidos da América. Diferentemente das fases anteriores dos conflitos insulares do século XIX, essa etapa final foi intensamente financiada, insuflada e militarmente decidida pela intervenção direta norte-americana — impulsionada por grandes grupos açucareiros, sindicatos financeiros de Nova York, imprensa sensacionalista e pela invasão militar dos EUA em 1898.',
+          'Os espanhóis daquela época — sobretudo republicanos íntegros e humanistas como José Adell y Fons, que dedicou toda a vida à democracia fundada na ética, no voto livre e na educação — compreendiam com nitidez que o futuro reservado à ilha por aquela ingerência estrangeira não seria uma república soberana e democrática, mas um regime tutelado a serviço de oligarquias e interesses políticos e econômicos escusos.',
         ],
       },
       {
-        kicker: 'II. O Alerta Confirmado pela História (1898–Anos 1950)',
-        title: 'Da ocupação dos EUA e da Emenda Platt à transformação de Cuba em reduto de jogatina e contravenção',
+        kicker: 'II. 1898, a Emenda Platt e a Independência Frustrada',
+        title: 'A estrutura da «República Neocolonial» (1902–1958) entre o latifúndio estrangeiro e o crime organizado',
         paragraphs: [
-          'Os acontecimentos que se seguiram à intervenção norte-americana de 1898 comprovaram tragicamente a previsão feita pelos espanhóis em 1895. Com o Tratado de Paris e a ocupação militar dos Estados Unidos (1898–1902), foi imposta à Constituição cubana a chamada Emenda Platt (1901), que subtraía a plena soberania da ilha, garantia a Washington o direito de intervenção militar e entregava bases estratégicas como Guantánamo, ao mesmo tempo em que latifúndios açucareiros e concessões públicas passavam ao controle de trustes estrangeiros e oligarquias clientelistas.',
-          'Privada de um projeto autenticamente republicano e soberano, a Cuba das primeiras décadas do século XX — muito antes da revolução comunista de 1959 — acabou convertida em sinônimo mundial de cassinos luxuosos, loterias viciadas, jogatina desenfreada, contrabando e contravenção sob a proteção de chefes políticos venais e sindicatos internacionais do jogo. Aquela degradação institucional foi exatamente o destino sombrio contra o qual José Adell e a colônia espanhola haviam alertado em 1895.',
+          'O curso real da história confirmou integralmente o alerta formulado pela Comissão Patriótica. A independência formal conquistada em 1898 foi imediatamente frustrada pela ocupação militar e pela tutela institucional dos Estados Unidos (via Emenda Platt), que submeteu a soberania cubana aos interesses estratégicos e econômicos de Washington.',
+          'Durante toda a chamada República Neocolonial (1902–1958), consolidou-se exatamente o quadro denunciado pelos espanhóis: concentração do poder nas mãos da oligarquia açucareira ("República dos Generais e Doutores"), apropriação de terras, usinas (centrales), ferrovias e bancos por empresas norte-americanas e, a partir da Lei Seca de 1920 até os governos de Fulgencio Batista nos anos 1950, a transformação de Havana em capital hemisférica de jogatina, contrabando e hotéis-cassinos controlados pela Máfia dos EUA.',
         ],
       },
       {
-        kicker: 'III. A União da Comunidade Espanhola no Rio de Janeiro (19 de Outubro de 1895)',
+        kicker: 'III. A União da Comunidade Espanhola no Rio de Janeiro',
         title: 'Como D. José Adell encabeçou o apoio financeiro e institucional em defesa de Cuba e seus territórios',
         paragraphs: [
-          'No Rio de Janeiro de 1895, o debate sobre Cuba incendiava as ruas e os jornais. Poucas semanas antes desta publicação, José Adell fora atingido por uma pedrada na cabeça durante manifestações pró-insurretos no Largo de São Francisco de Paula e respondera com altivez intelectual à carta aberta do Ministro do STF Lúcio de Mendonça nas páginas de O Paiz e La Unión Española. Com a fronte erguida, Adell assumiu a linha de frente para unir toda a coletividade espanhola do Brasil em torno da defesa institucional e financeira de Cuba e dos territórios espanhóis.',
-          'Em 19 de outubro de 1895, a edição nº 190 (Ano IV) de La Unión Española — impressa na histórica casinha colonial da Rua da Ajuda, onde hoje se ergue o Theatro Municipal do Rio de Janeiro — estampou em página inteira a gravura «Homenage á la Comisión Patriótica», assinada por A. Castaño. Ali aparecem lado a lado o republicano valenciano D. José Adell, o fundador carlista D. Gaspar de los Reyes Thous, o médico sevilhano Dr. Ricardo Meneses, o hoteleiro galego Comendador D. Vicente do Pazo e importantes industriais e comerciantes espanhóis do Rio, selando uma união cívica exemplar acima de quaisquer divergências partidárias.',
+          'No Rio de Janeiro, o debate sobre a guerra em Cuba mobilizava intensamente as ruas e a imprensa. Após ter sido atingido por uma pedrada na cabeça durante manifestações pró-insurretos no Largo de São Francisco de Paula e responder com altivez intelectual ao Ministro do STF Lúcio de Mendonça, José Adell assumiu na histórica casinha colonial da Rua da Ajuda — terreno onde hoje se ergue o Theatro Municipal do Rio de Janeiro — a liderança cívica da Comissão Patriótica Espanhola.',
+          'Na emblemática capa gravada por A. Castaño para La Unión Española («Homenage á la Comisión Patriótica»), aparecem lado a lado o republicano valenciano D. José Adell, o fundador tradicionalista D. Gaspar de los Reyes Thous, o médico sevilhano Dr. Ricardo Meneses, o hoteleiro galego Comendador D. Vicente do Pazo e destacados industriais e comerciantes espanhóis do Rio, selando uma união exemplar em defesa de Cuba.',
         ],
       },
     ],
-    rosterKicker: 'Lista Oficial Completa conforme a Gravura • Os 12 Medalhões de 1895',
-    rosterTitle: 'Integrantes Participantes da Comissão Patriótica Espanhola (19 de Outubro de 1895)',
+    neocolonialDossier: {
+      kicker: 'Comprovação Histórica Documentada • A «República Neocolonial» em Cuba (1902–1958)',
+      title: 'Como o Alerta da Comissão Patriótica se Confirmou: Os 3 Pilares da Tutela dos EUA, das Oligarquias e do Império da Jogatina',
+      intro:
+        'A independência formal conquistada em 1898 — ao término da última fase da revolução marcada pela interferência direta dos Estados Unidos — foi frustrada pela tutela norte-americana (via Emenda Platt), criando durante a chamada República Neocolonial (1902–1958) uma estrutura política e econômica que favoreceu oligarquias locais, o capital estrangeiro e, a partir da década de 1920, o crime organizado e o turismo de cassinos. O processo que levou Cuba a esse cenário passou por três pilares principais:',
+      pillars: [
+        {
+          number: '01',
+          title: '1. Domínio das Oligarquias e do Capital Estrangeiro',
+          bullets: [
+            {
+              lead: 'A «República dos Generais e Doutores»:',
+              text: 'Nos primeiros anos da República, o poder ficou concentrado nas mãos da elite latifundiária açucareira e de políticos ligados aos interesses comerciais norte-americanos. As eleições eram frequentemente marcadas por fraudes, clientelismo e corrupção administrativa.',
+            },
+            {
+              lead: 'Monocultura, dependência e o «tiempo muerto»:',
+              text: 'Empresas dos Estados Unidos compraram grande parte das terras mais férteis, usinas de açúcar (centrales), ferrovias e bancos. Cuba tornou-se dependente das cotas de exportação de açúcar para o mercado norte-americano, enriquecendo uma pequena elite local enquanto a maioria da população rural vivia em condições precárias e sujeita ao desemprego sazonal (o chamado tiempo muerto entre as colheitas).',
+            },
+          ],
+        },
+        {
+          number: '02',
+          title: '2. A Lei Seca nos EUA (1920) e a Explosão da Jogatina e do Contrabando',
+          intro:
+            'O papel de Havana como centro de jogos, álcool e contrabando ganhou força a partir de 1920, quando entrou em vigor a Lei Seca (Proibição) nos Estados Unidos:',
+          bullets: [
+            {
+              lead: 'Destino turístico sem restrições (a 145 km da Flórida):',
+              text: 'Situada a apenas 145 km da Flórida, Havana virou o refúgio imediato para turistas norte-americanos em busca de álcool, cabarés, prostituição e apostas — atividades então proibidas nos Estados Unidos.',
+            },
+            {
+              lead: 'Rota internacional de contrabando:',
+              text: 'Cuba tornou-se um dos principais entrepostos para o contrabando de rum e outras bebidas ilegais em direção à costa sul dos Estados Unidos, enriquecendo contrabandistas locais e redes criminosas americanas.',
+            },
+          ],
+        },
+        {
+          number: '03',
+          title: '3. A Máfia Norte-Americana e a Ditadura de Fulgencio Batista (Anos 1930–1950)',
+          intro:
+            'A partir das décadas de 1930 a 1950 — especialmente sob a influência e os governos de Fulgencio Batista (que liderou um golpe de Estado em 1952) —, o negócio dos cassinos foi institucionalizado:',
+          bullets: [
+            {
+              lead: 'Aliança direta com a Máfia (Meyer Lansky e Lucky Luciano):',
+              text: 'Chefes do crime organizado dos EUA, como Meyer Lansky e Lucky Luciano, firmaram acordos diretos com Batista e autoridades cubanas, recebendo isenções fiscais, licenças de jogo e proteção policial em troca de subornos milionários.',
+            },
+            {
+              lead: 'Império dos Cassinos, lavagem de dinheiro e narcóticos:',
+              text: 'Na década de 1950, Havana abrigava hotéis-cassinos de luxo controlados por mafiosos (como o Hotel Nacional, o Riviera, o Capri e o Tropicana), além de servir como ponto de lavagem de dinheiro e rota de tráfico de narcóticos para a América do Norte.',
+            },
+          ],
+        },
+      ],
+      closingSynthesisTitle: '⚖️ Desfecho Histórico: Da Tutela de 1898 ao Combustível Social de 1959',
+      closingSynthesisText:
+        'Esse contraste extremo — entre o luxo dos cassinos de Havana, os privilégios da oligarquia e a pobreza profunda no interior da ilha, somado à repressão política da ditadura de Fulgencio Batista — comprovou em toda a linha o alerta feito por D. José Adell e pela Comissão Patriótica Espanhola na última fase da guerra separatista sob interferência dos EUA, e foi justamente o combustível social e nacionalista que décadas depois alimentou a Revolução Cubana de 1959, liderada por Fidel Castro.',
+    },
+    rosterKicker: 'Lista Oficial Completa conforme a Gravura • Os 12 Medalhões da Capa Histórica',
+    rosterTitle: 'Integrantes Participantes da Comissão Patriótica Espanhola',
     rosterSubtitle:
       'Relação integral dos doze participantes retratados na capa de La Unión Española na exata ordem visual da gravura histórica, acompanhada de pequena biografia documentada na web e no acervo (quando disponível nos registros históricos).',
     leaderBadge: '★ Encabeçou esta Luta Histórica',
     memberOrderLabel: 'Medalhão Nº',
     engravedRibbonLabel: 'Nome gravado na imagem:',
     viewInternalDossierLabel: 'Ver Dossiê no Memorial →',
-    illustratorBoxTitle: '🎨 Sobre o Artista da Gravura Original: A. Castaño (Rio de Janeiro, 1895)',
+    illustratorBoxTitle: '🎨 Sobre o Artista da Gravura Original: A. Castaño (Rio de Janeiro)',
     illustratorBoxText:
       'Ao pé do medalhão central inferior lê-se a assinatura «A. Castaño», desenhista e litógrafo atuante na imprensa ilustrada do Rio de Janeiro no fim do século XIX. O artista entrelaçou os doze retratos ovais em ramos de palmeiras e flora tropical brasileira, abrindo à esquerda uma vista marítima da Baía de Guanabara cruzada por navios a vapor — símbolo da ponte atlântica entre a comunidade espanhola do Brasil e a defesa de Cuba.',
   },

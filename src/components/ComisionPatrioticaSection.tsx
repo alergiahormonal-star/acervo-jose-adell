@@ -107,14 +107,14 @@ export default function ComisionPatrioticaSection({
           )}
         </div>
 
-        {/* ==================== ALERTA HISTÓRICO: 1ª REVOLUÇÃO DE INDEPENDÊNCIA (1895–1898 COM OS EUA) VS. 1959 ==================== */}
+        {/* ==================== ALERTA HISTÓRICO: ÚLTIMA FASE DA REVOLUÇÃO COM INTERFERÊNCIA DIRETA DOS EUA & REPÚBLICA NEOCOLONIAL ==================== */}
         <div className="deco-frame p-5 sm:p-7 bg-parchment-elevated border-l-8 border-l-deco-crimson shadow-lg space-y-3">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-deco-burnished/60 pb-3">
             <h3 className="font-sans text-xs sm:text-sm uppercase tracking-[0.12em] text-deco-crimson font-bold">
               {c.chronologicalClarificationTitle}
             </h3>
             <span className="font-mono text-xs px-3 py-1 bg-deco-crimson text-white font-bold shrink-0 self-start md:self-auto">
-              1895 – 1898 • CUBA &amp; EUA
+              {c.chronologicalBadge}
             </span>
           </div>
           <p className="font-serif text-base sm:text-lg text-charcoal font-medium leading-relaxed">
@@ -288,6 +288,70 @@ export default function ComisionPatrioticaSection({
               </strong>
               <p>{c.illustratorBoxText}</p>
             </div>
+          </div>
+        </div>
+
+        {/* ==================== DOSSIÊ ANALÍTICO: A REPÚBLICA NEOCOLONIAL (1902–1958) E OS 3 PILARES DA TUTELA DOS EUA ==================== */}
+        <div className="deco-frame p-6 sm:p-10 bg-parchment-elevated border-2 border-deco-crimson shadow-xl space-y-8">
+          <div className="max-w-4xl space-y-3 border-b-2 border-deco-burnished/50 pb-5">
+            <span className="font-sans text-xs uppercase tracking-[0.2em] text-deco-crimson font-bold block">
+              {c.neocolonialDossier.kicker}
+            </span>
+            <h3 className="font-display text-2xl sm:text-4xl font-bold text-charcoal leading-tight">
+              {c.neocolonialDossier.title}
+            </h3>
+            <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+              {c.neocolonialDossier.intro}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {c.neocolonialDossier.pillars.map((pillar) => (
+              <article
+                key={pillar.number}
+                className="p-5 sm:p-6 bg-parchment border border-deco-burnished shadow-md flex flex-col justify-between space-y-4"
+              >
+                <div className="space-y-3.5">
+                  <div className="flex items-center gap-3 border-b border-deco-burnished/40 pb-3">
+                    <span className="px-2.5 py-1 bg-deco-crimson text-white font-mono text-xs font-bold border border-deco-gold shrink-0">
+                      {pillar.number}
+                    </span>
+                    <h4 className="font-display text-xl font-bold text-charcoal leading-snug">
+                      {pillar.title}
+                    </h4>
+                  </div>
+
+                  {pillar.intro && (
+                    <p className="font-serif text-sm sm:text-base text-charcoal font-medium leading-relaxed">
+                      {pillar.intro}
+                    </p>
+                  )}
+
+                  <ul className="space-y-3.5 font-serif text-sm sm:text-base text-charcoal leading-relaxed">
+                    {pillar.bullets.map((b, bIdx) => (
+                      <li
+                        key={bIdx}
+                        className="pl-3.5 border-l-2 border-deco-crimson space-y-1"
+                      >
+                        <strong className="font-bold text-deco-crimson block">
+                          {b.lead}
+                        </strong>
+                        <p className="text-charcoal">{b.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="p-5 sm:p-6 bg-parchment-card border-l-4 border-y border-r border-deco-gold space-y-2">
+            <h4 className="font-sans text-xs sm:text-sm uppercase tracking-wider text-deco-crimson font-bold">
+              {c.neocolonialDossier.closingSynthesisTitle}
+            </h4>
+            <p className="font-serif text-base sm:text-lg text-charcoal font-medium leading-relaxed">
+              {c.neocolonialDossier.closingSynthesisText}
+            </p>
           </div>
         </div>
 

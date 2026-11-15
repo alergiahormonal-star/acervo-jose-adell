@@ -81,11 +81,11 @@ const TIMELINE_DATA: Record<
         workSlug: 'sucesos-rio-agresion-pedrada-jose-adell-1895',
       },
       {
-        yearLabel: '1895 (Oct.) • Comisión Patriótica',
-        place: 'Río de Janeiro (19 de Octubre de 1895)',
-        title: 'Encabeza la Comisión Patriótica frente a la 1ª Revolución Cubana e injerencia de EE. UU.',
+        yearLabel: '1895–1898 • Comisión Patriótica',
+        place: 'Río de Janeiro (Defensa de Cuba ante EE. UU.)',
+        title: 'Encabeza la Comisión Patriótica para la última fase de la Revolución Cubana con interferencia directa de EE. UU.',
         description:
-          'La Unión Española (Año IV, Nº 190) inmortaliza en primera plana a D. José Adell junto a los 12 integrantes de la Comisión Patriótica de apoyo financiero e institucional en defensa de Cuba frente a las oligarquías e intereses oscuros respaldados por Estados Unidos.',
+          'La Unión Española inmortaliza en primera plana a D. José Adell junto a los 12 integrantes de la Comisión Patriótica de apoyo financiero e institucional para la última fase de la guerra cubana bajo interferencia directa de Estados Unidos, anticipando la frustración de la soberanía en la República Neocolonial (1902–1958) bajo la Enmienda Platt, las oligarquías y los casinos.',
         pageNum: 0,
         workSlug: 'homenaje-comision-patriotica-cuba-1895',
         customImg: '/destaques/comision-patriotica-1895.webp',
@@ -174,11 +174,11 @@ const TIMELINE_DATA: Record<
         workSlug: 'sucesos-rio-agresion-pedrada-jose-adell-1895',
       },
       {
-        yearLabel: '1895 (Oct.) • Comissió Patriòtica',
-        place: 'Rio de Janeiro (19 d’Octubre de 1895)',
-        title: 'Encapçala la Comissió Patriòtica davant la 1a Revolució Cubana i la participació dels EUA',
+        yearLabel: '1895–1898 • Comissió Patriòtica',
+        place: 'Rio de Janeiro (Defensa de Cuba davant els EUA)',
+        title: 'Encapçala la Comissió Patriòtica per a l’última fase de la Revolució Cubana amb interferència directa dels EUA',
         description:
-          'La Unión Española (Any IV, núm. 190) immortalitza en portada D. José Adell amb els 12 integrants de la Comissió Patriòtica de suport financer i institucional en defensa de Cuba davant les oligarquies i els interessos obscurs recolzats pels Estats Units.',
+          'La Unión Española immortalitza en portada D. José Adell amb els 12 integrants de la Comissió Patriòtica de suport financer i institucional per a l’última fase del conflicte cubà sota interferència directa dels Estats Units, anticipant la República Neocolonial (1902–1958) sota l’Esmena Platt, les oligarquies i l’imperi dels casinos.',
         pageNum: 0,
         workSlug: 'homenaje-comision-patriotica-cuba-1895',
         customImg: '/destaques/comision-patriotica-1895.webp',
@@ -267,11 +267,11 @@ const TIMELINE_DATA: Record<
         workSlug: 'sucesos-rio-agresion-pedrada-jose-adell-1895',
       },
       {
-        yearLabel: '1895 (Out.) • Comissão Patriótica',
-        place: 'Rio de Janeiro (19 de Outubro de 1895)',
-        title: 'Encabeça a Comissão Patriótica contra a 1ª Revolução Cubana e a ingerência dos EUA',
+        yearLabel: '1895–1898 • Comissão Patriótica',
+        place: 'Rio de Janeiro (Defesa de Cuba diante dos EUA)',
+        title: 'Encabeça a Comissão Patriótica para a última fase da Revolução Cubana com interferência direta dos EUA',
         description:
-          'La Unión Española (Ano IV, Nº 190) imortaliza em capa D. José Adell com os 12 integrantes da Comissão Patriótica de apoio financeiro e institucional na defesa de Cuba contra oligarquias e interesses escusos apoiados pelos Estados Unidos.',
+          'La Unión Española imortaliza em capa D. José Adell com os 12 integrantes da Comissão Patriótica de apoio financeiro e institucional para a última fase da revolução em Cuba sob interferência direta dos Estados Unidos, antecipando a frustração da soberania na República Neocolonial (1902–1958) sob a Emenda Platt, as oligarquias açucareiras e o império mafioso dos cassinos.',
         pageNum: 0,
         workSlug: 'homenaje-comision-patriotica-cuba-1895',
         customImg: '/destaques/comision-patriotica-1895.webp',
