@@ -202,17 +202,17 @@ export const COMISION_MEMBERS: ComisionMember[] = [
     internalHrefSlug: 'prefacio',
     es: {
       roleTitle: 'Periodista Republicano, Redactor Jefe de «La Unión Española» y Líder de esta Lucha Patriótica',
-      bio: 'Hijo autodidacta de Vinaròs (Castellón), secretario de redacción en Barcelona a los 17 años, pensador republicano humanista y maestro grabador en metales. Al hacer frente a la última fase de la Revolución Cubana (marcada por la interferencia directa de los Estados Unidos), José Adell encabezó la Comisión Patriótica en Río de Janeiro y previó con impresionante exactitud toda la desgracia que se abatiría sobre Cuba: demostró que la salida de Cuba de España abriría un camino de desgracias —desde la tutela de EE. UU., las oligarquías, el contrabando y la mafia de los casinos (1902–1958) hasta el colapso ulterior de la isla—. Este medallón conserva su auténtico retrato grabado.',
+      bio: 'Hijo autodidacta de Vinaròs (Castellón), secretario de redacción en Barcelona a los 17 años, pensador republicano humanista y maestro grabador en metales. Al hacer frente a la última fase de la Revolución Cubana (marcada por la interferencia directa de los Estados Unidos), José Adell encabezó la Comisión Patriótica en Río de Janeiro y anticipó con asombrosa lucidez el porvenir sombrío que aguardaba a la Gran Antilla: demostró que la ruptura de Cuba con España inauguraría un largo calvario de tutelaje extranjero, expolio oligárquico, contrabando y dominio mafioso de los casinos (1902–1958), antesala de su posterior colapso totalitario. Este medallón conserva su auténtico retrato grabado.',
       webSourceNote: 'Figura central de este Memorial (73 obras y 89 páginas originales preservadas, 1885–1927).',
     },
     va: {
       roleTitle: 'Periodista Republicà, Redactor en Cap de «La Unión Española» i Líder d’aquesta Lluita Patriòtica',
-      bio: 'Fill autodidacte de Vinaròs (Castelló), secretari de redacció a Barcelona als 17 anys, pensador republicà humanista i mestre gravador en metalls. En fer front a l’última fase de la Revolució Cubana (marcada per la interferència directa dels Estats Units), José Adell encapçalà la Comissió Patriòtica a Rio de Janeiro i previngué amb exactitud tota la desgràcia que patiria Cuba: advertí que l’eixida de Cuba d’Espanya obriria un camí de desgràcies —des de la tutela dels EUA, les oligarquies, el contraban i la màfia dels casinos (1902–1958) fins al desastre posterior de l’illa—. Aquest medalló conserva el seu retrat autèntic gravat.',
+      bio: 'Fill autodidacte de Vinaròs (Castelló), secretari de redacció a Barcelona als 17 anys, pensador republicà humanista i mestre gravador en metalls. En fer front a l’última fase de la Revolució Cubana (marcada per la interferència directa dels Estats Units), José Adell encapçalà la Comissió Patriòtica a Rio de Janeiro i anticipà amb sorprenent lucidesa el destí ombrívol que esperava l’illa: advertí que la ruptura de Cuba amb Espanya inauguraria un llarg calvari de tutela estrangera, espoli oligàrquic, contraban i domini mafiós dels casinos (1902–1958), preludi del seu enfonsament totalitari posterior. Aquest medalló conserva el seu retrat autèntic gravat.',
       webSourceNote: 'Figura central d’aquest Memorial (73 obres i 89 pàgines originals preservades, 1885–1927).',
     },
     pt: {
       roleTitle: 'Jornalista Republicano, Redator-Chefe de «La Unión Española» e Líder que Encabeçou esta Luta',
-      bio: 'Filho autodidata de Vinaròs (Castellón), secretário de redação em Barcelona aos 17 anos, pensador republicano humanista e mestre gravador em metais. Ao fazer face contra a última fase da Revolução Cubana (marcada pela interferência direta dos Estados Unidos), José Adell encabeçou a Comissão Patriótica no Rio de Janeiro e previu com impressionante exatidão toda a desgraça que ia se passar com Cuba: evidenciou que a saída de Cuba da Espanha abriria um caminho de desgraças — da tutela norte-americana, das oligarquias açucareiras, do contrabando e da máfia dos cassinos (1902–1958) até a ruína subsequente da ilha. Este medalhão preserva seu retrato autêntico.',
+      bio: 'Filho autodidata de Vinaròs (Castellón), secretário de redação em Barcelona aos 17 anos, pensador republicano humanista e mestre gravador em metais. Ao enfrentar a última fase da Revolução Cubana (marcada pela interferência direta dos Estados Unidos), José Adell encabeçou a Comissão Patriótica no Rio de Janeiro e anteviu com espantosa lucidez o destino sombrio reservado à ilha: evidenciou que a ruptura de Cuba com a Espanha inauguraria um longo calvário de tutela externa, espoliação oligárquica, contrabando e império mafioso dos cassinos (1902–1958), prelúdio de sua posterior ruína totalitária. Este medalhão preserva seu retrato autêntico.',
       webSourceNote: 'Figura central deste Memorial (73 obras e 89 páginas originais preservadas, 1885–1927).',
     },
   },
@@ -396,26 +396,26 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
     navShort: 'Comisión Patriótica (Cuba)',
     navFull: 'Comisión Patriótica — Última Fase de la Revolución e Interferencia de EE. UU.',
     metaTitle:
-      'La Comisión Patriótica que Previó la Desgracia de Cuba: José Adell al Frente de la Unión Española — La Salida de España Abrió un Camino de Desgracias',
+      'La Clarividencia de la Comisión Patriótica: José Adell en Defensa de Cuba y la Ruptura con España que Abrió un Siglo de Infortunios',
     metaDescription:
-      'Al hacer frente a la última fase de la Revolución Cubana con interferencia directa de EE. UU., la Comisión Patriótica encabezada por D. José Adell previó la desgracia que sufriría Cuba: la salida de Cuba de España abrió un camino de desgracias, desde la República Neocolonial (1902–1958) y la Mafia de los casinos hasta el colapso de 1959.',
+      'Al enfrentar la última fase de la Revolución Cubana bajo interferencia directa de EE. UU., la Comisión Patriótica liderada por D. José Adell anticipó el sombrío destino de la isla: de la tutela de la Enmienda Platt, las oligarquías y la Mafia de los casinos (1902–1958) al colapso totalitario de 1959.',
     badge: '🇪🇸 Documento Histórico Profético • La Unión Española • Última Fase de la Revolución e Interferencia Directa de EE. UU.',
     heroTitle:
-      'La Comisión Patriótica que Previó la Tragedia de Cuba: La Salida de España Abrió un Camino de Desgracias',
+      'La Clarividencia de la Comisión Patriótica: José Adell en Defensa de Cuba y la Ruptura con España que Abrió un Siglo de Infortunios',
     heroSubtitle:
-      'Al hacer frente a la última fase de la Revolución de Independencia de Cuba —marcada por la interferencia directa de los Estados Unidos de América (1895–1898)—, la Comisión Patriótica encabezada por D. José Adell en Río de Janeiro previó con sobrecogedora exactitud toda la desgracia que iba a ocurrir con Cuba. La historia demostró que la salida de Cuba de España no trajo libertad ni democracia, sino que abrió un largo e ininterrumpido camino de desgracias: primero bajo la tutela neocolonial estadounidense (Enmienda Platt), las oligarquías, el contrabando y la Mafia de los casinos (1902–1958), y después bajo la ruina totalitaria de 1959.',
+      'Movilizada en la última y decisiva fase de la Revolución Cubana —cuando se consumó la interferencia directa de los Estados Unidos de América (1895–1898)—, la Comisión Patriótica encabezada por D. José Adell en Río de Janeiro miró mucho más allá de la propaganda bélica. Aquellos españoles advirtieron con rigor profético que desgajar a Cuba de España no instauraría una república libre y soberana, sino que inauguraría un largo calvario político, social y moral para el pueblo cubano.',
     prophecyBanner: {
-      badge: '⚠️ LA PREVISIÓN HISTÓRICA QUE SE CUMPLIÓ ÍNTEGRAMENTE',
+      badge: '⚖️ EL VEREDICTO DE LA HISTORIA • UN VATICINIO CUMPLIDO EN CADA DETALLE',
       headline:
-        '«Al hacer frente a aquella revolución, la Comisión Patriótica previó todo lo que iba a pasar de desgracia con Cuba: la salida de Cuba de España abrió un camino de desgracias.»',
+        '«Al hacer frente a aquella insurrección tutelada desde el exterior, la Comisión Patriótica avizoró el abismo que aguardaba a la isla: la salida de Cuba de España abrió una trágica sucesión de desgracias, servidumbres y ruinas institucionales.»',
       body:
-        'Mientras la propaganda separatista y la injerencia norteamericana prometían emancipación y prosperidad, D. José Adell y los doce integrantes de la Comisión Patriótica vieron con absoluta claridad el abismo real que aguardaba a la isla. Arrancada de España en la última fase de la guerra mediante la interferencia directa de los Estados Unidos (1898), Cuba jamás conoció la república ética prometida: cayó en una cadena histórica de desgracias —soberanía amputada, miseria campesina, corrupción oligárquica, prostitución, contrabando, casinos controlados por la Mafia y dictaduras— que terminaría desembocando décadas más tarde en la tragedia comunista de 1959.',
+        'Donde los panfletos separatistas y los intereses de Washington prometían emancipación y prosperidad, D. José Adell y sus once compañeros divisaron la celada geopolítica en marcha. Separada de España bajo la intervención militar estadounidense de 1898, la Perla de las Antillas vio su soberanía inmediatamente confiscada por la Enmienda Platt, precipitándose primero en medio siglo de expolio oligárquico, contrabando, corrupción e imperio mafioso de los casinos (1902–1958) —preludio directo del régimen totalitario instaurado en 1959—.',
     },
     chronologicalBadge: 'ÚLTIMA FASE (1895–1898) • INTERFERENCIA DIRECTA DE EE. UU.',
     chronologicalClarificationTitle:
-      '📌 Marco Histórico Fundamental: La Última Fase de la Revolución de Independencia con Interferencia Directa de EE. UU. (1895–1898) y el Origen de la «República Neocolonial» (1902–1958)',
+      '📌 Precisión Cronológica: De la Intervención Directa de EE. UU. (1895–1898) a la «República Neocolonial» (1902–1958)',
     chronologicalClarificationText:
-      'La Comisión Patriótica actuó específicamente para la última fase de la Revolución de Independencia cubana (tras las guerras anteriores de 1868–1878 y 1879–1880), cuando se produjo la interferencia directa —financiera, geopolítica y militar— de los Estados Unidos, muy anterior y distinta de la revolución comunista de Fidel Castro de 1959. En efecto, la independencia formal de 1898 fue frustrada por la tutela estadounidense mediante la Enmienda Platt, instaurando la República Neocolonial (1902–1958), dominada por oligarquías azucareras, monopolios norteamericanos, el contrabando de la Ley Seca (1920) y la alianza entre la Mafia estadounidense (Meyer Lansky y Lucky Luciano) y la dictadura de Fulgencio Batista: exactamente el abismo institucional contra el cual habían alertado José Adell y la colonia española.',
+      'Este documento histórico se enmarca en la etapa final de las guerras separatistas cubanas del siglo XIX (tras los conflictos de 1868–1878 y 1879–1880), período signado por la injerencia financiera, diplomática y militar directa de los Estados Unidos —y no en la revolución comunista comandada por Fidel Castro seis décadas más tarde, en 1959—. Comprender esta secuencia es esencial: fue la tutela impuesta en 1898 la que deformó el nacimiento del Estado cubano durante toda la República Neocolonial (1902–1958), engendrando las fracturas sociales e institucionales que desembocarían en la ruptura de 1959.',
     leaderHighlightTitle: '★ D. José Adell Encabezó Esta Lucha Cívica y Patriótica en Río de Janeiro',
     leaderHighlightText:
       'Republicano convencido, demócrata humanista y redactor jefe de La Unión Española en la Rua da Ajuda, José Adell y Fons («Pepe Adell», retratado en el quinto medallón) lideró la articulación intelectual, periodística e institucional de esta movilización en la etapa decisiva del conflicto cubano, tras haber sufrido una pedrada en la cabeza defendiendo la dignidad española en las calles cariocas.',
@@ -519,9 +519,9 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
           ],
         },
       ],
-      closingSynthesisTitle: '⚖️ La Profecía Cumplida: La Salida de Cuba de España Abrió un Camino de Desgracias',
+      closingSynthesisTitle: '⚖️ Síntesis Histórica: Del Ocaso de la Soberanía en 1898 a la Ruptura Totalitaria de 1959',
       closingSynthesisText:
-        'Los hechos históricos son irrefutables: al hacer frente contra aquella revolución, la Comisión Patriótica encabezada por D. José Adell previó exactamente toda la desgracia que iba a pasar con Cuba. La salida de Cuba de España abrió un trágico camino de desgracias sucesivas: primero medio siglo de tutelaje extranjero, despojo agrario, privilegios oligárquicos, lujo mafioso en los casinos de La Habana frente a la miseria rural y represión bajo la dictadura de Fulgencio Batista (1902–1958); y, como consecuencia directa de ese extremo deterioro social y moral, el estallido de una segunda desgracia histórica con la dictadura comunista de Fidel Castro en 1959.',
+        'La trayectoria cubana a lo largo del siglo XX confirmó, punto por punto, la lúcida advertencia formulada por D. José Adell y la Comisión Patriótica Española. El contraste extremo entre la opulencia de los casinos mafiosos de La Habana, los privilegios de la oligarquía azucarera, la penuria crónica del campesinado y la represión policial de Fulgencio Batista selló el fracaso del orden instaurado tras 1898 —convirtiéndose en el detonante social y nacionalista que precipitó a la isla, en 1959, bajo el yugo de la dictadura comunista de Fidel Castro—.',
     },
     rosterKicker: 'Nómina Histórica Completa • Los 12 Medallones del Grabado Original',
     rosterTitle: 'Integrantes Participantes de la Comisión Patriótica Española',
@@ -540,26 +540,26 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
     navShort: 'Comissió Patriòtica (Cuba)',
     navFull: 'Comissió Patriòtica — Última Fase de la Revolució i Interferència dels EUA',
     metaTitle:
-      'La Comissió Patriòtica que Previngué la Desgràcia de Cuba: José Adell al Capdavant de la Unió Espanyola — L’Eixida d’Espanya Obrí un Camí de Desgràcies',
+      'La Clarividència de la Comissió Patriòtica: José Adell en Defensa de Cuba i la Ruptura amb Espanya que Obrí un Segle d’Infortunis',
     metaDescription:
-      'En fer front a l’última fase de la Revolució Cubana amb interferència directa dels EUA, la Comissió Patriòtica encapçalada per D. José Adell previngué la desgràcia que patiria Cuba: l’eixida de Cuba d’Espanya obrí un camí de desgràcies, des de la República Neocolonial (1902–1958) i la Màfia dels casinos fins al col·lapse de 1959.',
+      'En enfrontar l’última fase de la Revolució Cubana sota interferència directa dels EUA, la Comissió Patriòtica liderada per D. José Adell anticipà el destí ombrívol de l’illa: de la tutela de l’Esmena Platt, les oligarquies i la Màfia dels casinos (1902–1958) al col·lapse totalitari de 1959.',
     badge: '🇪🇸 Document Històric Profètic • La Unión Española • Última Fase de la Revolució i Interferència Directa dels EUA',
     heroTitle:
-      'La Comissió Patriòtica que Previngué la Tragèdia de Cuba: L’Eixida d’Espanya Obrí un Camí de Desgràcies',
+      'La Clarividència de la Comissió Patriòtica: José Adell en Defensa de Cuba i la Ruptura amb Espanya que Obrí un Segle d’Infortunis',
     heroSubtitle:
-      'En fer front a l’última fase de la Revolució d’Independència de Cuba —marcada per la interferència directa dels Estats Units d’Amèrica (1895–1898)—, la Comissió Patriòtica encapçalada per D. José Adell a Rio de Janeiro previngué amb colpidora exactitud tota la desgràcia que anava a passar amb Cuba. La història demostrà que l’eixida de Cuba d’Espanya no portà llibertat ni democràcia, sinó que obrí un llarg i ininterromput camí de desgràcies: primer sota la tutela neocolonial nord-americana (Esmena Platt), les oligarquies, el contraban i la Màfia dels casinos (1902–1958), i després sota la ruïna totalitària de 1959.',
+      'Mobilitzada en l’última i decisiva fase de la Revolució Cubana —quan es consumà la interferència directa dels Estats Units d’Amèrica (1895–1898)—, la Comissió Patriòtica encapçalada per D. José Adell a Rio de Janeiro mirà molt més enllà de la propaganda bèl·lica. Aquells espanyols advertiren amb rigor profètic que separar Cuba d’Espanya no instauraria una república lliure i sobirana, sinó que inauguraria un llarg calvari polític, social i moral per al poble cubà.',
     prophecyBanner: {
-      badge: '⚠️ LA PREVISIÓ HISTÒRICA QUE ES COMPLÍ ÍNTEGRAMENT',
+      badge: '⚖️ EL VEREDICTE DE LA HISTÒRIA • UN VATICINI COMPLIT EN CADA DETALL',
       headline:
-        '«En fer front a aquella revolució, la Comissió Patriòtica previngué tot el que anava a passar de desgràcia amb Cuba: l’eixida de Cuba d’Espanya obrí un camí de desgràcies.»',
+        '«En fer front a aquella insurrecció tutelada des de l’exterior, la Comissió Patriòtica albirà l’abisme que esperava l’illa: l’eixida de Cuba d’Espanya obrí una tràgica successió de desgràcies, servituds i ruïnes institucionals.»',
       body:
-        'Mentre la propaganda separatista i la ingerència nord-americana prometien emancipació i prosperitat, D. José Adell i els dotze integrants de la Comissió Patriòtica veieren amb absoluta claredat l’abisme real que esperava l’illa. Arrancada d’Espanya en l’última fase de la guerra mitjançant la interferència directa dels Estats Units (1898), Cuba mai conegué la república ètica promesa: caigué en una cadena històrica de desgràcies —sobirania amputada, misèria camperola, corrupció oligàrquica, prostitució, contraban, casinos controlats per la Màfia i dictadures— que acabaria desembocant dècades més tard en la tragèdia comunista de 1959.',
+        'On els pamflets separatistes i els interessos de Washington prometien emancipació i prosperitat, D. José Adell i els seus onze companys divisaren el parany geopolític en marxa. Arrancada d’Espanya sota la intervenció militar nord-americana del 1898, la Perla de les Antilles veié la seua sobirania immediatament confiscada per l’Esmena Platt, precipitant-se primer en mig segle d’espoli oligàrquic, contraban, corrupció i imperi mafiós dels casinos (1902–1958) —preludi directe del règim totalitari instaurat el 1959—.',
     },
     chronologicalBadge: 'ÚLTIMA FASE (1895–1898) • INTERFERÈNCIA DIRECTA DELS EUA',
     chronologicalClarificationTitle:
-      '📌 Marc Històric Fonamental: L’Última Fase de la Revolució d’Independència amb Interferència Directa dels EUA (1895–1898) i l’Origen de la «República Neocolonial» (1902–1958)',
+      '📌 Precisió Cronològica: De la Intervenció Directa dels EUA (1895–1898) a la «República Neocolonial» (1902–1958)',
     chronologicalClarificationText:
-      'La Comissió Patriòtica actuà específicament per a l’última fase de la Revolució d’Independència cubana (després de les guerres anteriors de 1868–1878 i 1879–1880), quan es produí la interferència directa —financera, geopolítica i militar— dels Estats Units, molt anterior i distinta de la revolució comunista de Fidel Castro del 1959. En efecte, la independència formal de 1898 fou frustrada per la tutela nord-americana mitjançant l’Esmena Platt, instaurant la República Neocolonial (1902–1958), dominada per oligarquies sucreres, monopolis dels EUA, el contraban de la Llei Seca (1920) i l’aliança entre la Màfia nord-americana (Meyer Lansky i Lucky Luciano) i la dictadura de Fulgencio Batista: exactament l’abisme institucional contra el qual havien alertat José Adell i la colònia espanyola.',
+      'Aquest document històric s’emmarca en l’etapa final de les guerres separatistes cubanes del segle XIX (després dels conflictes de 1868–1878 i 1879–1880), període marcat per la ingerència financera, diplomàtica i militar directa dels Estats Units —i no en la revolució comunista comandada per Fidel Castro sis dècades més tard, el 1959—. Comprendre aquesta seqüència és essencial: fou la tutela imposada el 1898 la que deformà el naixement de l’Estat cubà durant tota la República Neocolonial (1902–1958), generant les fractures socials i institucionals que desembocarien en la ruptura de 1959.',
     leaderHighlightTitle: '★ D. José Adell Encapçalà Aquesta Lluita Cívica i Patriòtica a Rio de Janeiro',
     leaderHighlightText:
       'Republicà convençut, demòcrata humanista i redactor en cap de La Unión Española a la Rua da Ajuda, José Adell y Fons («Pepe Adell», retratat al cinqué medalló) liderà la mobilització intel·lectual, periodística i institucional de la colònia espanyola en aquesta etapa decisiva del conflicte cubà, després d’haver patit una pedrada al cap defensant la dignitat espanyola als carrers de Rio.',
@@ -663,9 +663,9 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
           ],
         },
       ],
-      closingSynthesisTitle: '⚖️ La Profecia Complida: L’Eixida de Cuba d’Espanya Obrí un Camí de Desgràcies',
+      closingSynthesisTitle: '⚖️ Síntesi Històrica: De l’Ocàs de la Sobirania el 1898 a la Ruptura Totalitària de 1959',
       closingSynthesisText:
-        'Els fets històrics són irrefutables: en fer front contra aquella revolució, la Comissió Patriòtica encapçalada per D. José Adell previngué exactament tota la desgràcia que anava a passar amb Cuba. L’eixida de Cuba d’Espanya obrí un tràgic camí de desgràcies successives: primer mig segle de tutela estrangera, espoli agrari, privilegis oligàrquics, luxe mafiós als casinos de l’Havana enfront de la misèria rural i repressió sota la dictadura de Fulgencio Batista (1902–1958); i, com a conseqüència directa d’aquella degradació social i moral extrema, l’esclat d’una segona desgràcia històrica amb la dictadura comunista de Fidel Castro el 1959.',
+        'La trajectòria cubana al llarg del segle XX confirmà, punt per punt, el lúcid advertiment formulat per D. José Adell i la Comissió Patriòtica Espanyola. El contrast extrem entre l’opulència dels casinos mafiosos de l’Havana, els privilegis de l’oligarquia sucrera, la penúria crònica de la pagesia i la repressió policial de Fulgencio Batista segellà el fracàs de l’ordre instaurat després de 1898 —convertint-se en el detonant social i nacionalista que precipità l’illa, el 1959, sota el jou de la dictadura comunista de Fidel Castro—.',
     },
     rosterKicker: 'Nòmina Històrica Completa • Els 12 Medallons del Gravat Original',
     rosterTitle: 'Integrants Participants de la Comissió Patriòtica Espanyola',
@@ -684,26 +684,26 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
     navShort: 'Comissão Patriótica (Cuba)',
     navFull: 'Comissão Patriótica — Última Fase da Revolução e Interferência dos EUA',
     metaTitle:
-      'A Comissão Patriótica que Previu a Desgraça de Cuba: José Adell à Frente da União Espanhola — A Saída da Espanha Abriu um Caminho de Desgraças',
+      'A Clarividência da Comissão Patriótica: José Adell na Defesa de Cuba e a Ruptura com a Espanha que Abriu um Século de Infortúnios',
     metaDescription:
-      'Ao fazer face contra a última fase da Revolução Cubana com interferência direta dos EUA, a Comissão Patriótica encabeçada por D. José Adell previu o que ia se passar de desgraça com Cuba: a saída de Cuba da Espanha abriu um caminho de desgraças — da República Neocolonial (1902–1958) e da Máfia dos cassinos até a ditadura de 1959.',
+      'Ao enfrentar a última fase da Revolução Cubana sob interferência direta dos EUA, a Comissão Patriótica liderada por D. José Adell anteviu o sombrio destino da ilha: da tutela da Emenda Platt, das oligarquias e da Máfia dos cassinos (1902–1958) ao colapso totalitário de 1959.',
     badge: '🇪🇸 Evento Histórico Profético • La Unión Española • Última Fase da Revolução e Interferência Direta dos EUA',
     heroTitle:
-      'A Comissão Patriótica que Previu a Tragédia de Cuba: A Saída de Cuba da Espanha Abriu um Caminho de Desgraças',
+      'A Clarividência da Comissão Patriótica: José Adell na Defesa de Cuba e a Ruptura com a Espanha que Abriu um Século de Infortúnios',
     heroSubtitle:
-      'Ao fazer face contra a última fase da Revolução de Independência de Cuba — marcada pela interferência direta dos Estados Unidos da América (1895–1898) —, a Comissão Patriótica encabeçada por D. José Adell no Rio de Janeiro previu com impressionante exatidão tudo o que ia se passar de desgraça com Cuba. A história provou que a saída de Cuba da Espanha não trouxe liberdade nem democracia: abriu um longo e ininterrupto caminho de desgraças — primeiro sob a tutela neocolonial dos EUA (Emenda Platt), as oligarquias, o contrabando e a Máfia dos cassinos (1902–1958), e depois sob a ruína totalitária de 1959.',
+      'Mobilizada na última e decisiva fase da Revolução Cubana — quando se consumou a interferência direta dos Estados Unidos da América (1895–1898) —, a Comissão Patriótica liderada por D. José Adell no Rio de Janeiro enxergou muito além da propaganda bélica. Aqueles espanhóis advertiram com rigor profético que desligar Cuba da Espanha não instauraria uma república livre e soberana, mas inauguraria um longo calvário político, social e moral para o povo cubano.',
     prophecyBanner: {
-      badge: '⚠️ A PREVISÃO HISTÓRICA QUE SE CUMPRIU INTEGRALMENTE',
+      badge: '⚖️ O VEREDITO DA HISTÓRIA • UMA ANTECIPAÇÃO CUMPRIDA EM CADA DETALHE',
       headline:
-        '«Ao fazer face contra essa revolução, a Comissão Patriótica previu o que ia se passar de desgraça com Cuba: a saída de Cuba da Espanha abriu um caminho de desgraças.»',
+        '«Ao enfrentar aquela insurreição tutelada do exterior, a Comissão Patriótica anteviu o abismo que aguardava a ilha: a saída de Cuba da Espanha abriu uma trágica sucessão de desgraças, servidões e ruínas institucionais.»',
       body:
-        'Enquanto a propaganda separatista e a ingerência norte-americana prometiam emancipação e prosperidade, D. José Adell e os doze integrantes da Comissão Patriótica enxergaram com absoluta clareza o abismo real que aguardava a ilha. Arrancada da Espanha na última fase da revolução mediante a interferência direta dos Estados Unidos (1898), Cuba jamais conheceu a república ética prometida: mergulhou em uma sucessão histórica de desgraças — soberania amputada pela Emenda Platt, miséria camponesa, corrupção oligárquica, prostituição, contrabando, hotéis-cassinos controlados pela Máfia e ditaduras — que acabaria desembocando décadas mais tarde na tragédia comunista de 1959.',
+        'Onde os panfletos separatistas e os interesses de Washington acenavam com emancipação e prosperidade, D. José Adell e seus onze companheiros divisaram a armadilha geopolítica em curso. Separada da Espanha sob intervenção militar norte-americana em 1898, a Pérola das Antilhas viu sua soberania imediatamente confiscada pela Emenda Platt, precipitando-se primeiro em meio século de espoliação oligárquica, contrabando, corrupção e império mafioso dos cassinos (1902–1958) — prelúdio direto do regime totalitário instalado em 1959.',
     },
     chronologicalBadge: 'ÚLTIMA FASE (1895–1898) • INTERFERÊNCIA DIRETA DOS EUA',
     chronologicalClarificationTitle:
-      '📌 Marco Histórico Essencial: A Comissão Patriótica na Última Fase da Revolução com Interferência Direta dos EUA (1895–1898) e o Nascimento da «República Neocolonial» (1902–1958)',
+      '📌 Precisão Cronológica: Da Intervenção Direta dos EUA (1895–1898) à «República Neocolonial» (1902–1958)',
     chronologicalClarificationText:
-      'A Comissão Patriótica atuou voltada especificamente para a última fase da Revolução de Independência de Cuba (após os conflitos anteriores do século XIX), quando houve a interferência direta — financeira, geopolítica e militar — dos Estados Unidos da América, episódio anterior e distinto da revolução comunista de Fidel Castro em 1959. A independência formal conquistada em 1898 foi frustrada pela tutela dos Estados Unidos via Emenda Platt, criando durante a chamada República Neocolonial (1902–1958) uma estrutura política e econômica que favoreceu oligarquias locais, o capital estrangeiro e, a partir da década de 1920, o crime organizado norte-americano (Meyer Lansky e Lucky Luciano em aliança com Fulgencio Batista) e o turismo de cassinos — confirmando integralmente o alerta histórico de José Adell e da comunidade espanhola.',
+      'Este documento histórico situa-se na etapa derradeira das guerras separatistas cubanas do século XIX (após os conflitos de 1868–1878 e 1879–1880), período marcado pela ingerência financeira, diplomática e militar direta dos Estados Unidos — e não na revolução comunista comandada por Fidel Castro seis décadas mais tarde, em 1959. Compreender essa sequência é essencial: foi a tutela imposta em 1898 que deformou o nascimento do Estado cubano ao longo de toda a República Neocolonial (1902–1958), gerando as fraturas sociais e institucionais que desembocariam na ruptura de 1959.',
     leaderHighlightTitle: '★ D. José Adell Encabeçou Esta Luta Histórica no Rio de Janeiro',
     leaderHighlightText:
       'Republicano convicto, humanista e redator-chefe de La Unión Española na Rua da Ajuda, José Adell y Fons (“Pepe Adell”, retratado no quinto medalhão) liderou intelectual, jornalística e institucionalmente a mobilização da colônia espanhola nesta etapa decisiva do conflito cubano, após ter sido ferido por uma pedrada na cabeça nos tumultos de rua do Rio de Janeiro.',
@@ -807,9 +807,9 @@ export const COMISION_PATRIOTICA_CONTENT: Record<SiteLang, ComisionLocaleContent
           ],
         },
       ],
-      closingSynthesisTitle: '⚖️ A Profecia Cumprida: A Saída de Cuba da Espanha Abriu um Caminho de Desgraças',
+      closingSynthesisTitle: '⚖️ Síntese Histórica: Do Ocaso da Soberania em 1898 à Ruptura Totalitária de 1959',
       closingSynthesisText:
-        'Os fatos históricos são irrefutáveis: ao fazer face contra aquela revolução, a Comissão Patriótica encabeçada por D. José Adell previu exatamente tudo o que ia se passar de desgraça com Cuba. A saída de Cuba da Espanha abriu um trágico caminho de desgraças sucessivas: primeiro meio século de tutela estrangeira, espoliação agrária, privilégios oligárquicos, luxo mafioso nos cassinos de Havana diante da pobreza profunda no interior da ilha e repressão sob a ditadura de Fulgencio Batista (1902–1958); e, como combustível direto dessa extrema degradação social e moral, uma segunda grande desgraça histórica com a ditadura comunista de Fidel Castro em 1959.',
+        'A trajetória cubana ao longo do século XX confirmou, ponto por ponto, a lúcida advertência formulada por D. José Adell e pela Comissão Patriótica Espanhola. O contraste extremo entre a opulência dos cassinos mafiosos de Havana, os privilégios da oligarquia açucareira, a penúria crônica do campesinato e a repressão policial de Fulgencio Batista selou o fracasso da ordem instaurada após 1898 — convertendo-se no estopim social e nacionalista que precipitou a ilha, em 1959, sob o jugo da ditadura comunista de Fidel Castro.',
     },
     rosterKicker: 'Lista Oficial Completa conforme a Gravura • Os 12 Medalhões da Capa Histórica',
     rosterTitle: 'Integrantes Participantes da Comissão Patriótica Espanhola',

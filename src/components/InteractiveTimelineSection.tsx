@@ -83,9 +83,9 @@ const TIMELINE_DATA: Record<
       {
         yearLabel: '1895–1898 • Comisión Patriótica',
         place: 'Río de Janeiro (Defensa de Cuba ante EE. UU.)',
-        title: 'Encabeza la Comisión Patriótica que previó la desgracia de Cuba: la salida de España abrió un camino de desgracias',
+        title: 'Encabeza la Comisión Patriótica que anticipó el calvario de Cuba tras su ruptura con España',
         description:
-          'Al hacer frente a la última fase de la Revolución Cubana bajo interferencia directa de Estados Unidos, la Comisión Patriótica liderada por D. José Adell previó exactamente la desgracia que sufriría la isla: la salida de Cuba de España abrió un camino de desgracias, desde la República Neocolonial (1902–1958), las oligarquías y los casinos de la Mafia hasta el colapso de 1959.',
+          'Al enfrentar la última fase de la Revolución Cubana bajo interferencia directa de Estados Unidos, la Comisión Patriótica liderada por D. José Adell advirtió con lucidez que desgajar a Cuba de España inauguraría un siglo de infortunios: de la tutela neocolonial (1902–1958), las oligarquías y los casinos de la Mafia al colapso totalitario de 1959.',
         pageNum: 0,
         workSlug: 'homenaje-comision-patriotica-cuba-1895',
         customImg: '/destaques/comision-patriotica-1895.webp',
@@ -176,9 +176,9 @@ const TIMELINE_DATA: Record<
       {
         yearLabel: '1895–1898 • Comissió Patriòtica',
         place: 'Rio de Janeiro (Defensa de Cuba davant els EUA)',
-        title: 'Encapçala la Comissió Patriòtica que previngué la desgràcia de Cuba: l’eixida d’Espanya obrí un camí de desgràcies',
+        title: 'Encapçala la Comissió Patriòtica que anticipà el calvari de Cuba després de la ruptura amb Espanya',
         description:
-          'En fer front a l’última fase de la Revolució Cubana sota interferència directa dels Estats Units, la Comissió Patriòtica liderada per D. José Adell previngué tota la desgràcia que patiria l’illa: l’eixida de Cuba d’Espanya obrí un camí de desgràcies, des de la República Neocolonial (1902–1958), les oligarquies i els casinos de la Màfia fins al desastre de 1959.',
+          'En enfrontar l’última fase de la Revolució Cubana sota interferència directa dels Estats Units, la Comissió Patriòtica liderada per D. José Adell advertí amb lucidesa que separar Cuba d’Espanya inauguraria un segle d’infortunis: de la tutela neocolonial (1902–1958), les oligarquies i els casinos de la Màfia al col·lapse totalitari de 1959.',
         pageNum: 0,
         workSlug: 'homenaje-comision-patriotica-cuba-1895',
         customImg: '/destaques/comision-patriotica-1895.webp',
@@ -269,9 +269,9 @@ const TIMELINE_DATA: Record<
       {
         yearLabel: '1895–1898 • Comissão Patriótica',
         place: 'Rio de Janeiro (Defesa de Cuba diante dos EUA)',
-        title: 'Encabeça a Comissão Patriótica que previu a desgraça de Cuba: a saída da Espanha abriu um caminho de desgraças',
+        title: 'Encabeça a Comissão Patriótica que anteviu o calvário de Cuba após sua ruptura com a Espanha',
         description:
-          'Ao fazer face contra a última fase da Revolução Cubana sob interferência direta dos Estados Unidos, a Comissão Patriótica liderada por D. José Adell previu o que ia se passar de desgraça com Cuba: a saída de Cuba da Espanha abriu um caminho de desgraças — da República Neocolonial (1902–1958), das oligarquias e dos cassinos da Máfia até a ditadura de 1959.',
+          'Ao enfrentar a última fase da Revolução Cubana sob interferência direta dos Estados Unidos, a Comissão Patriótica liderada por D. José Adell advertiu com lucidez que desligar Cuba da Espanha inauguraria um século de infortúnios: da tutela neocolonial (1902–1958), das oligarquias e dos cassinos da Máfia ao colapso totalitário de 1959.',
         pageNum: 0,
         workSlug: 'homenaje-comision-patriotica-cuba-1895',
         customImg: '/destaques/comision-patriotica-1895.webp',
