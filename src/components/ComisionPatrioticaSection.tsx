@@ -107,6 +107,21 @@ export default function ComisionPatrioticaSection({
           )}
         </div>
 
+        {/* ==================== DESTAQUE CENTRAL EM EVIDÊNCIA: A PREVISÃO DA DESGRAÇA DE CUBA ==================== */}
+        <div className="p-6 sm:p-8 bg-parchment-elevated border-2 sm:border-4 border-deco-crimson shadow-xl space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-deco-gold pb-3">
+            <span className="inline-block px-3.5 py-1 bg-deco-crimson text-white font-sans text-xs sm:text-sm uppercase tracking-[0.14em] font-bold">
+              {c.prophecyBanner.badge}
+            </span>
+          </div>
+          <p className="font-display text-2xl sm:text-3xl font-bold text-charcoal leading-snug">
+            {c.prophecyBanner.headline}
+          </p>
+          <p className="font-serif text-base sm:text-lg text-charcoal font-medium leading-relaxed">
+            {c.prophecyBanner.body}
+          </p>
+        </div>
+
         {/* ==================== ALERTA HISTÓRICO: ÚLTIMA FASE DA REVOLUÇÃO COM INTERFERÊNCIA DIRETA DOS EUA & REPÚBLICA NEOCOLONIAL ==================== */}
         <div className="deco-frame p-5 sm:p-7 bg-parchment-elevated border-l-8 border-l-deco-crimson shadow-lg space-y-3">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-deco-burnished/60 pb-3">

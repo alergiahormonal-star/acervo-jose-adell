@@ -1466,7 +1466,7 @@ export const CATALOG_WORKS: CatalogWork[] = [
     id: '73',
     slug: 'homenaje-comision-patriotica-cuba-1895',
     title: 'Homenage á la Comisión Patriótica (La Unión Española, Año IV, Nº 190)',
-    humanTitle: 'A Comissão Patriótica encabeçada por José Adell para a última fase da Revolução Cubana sob interferência direta dos EUA',
+    humanTitle: 'A Comissão Patriótica que previu a desgraça de Cuba: a saída da Espanha abriu um caminho de desgraças',
     date: '1895–1898 (Capa de 19 de Outubro de 1895)',
     year: 1895,
     periodical: 'La Unión Española',
@@ -1477,7 +1477,7 @@ export const CATALOG_WORKS: CatalogWork[] = [
     featured: true,
     customImage: '/destaques/comision-patriotica-1895.webp',
     summary:
-      'Capa histórica gravada de La Unión Española (Rio de Janeiro) homenageando os 12 integrantes da Comissão Patriótica Espanhola encabeçada por D. José Adell para a última fase da Revolução de Independência de Cuba, marcada pela interferência direta dos Estados Unidos (culminando em 1898). O alerta dos espanhóis confirmou-se integralmente durante a República Neocolonial (1902–1958) sob a tutela da Emenda Platt, marcada pela "República dos Generais e Doutores", monopólios açucareiros norte-americanos, contrabando durante a Lei Seca de 1920 e o império mafioso dos cassinos (Meyer Lansky, Lucky Luciano e Fulgencio Batista).',
+      'Ao fazer face contra a última fase da Revolução Cubana (marcada pela interferência direta dos Estados Unidos, 1895–1898), a Comissão Patriótica encabeçada por D. José Adell no Rio de Janeiro previu com impressionante exatidão tudo o que ia se passar de desgraça com Cuba: a saída de Cuba da Espanha abriu um caminho de desgraças — desde a tutela da Emenda Platt, a oligarquia açucareira, o contrabando na Lei Seca de 1920 e o império mafioso dos cassinos sob Fulgencio Batista na República Neocolonial (1902–1958) até a ditadura comunista de 1959.',
     excerpt:
       'LA UNIÓN ESPAÑOLA — AÑO IV — Nº 190 — RIO DE JANEIRO, 19 OCTUBRE 1895.\n\nIntegrantes retratados: D. Benito Martínez, D. Casiano Fernández, D. Luís de la Fuente, Dr. Ricardo Meneses, D. José Adell, D. Gaspar de los R. Thous, D. Fidel Vergara, D. P. Sieiro Garrido, D. Luís Suárez, D. Francisco Brandariz, D. Vicente do Pazo, D. Ezequiel C. Areas.\n\nHOMENAGE Á LA COMISIÓN PATRIÓTICA. (Gravura assinada por A. Castaño).',
     excerptTranslation:
