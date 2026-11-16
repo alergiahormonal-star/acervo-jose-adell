@@ -177,7 +177,20 @@ export default function MarcelloLegacyReportView({
                     {chapter.title}
                   </h3>
                 </div>
-                <div className="space-y-3.5 font-serif text-base text-charcoal leading-relaxed">
+                <div className="space-y-3.5 font-serif text-base text-charcoal leading-relaxed clearfix">
+                  {chapter.figure && (
+                    <figure className="sm:float-right sm:w-56 sm:ml-6 sm:mb-4 mb-5 mx-auto max-w-[220px] border-2 border-deco-gold bg-[#EFE6D2] p-2.5 shadow-lg space-y-1.5">
+                      <img
+                        src={chapter.figure.src}
+                        alt={chapter.figure.alt}
+                        loading="lazy"
+                        className="w-full h-auto object-contain shadow-sm"
+                      />
+                      <figcaption className="font-serif text-xs italic text-charcoal leading-snug text-center">
+                        {chapter.figure.caption}
+                      </figcaption>
+                    </figure>
+                  )}
                   {chapter.paragraphs.map((para, pIdx) => (
                     <p key={pIdx}>{para}</p>
                   ))}

@@ -14,6 +14,8 @@ interface MilestoneItem {
   workSlug: string;
   customImg?: string;
   customDossierHref?: string;
+  portraitImg?: string;
+  portraitCaption?: string;
 }
 
 const TIMELINE_DATA: Record<
@@ -108,6 +110,8 @@ const TIMELINE_DATA: Record<
           'Fallece a los 33 años su amada esposa Doña Emilia Vallespí de Adell. Cuarenta carruajes acompañan el cortejo mientras Pepe consuela el llanto desgarrador de sus tres hijos pequeños.',
         pageNum: 83,
         workSlug: 'obituario-emilia-vallespi-de-adell-1903',
+        portraitImg: '/destaques/dona-emilia-vallespi-adell.webp',
+        portraitCaption: 'Doña Emilia Vallespí de Adell (1870–1903)',
       },
       {
         yearLabel: '1927 • Bahía y Posteridad',
@@ -201,6 +205,8 @@ const TIMELINE_DATA: Record<
           'Mor als 33 anys la seua estimada esposa Doña Emilia Vallespí de Adell. Quaranta carruatges acompanyen el seguici mentre Pepe consola el plor dels seus tres fills menuts.',
         pageNum: 83,
         workSlug: 'obituario-emilia-vallespi-de-adell-1903',
+        portraitImg: '/destaques/dona-emilia-vallespi-adell.webp',
+        portraitCaption: 'Doña Emilia Vallespí de Adell (1870–1903)',
       },
       {
         yearLabel: '1927 • Bahia i Posteritat',
@@ -294,6 +300,8 @@ const TIMELINE_DATA: Record<
           'Falece aos 33 anos sua amada esposa Doña Emilia Vallespí de Adell. Quarenta carruagens acompanham o cortejo enquanto Pepe consola o choro de seus três filhos pequenos.',
         pageNum: 83,
         workSlug: 'obituario-emilia-vallespi-de-adell-1903',
+        portraitImg: '/destaques/dona-emilia-vallespi-adell.webp',
+        portraitCaption: 'Doña Emilia Vallespí de Adell (1870–1903)',
       },
       {
         yearLabel: '1927 • Bahia e Posteridade',
@@ -412,9 +420,29 @@ export default function InteractiveTimelineSection({
                 {current.title}
               </h3>
 
-              <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
-                {current.description}
-              </p>
+              {current.portraitImg ? (
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 pt-1">
+                  <figure className="w-36 sm:w-40 shrink-0 border-2 border-deco-gold bg-[#EFE6D2] p-1.5 shadow-md space-y-1">
+                    <img
+                      src={current.portraitImg}
+                      alt={current.portraitCaption || current.title}
+                      className="w-full h-auto object-contain"
+                    />
+                    {current.portraitCaption && (
+                      <figcaption className="font-sans text-[10px] font-bold text-deco-crimson text-center leading-tight">
+                        {current.portraitCaption}
+                      </figcaption>
+                    )}
+                  </figure>
+                  <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+                    {current.description}
+                  </p>
+                </div>
+              ) : (
+                <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+                  {current.description}
+                </p>
+              )}
             </div>
 
             <div className="pt-4 border-t border-deco-burnished/40 flex flex-wrap gap-3 font-sans text-xs">

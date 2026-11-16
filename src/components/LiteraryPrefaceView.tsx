@@ -127,7 +127,20 @@ export default function LiteraryPrefaceView({
                   </h2>
                 </div>
 
-                <div className="space-y-4 font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+                <div className="space-y-4 font-serif text-base sm:text-lg text-charcoal leading-relaxed clearfix">
+                  {chapter.figure && (
+                    <figure className="sm:float-right sm:w-60 sm:ml-6 sm:mb-4 mb-5 mx-auto max-w-[240px] border-2 border-deco-gold bg-[#EFE6D2] p-2.5 shadow-lg space-y-1.5">
+                      <img
+                        src={chapter.figure.src}
+                        alt={chapter.figure.alt}
+                        loading="lazy"
+                        className="w-full h-auto object-contain shadow-sm"
+                      />
+                      <figcaption className="font-serif text-xs italic text-charcoal leading-snug text-center">
+                        {chapter.figure.caption}
+                      </figcaption>
+                    </figure>
+                  )}
                   {chapter.paragraphs.map((para, pIdx) => (
                     <p
                       key={pIdx}

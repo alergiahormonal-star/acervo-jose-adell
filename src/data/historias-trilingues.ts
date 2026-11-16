@@ -13,6 +13,7 @@ interface LocalizedStoryText {
   subtitle: string;
   quote: string;
   quoteAuthor: string;
+  portraitCaption?: string;
   paragraphs: string[];
   curiosityBox: { title: string; text: string };
 }
@@ -68,6 +69,8 @@ const STORIES_ES: Record<string, LocalizedStoryText> = {
     quote:
       '¡No había una persona que no llorara al escuchar los desgarradores gritos de los tres huérfanos de la finada —Josefina, Alberto y Pepe— que, en su inconsciencia de la niñez, solo veían que se llevaban a su madre y pedían a toda costa ir con ella!',
     quoteAuthor: 'Crónica necrológica de Río de Janeiro (Septiembre de 1903)',
+    portraitCaption:
+      'Fotografía histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), amada esposa de José Adell y Fons («Pepe Adell») y madre de Josefina, Alberto y Pepín.',
     paragraphs: [
       'Detrás del polemista vigoroso y del maestro artesano del metal latía el corazón de un esposo enamorado y de un padre que conoció el dolor más hondo lejos de su tierra natal. El sábado 5 de septiembre de 1903, a las dos y media de la tarde, fallecía tras larga y cruel enfermedad Doña Emilia Vallespí de Adell. Tenía apenas 33 años, nacida el 1 de enero de 1870 según la nota manuscrita conservada con ternura al pie del recorte.',
       'Por su donaire, ingenio, amabilidad y franqueza sin artificios, Emilia había convertido su hogar en el punto de reunión predilecto de buena parte de la colonia española de Río. Desde la mañana del domingo la casa se llenó de tal multitud que resultaba casi imposible acercarse al ataúd cubierto de flores naturales.',
@@ -190,6 +193,8 @@ const STORIES_VA: Record<string, LocalizedStoryText> = {
     quote:
       'No hi havia una sola persona que no plorara en escoltar els esquinçadors crits dels tres orfes de la finada —Josefina, Alberto i Pepe— que, en la seua inconsciència de la infantesa, sols veien que s’emportaven sa mare i demanaven a tot preu anar-se’n amb ella!',
     quoteAuthor: 'Crònica necrològica de Rio de Janeiro (Setembre de 1903)',
+    portraitCaption:
+      'Fotografia històrica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), estimada esposa de José Adell y Fons («Pepe Adell») i mare de Josefina, Alberto i Pepín.',
     paragraphs: [
       'Darrere del polemista vigorós i del mestre artesà del metall bategava el cor d’un espòs enamorat i d’un pare que conegué el dolor més profund lluny de la terra natal. El dissabte 5 de setembre de 1903, a les dues i mitja de la vesprada, moria després d’una llarga malaltia Doña Emilia Vallespí de Adell, amb només 33 anys.',
       'Per la seua gràcia, enginy, amabilitat i franquesa, Emilia havia convertit sa casa en el punt de trobada predilecte de bona part de la colònia espanyola de Rio. Des del matí de diumenge la residència s’omplí de tanta gent que resultava quasi impossible acostar-se al fèretre cobert de flors naturals.',
@@ -276,13 +281,14 @@ export function getLocalizedStories(lang: SiteLang): HumanStory[] {
       subtitle: tr.subtitle,
       quote: tr.quote,
       quoteAuthor: tr.quoteAuthor,
+      portraitCaption: tr.portraitCaption ?? s.portraitCaption,
       paragraphs: tr.paragraphs,
       curiosityBox: tr.curiosityBox,
     };
   });
 }
 
-const FAMILY_ES: Record<string, { relation: string; dates: string; story: string; highlightQuote?: string }> = {
+const FAMILY_ES: Record<string, { relation: string; dates: string; story: string; highlightQuote?: string; portraitCaption?: string }> = {
   'pepe-adell': {
     relation: 'El Patriarca • Periodista, Librepensador y Maestro Grabador',
     dates: 'Vinaròs, 10.02.1868 — Salvador de Bahía, 12.05.1927',
@@ -297,6 +303,8 @@ const FAMILY_ES: Record<string, { relation: string; dates: string; story: string
       'Mujer de raras dotes de espíritu, franqueza y dulzura, Emilia convirtió el hogar de los Adell en el corazón acogedor de la colonia española en Río de Janeiro. Su partida prematura a los 33 años, un sábado de septiembre de 1903, conmovió a toda la ciudad: más de cuarenta carruajes acompañaron su féretro cubierto de flores hasta el Cementerio de San Juan Bautista.',
     highlightQuote:
       '«Nunca podremos olvidar el donaire, el ingenio y la amabilidad con que acogió a cuantos se presentaban en su casa.»',
+    portraitCaption:
+      'Fotografía histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
   },
   'tres-filhos': {
     relation: 'Los Tres Hijos Huérfanos en la Tarde de 1903',
@@ -324,7 +332,7 @@ const FAMILY_ES: Record<string, { relation: string; dates: string; story: string
   },
 };
 
-const FAMILY_VA: Record<string, { relation: string; dates: string; story: string; highlightQuote?: string }> = {
+const FAMILY_VA: Record<string, { relation: string; dates: string; story: string; highlightQuote?: string; portraitCaption?: string }> = {
   'pepe-adell': {
     relation: 'El Patriarca • Periodista, Lliurepensador i Mestre Gravador',
     dates: 'Vinaròs, 10.02.1868 — Salvador de Bahia, 12.05.1927',
@@ -339,6 +347,8 @@ const FAMILY_VA: Record<string, { relation: string; dates: string; story: string
       'Dona de rares dots d’esperit, franquesa i dolçor, Emilia convertí la llar dels Adell en el cor acollidor de la colònia espanyola a Rio de Janeiro. La seua partida prematura als 33 anys commogué tota la ciutat: més de quaranta carruatges acompanyaren el seu fèretre cobert de flors fins al Cementeri de São João Batista.',
     highlightQuote:
       '«Mai no podrem oblidar la gràcia, l’enginy i l’amabilitat amb què acollí a tots els qui es presentaven a sa casa.»',
+    portraitCaption:
+      'Fotografia històrica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
   },
   'tres-filhos': {
     relation: 'Els Tres Fills Orfes en la Vesprada de 1903',
@@ -378,6 +388,7 @@ export function getLocalizedFamily(lang: SiteLang): FamilyMember[] {
       dates: tr.dates,
       story: tr.story,
       highlightQuote: tr.highlightQuote,
+      portraitCaption: tr.portraitCaption ?? m.portraitCaption,
     };
   });
 }

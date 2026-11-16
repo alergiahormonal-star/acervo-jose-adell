@@ -182,9 +182,31 @@ export default function WorkDetailClient({
             <h3 className="font-sans text-xs uppercase tracking-widest text-deco-crimson font-bold border-b border-deco-burnished/40 pb-2">
               {t.workContextTitle}
             </h3>
-            <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
-              {work.summary}
-            </p>
+            {rawWork.relatedPortrait ? (
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                <figure className="w-44 sm:w-48 shrink-0 border-2 border-deco-gold bg-[#EFE6D2] p-2 shadow-md space-y-1.5">
+                  <img
+                    src={rawWork.relatedPortrait.src}
+                    alt={work.humanTitle}
+                    className="w-full h-auto object-contain"
+                  />
+                  <figcaption className="font-serif text-[11px] italic text-charcoal leading-snug text-center">
+                    {lang === 'va'
+                      ? rawWork.relatedPortrait.captionVa
+                      : lang === 'pt'
+                      ? rawWork.relatedPortrait.captionPt
+                      : rawWork.relatedPortrait.captionEs}
+                  </figcaption>
+                </figure>
+                <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+                  {work.summary}
+                </p>
+              </div>
+            ) : (
+              <p className="font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+                {work.summary}
+              </p>
+            )}
           </section>
 
           <section className="lg:col-span-5 deco-frame p-6 space-y-3">

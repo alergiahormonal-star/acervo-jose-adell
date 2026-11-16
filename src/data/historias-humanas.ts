@@ -9,6 +9,8 @@ export interface HumanStory {
   quote: string;
   quoteAuthor: string;
   coverImage: string;
+  portraitImage?: string;
+  portraitCaption?: string;
   pages: number[];
   relatedWorkSlugs: string[];
   paragraphs: string[];
@@ -27,6 +29,8 @@ export interface FamilyMember {
   highlightQuote?: string;
   pages: number[];
   image: string;
+  isPortrait?: boolean;
+  portraitCaption?: string;
 }
 
 export const FAMILY_AND_CIRCLE: FamilyMember[] = [
@@ -52,7 +56,10 @@ export const FAMILY_AND_CIRCLE: FamilyMember[] = [
     highlightQuote:
       '“Nunca poderemos esquecer a graça, o engenho e a amabilidade com que acolhia a quantos se apresentavam em sua casa.”',
     pages: [80, 82, 83],
-    image: '/paginas/pagina-83.webp',
+    image: '/destaques/dona-emilia-vallespi-adell.webp',
+    isPortrait: true,
+    portraitCaption:
+      'Fotografia histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
   },
   {
     id: 'tres-filhos',
@@ -157,7 +164,10 @@ export const HUMAN_STORIES: HumanStory[] = [
     quote:
       'Não havia uma única pessoa que não chorasse ao escutar os dilacerantes gritos dos três órfãos — Josefina, Alberto e Pepe — que só viam que levavam sua mãe e pediam a todo custo para ir com ela!',
     quoteAuthor: 'Crônica fúnebre do Rio de Janeiro (Setembro de 1903)',
-    coverImage: '/paginas/pagina-83.webp',
+    coverImage: '/destaques/dona-emilia-vallespi-adell.webp',
+    portraitImage: '/destaques/dona-emilia-vallespi-adell.webp',
+    portraitCaption:
+      'Fotografia histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), amada esposa de José Adell y Fons («Pepe Adell») e mãe de Josefina, Alberto e Pepín.',
     pages: [83, 82, 80],
     relatedWorkSlugs: ['obituario-emilia-vallespi-de-adell-1903', 'missa-setimo-dia-emilia-vallespi-1903'],
     paragraphs: [

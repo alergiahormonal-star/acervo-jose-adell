@@ -48,6 +48,13 @@ export const CATEGORY_LABELS: Record<
   },
 };
 
+export interface RelatedPortrait {
+  src: string;
+  captionEs: string;
+  captionVa: string;
+  captionPt: string;
+}
+
 export interface CatalogWork {
   id: string;
   slug: string;
@@ -65,6 +72,7 @@ export interface CatalogWork {
   excerptTranslation: string;
   featured?: boolean;
   customImage?: string;
+  relatedPortrait?: RelatedPortrait;
 }
 
 export const CATALOG_WORKS: CatalogWork[] = [
@@ -102,6 +110,15 @@ export const CATALOG_WORKS: CatalogWork[] = [
     category: 'humanidade-familia',
     pages: [83, 82],
     featured: true,
+    relatedPortrait: {
+      src: '/destaques/dona-emilia-vallespi-adell.webp',
+      captionEs:
+        'Fotografía histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
+      captionVa:
+        'Fotografia històrica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
+      captionPt:
+        'Fotografia histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
+    },
     summary:
       'Relato dilacerante do falecimento da esposa de José Adell aos 33 anos. Descreve como sua casa era o lar espiritual da colônia espanhola no Rio, reproduz as dedicatórias das coroas de flores (“A su querida Emilia, Pepe”) e narra a cena inesquecível das 17h, quando os três filhos pequenos imploraram chorando para entrar no coche fúnebre junto com a mãe rumo ao Cemitério de São João Batista (quadro 2º, nº 2666).',
     excerpt:
@@ -121,6 +138,15 @@ export const CATALOG_WORKS: CatalogWork[] = [
     signature: 'Redação do Jornal do Brasil',
     category: 'humanidade-familia',
     pages: [80],
+    relatedPortrait: {
+      src: '/destaques/dona-emilia-vallespi-adell.webp',
+      captionEs:
+        'Fotografía histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
+      captionVa:
+        'Fotografia històrica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
+      captionPt:
+        'Fotografia histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons.',
+    },
     summary:
       'Registro publicado em português pelo Jornal do Brasil listando as dezenas de personalidades e famílias que lotaram o altar-mor da Igreja de São Francisco de Paula às 9h da manhã em abraço solidário a José Adell, incluindo o Cônsul Juan Capllonch y Puerto, Adolfo Morales de los Ríos, Plácido Isasi, Elías Novoa e Vicente do Pazo.',
     excerpt:
@@ -1398,6 +1424,15 @@ export const CATALOG_WORKS: CatalogWork[] = [
     category: 'humanidade-familia',
     pages: [82],
     featured: true,
+    relatedPortrait: {
+      src: '/destaques/dona-emilia-vallespi-adell.webp',
+      captionEs:
+        'Fotografía histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons — recordada como «toda amor, bondad, ingenio y alegría».',
+      captionVa:
+        'Fotografia històrica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons — recordada com «tota amor, bondat, enginy i alegria».',
+      captionPt:
+        'Fotografia histórica original de Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), esposa de José Adell y Fons — lembrada como «toda amor, bondade, engenho e alegria».',
+    },
     summary:
       'Registra nominalmente dezenas de amigos presentes no sepultamento de Doña Emilia Vallespí de Adell e preserva as palavras comovidas de Don Francisco Fernández ao descer o corpo à sepultura nº 2666 do quadro 2º do Cemitério de São João Batista, no Rio de Janeiro.',
     excerpt:

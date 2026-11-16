@@ -81,7 +81,21 @@ export default function StoryDetailView({
             </footer>
           </blockquote>
 
-          <div className="space-y-5 font-serif text-base sm:text-lg text-charcoal leading-relaxed">
+          <div className="space-y-5 font-serif text-base sm:text-lg text-charcoal leading-relaxed clearfix">
+            {story.portraitImage && (
+              <figure className="sm:float-right sm:w-72 sm:ml-8 sm:mb-5 mb-6 mx-auto max-w-xs border-2 border-deco-gold bg-[#EFE6D2] p-3 shadow-lg space-y-2">
+                <img
+                  src={story.portraitImage}
+                  alt={story.title}
+                  className="w-full h-auto object-contain shadow-sm"
+                />
+                {story.portraitCaption && (
+                  <figcaption className="font-serif text-xs italic text-charcoal leading-snug text-center">
+                    {story.portraitCaption}
+                  </figcaption>
+                )}
+              </figure>
+            )}
             {story.paragraphs.map((p, idx) => (
               <p
                 key={idx}

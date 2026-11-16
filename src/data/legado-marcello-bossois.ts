@@ -1,8 +1,15 @@
 import { SiteLang } from '@/lib/i18n-ui';
 
+export interface PrefaceFigure {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
 export interface PrefaceChapter {
   roman: string;
   title: string;
+  figure?: PrefaceFigure;
   paragraphs: string[];
 }
 
@@ -126,8 +133,14 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
         {
           roman: 'IV',
           title: 'Las Cuarenta Carrozas del Dolor y la Sonrisa Inmortal en Bahía (1903–1927)',
+          figure: {
+            src: '/destaques/dona-emilia-vallespi-adell.webp',
+            alt: 'Doña Emilia Vallespí de Adell (1870–1903), esposa de José Adell y Fons',
+            caption:
+              'Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), amada esposa de Pepe Adell y alma del hogar familiar en Río de Janeiro.',
+          },
           paragraphs: [
-            'Pero la grandeza de un hombre se mide, sobre todo, en la hora desnuda del dolor. En febrero de 1903, la muerte arrebató en Río de Janeiro, a los treinta y dos años de edad, a su amadísima esposa y compañera de luchas, Doña Emilia Vallespí de Adell. Cuarenta carruajes acompañaron el féretro hasta el cementerio de São Francisco Xavier bajo una lluvia de lágrimas y coronas. Quedaba Pepe Adell viudo en tierra americana con sus pequeños hijos —Josefina, Alberto y Pepín— abrazados a su levita negra. Muchos habrían sucumbido a la amargura; él, en cambio, transformó el luto en amor redoblado hacia sus hijos, hacia los huérfanos y hacia las sociedades de beneficencia.',
+            'Pero la grandeza de un hombre se mide, sobre todo, en la hora desnuda del dolor. El 5 de septiembre de 1903, la muerte arrebató en Río de Janeiro, a los treinta y tres años de edad, a su amadísima esposa y compañera de luchas, Doña Emilia Vallespí de Adell. Cuarenta carruajes acompañaron el féretro hasta el cementerio de San Juan Bautista bajo una lluvia de lágrimas y coronas. Quedaba Pepe Adell viudo en tierra americana con sus pequeños hijos —Josefina, Alberto y Pepín— abrazados a su levita negra. Muchos habrían sucumbido a la amargura; él, en cambio, transformó el luto en amor redoblado hacia sus hijos, hacia los huérfanos y hacia las sociedades de beneficencia.',
             'Cuando el 12 de mayo de 1927 entregó su alma en Salvador de Bahía, a los cincuenta y nueve años de edad, la prensa de España y del Brasil se vistió de duelo. Fue entonces cuando el viejo maestro Adolfo Morales de los Ríos escribió aquella carta de despedida que ningún descendiente puede leer sin que se le empañen los ojos: recordaba cómo en la Rua da Ajuda todos reían y esperaban siempre lo mejor de la vida porque seguían la máxima íntima de Pepe Adell: «Más vale hablar de cosas risueñas, que escribir sobre lágrimas».',
           ],
         },
@@ -221,8 +234,14 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
         {
           roman: 'IV',
           title: 'Les Quaranta Carrosses del Dolor i el Somriure Immortal a Bahia (1903–1927)',
+          figure: {
+            src: '/destaques/dona-emilia-vallespi-adell.webp',
+            alt: 'Doña Emilia Vallespí de Adell (1870–1903), esposa de José Adell y Fons',
+            caption:
+              'Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), estimada esposa de Pepe Adell i ànima de la llar familiar a Rio de Janeiro.',
+          },
           paragraphs: [
-            'Però la grandesa d’un home es mesura, sobretot, en l’hora nua del dolor. El febrer de 1903, la mort arrabassà a Rio de Janeiro, als trenta-dos anys d’edat, la seua estimadíssima esposa i companya de lluites, Doña Emilia Vallespí de Adell. Quaranta carruatges acompanyaren el fèretre fins al cementeri de São Francisco Xavier sota una pluja de llàgrimes i corones. Quedava Pepe Adell vidu en terra americana amb els seus fills menuts —Josefina, Alberto i Pepín— abraçats a la seua levita negra. Molts haurien sucumbit a l’amargor; ell, en canvi, transformà el dol en amor redoblat cap als seus fills, cap als orfes i cap a les societats de beneficència.',
+            'Però la grandesa d’un home es mesura, sobretot, en l’hora nua del dolor. El 5 de setembre de 1903, la mort arrabassà a Rio de Janeiro, als trenta-tres anys d’edat, la seua estimadíssima esposa i companya de lluites, Doña Emilia Vallespí de Adell. Quaranta carruatges acompanyaren el fèretre fins al cementeri de São João Batista sota una pluja de llàgrimes i corones. Quedava Pepe Adell vidu en terra americana amb els seus fills menuts —Josefina, Alberto i Pepín— abraçats a la seua levita negra. Molts haurien sucumbit a l’amargor; ell, en canvi, transformà el dol en amor redoblat cap als seus fills, cap als orfes i cap a les societats de beneficència.',
             'Quan el 12 de maig de 1927 lliurà la seua ànima a Salvador de Bahia, als cinquanta-nou anys d’edat, la premsa d’Espanya i del Brasil es vestí de dol. Fou aleshores quan el vell mestre Adolfo Morales de los Ríos escrigué aquella carta de comiat que cap descendent pot llegir sense que se li entelen els ulls: recordava com a la Rua da Ajuda tots reien i esperaven sempre el millor de la vida perquè seguien la màxima íntima de Pepe Adell: «Més val parlar de coses rialleres que escriure sobre llàgrimes».',
           ],
         },
@@ -316,8 +335,14 @@ export const TRINETO_IDEALIZADOR_I18N: Record<SiteLang, TrinetoIdealizadorConten
         {
           roman: 'IV',
           title: 'As Quarenta Carruagens da Dor e o Sorriso Imortal na Bahia (1903–1927)',
+          figure: {
+            src: '/destaques/dona-emilia-vallespi-adell.webp',
+            alt: 'Doña Emilia Vallespí de Adell (1870–1903), esposa de José Adell y Fons',
+            caption:
+              'Doña Emilia Vallespí de Adell (01.01.1870 — 05.09.1903), amada esposa de Pepe Adell e alma do lar familiar no Rio de Janeiro.',
+          },
           paragraphs: [
-            'Mas a grandeza de um homem mede-se, sobretudo, na hora desnuda da dor. Em fevereiro de 1903, a morte arrebatou no Rio de Janeiro, aos trinta e dois anos de idade, sua amadíssima esposa e companheira de lutas, Doña Emilia Vallespí de Adell. Quarenta carruagens acompanharam o féretro até o cemitério de São Francisco Xavier sob uma chuva de lágrimas e coroas. Ficava Pepe Adell viúvo em terra americana com seus filhos pequenos — Josefina, Alberto e Pepín — abraçados à sua sobrecasaca negra. Muitos teriam sucumbido à amargura; ele, ao contrário, transformou o luto em amor redobrado pelos filhos, pelos órfãos e pelas sociedades de beneficência.',
+            'Mas a grandeza de um homem mede-se, sobretudo, na hora desnuda da dor. Em 5 de setembro de 1903, a morte arrebatou no Rio de Janeiro, aos trinta e três anos de idade, sua amadíssima esposa e companheira de lutas, Doña Emilia Vallespí de Adell. Quarenta carruagens acompanharam o féretro até o cemitério de São João Batista sob uma chuva de lágrimas e coroas. Ficava Pepe Adell viúvo em terra americana com seus filhos pequenos — Josefina, Alberto e Pepín — abraçados à sua sobrecasaca negra. Muitos teriam sucumbido à amargura; ele, ao contrário, transformou o luto em amor redobrado pelos filhos, pelos órfãos e pelas sociedades de beneficência.',
             'Quando, em 12 de maio de 1927, entregou sua alma em Salvador da Bahia, aos cinquenta e nove anos de idade, a imprensa da Espanha e do Brasil vestiu-se de luto. Foi então que o velho mestre Adolfo Morales de los Ríos escreveu aquela carta de despedida que nenhum descendente pode ler sem que os olhos se marejem: recordava como na Rua da Ajuda todos riam e esperavam sempre o melhor da vida porque seguiam a máxima íntima de Pepe Adell: “Mais vale falar de coisas risonhas do que escrever sobre lágrimas”.',
           ],
         },

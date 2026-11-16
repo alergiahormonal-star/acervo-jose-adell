@@ -146,35 +146,55 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                   <SpainAndValenciaFlags size="lg" />
                 </div>
 
-                {/* Retrato Autêntico Gravado em 1895 + Assinatura Autógrafa */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-b border-deco-burnished/40 pb-4 items-center">
-                  <Link
-                    href={`${prefix}/comision-patriotica-1895/`}
-                    className="text-center bg-[#EFE6D2] border border-deco-burnished/50 p-2.5 hover:border-deco-crimson transition-colors group"
-                  >
-                    <img
-                      src="/destaques/retrato-pepe-adell-1895.webp"
-                      alt="D. José Adell — Retrato grabado en La Unión Española (19.10.1895)"
-                      className="max-h-36 mx-auto object-contain group-hover:scale-105 transition-transform"
-                    />
-                    <span className="font-sans text-[9px] uppercase tracking-[0.14em] text-deco-crimson font-bold block mt-1.5">
-                      {lang === 'va'
-                        ? 'D. José Adell (1895 • 27 anys)'
-                        : lang === 'pt'
-                        ? 'D. José Adell (1895 • 27 anos)'
-                        : 'D. José Adell (1895 • 27 años)'}
-                    </span>
-                  </Link>
+                {/* Retratos Autênticos do Casal (Pepe Adell & Doña Emilia) + Assinatura Autógrafa */}
+                <div className="space-y-3 border-b border-deco-burnished/40 pb-4">
+                  <div className="grid grid-cols-2 gap-3 items-stretch">
+                    <Link
+                      href={`${prefix}/comision-patriotica-1895/`}
+                      className="text-center bg-[#EFE6D2] border border-deco-burnished/50 p-2.5 hover:border-deco-crimson transition-colors group flex flex-col justify-between"
+                    >
+                      <img
+                        src="/destaques/retrato-pepe-adell-1895.webp"
+                        alt="D. José Adell — Retrato grabado en La Unión Española"
+                        className="max-h-36 mx-auto object-contain group-hover:scale-105 transition-transform"
+                      />
+                      <span className="font-sans text-[9px] uppercase tracking-[0.12em] text-deco-crimson font-bold block mt-1.5">
+                        {lang === 'va'
+                          ? 'D. José Adell (1868–1927)'
+                          : lang === 'pt'
+                          ? 'D. José Adell (1868–1927)'
+                          : 'D. José Adell (1868–1927)'}
+                      </span>
+                    </Link>
 
-                  <div className="text-center space-y-1.5">
+                    <Link
+                      href={`${prefix}/historia/o-adeus-a-dona-emilia-e-o-grito-dos-tres-filhos-1903/`}
+                      className="text-center bg-[#EFE6D2] border border-deco-burnished/50 p-2.5 hover:border-deco-crimson transition-colors group flex flex-col justify-between"
+                    >
+                      <img
+                        src="/destaques/dona-emilia-vallespi-adell.webp"
+                        alt="Doña Emilia Vallespí de Adell (1870–1903), esposa de José Adell"
+                        className="max-h-36 mx-auto object-contain group-hover:scale-105 transition-transform"
+                      />
+                      <span className="font-sans text-[9px] uppercase tracking-[0.12em] text-deco-crimson font-bold block mt-1.5">
+                        {lang === 'va'
+                          ? 'Doña Emilia Vallespí (1870–1903)'
+                          : lang === 'pt'
+                          ? 'Doña Emilia Vallespí (1870–1903)'
+                          : 'Doña Emilia Vallespí (1870–1903)'}
+                      </span>
+                    </Link>
+                  </div>
+
+                  <div className="text-center space-y-1">
                     <span className="font-sans text-[9px] uppercase tracking-[0.16em] text-deco-gold font-bold block">
                       {t.signatureCaption}
                     </span>
-                    <div className="bg-[#EFE6D2] border border-deco-burnished/40 p-2.5">
+                    <div className="bg-[#EFE6D2] border border-deco-burnished/40 py-2 px-4">
                       <img
                         src="/destaques/assinatura-jose-adell.webp"
                         alt="José Adell — Firma autógrafa"
-                        className="max-h-20 mx-auto object-contain"
+                        className="max-h-14 mx-auto object-contain"
                       />
                     </div>
                   </div>
@@ -379,24 +399,34 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                     key={person.id}
                     type="button"
                     onClick={() => setSelectedFamilyIdx(idx)}
-                    className={`w-full text-left p-4 border transition-all flex items-center justify-between ${
+                    className={`w-full text-left p-4 border transition-all flex items-center justify-between gap-3 ${
                       selectedFamilyIdx === idx
                         ? 'deco-frame border-deco-gold shadow-lg'
                         : 'bg-parchment-card border-deco-burnished/40 hover:border-deco-gold'
                     }`}
                   >
-                    <div className="pr-3">
-                      <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-deco-crimson block">
-                        {person.relation}
-                      </span>
-                      <span className="font-display text-xl font-bold text-charcoal block mt-0.5">
-                        {person.name}
-                      </span>
-                      <span className="font-sans text-xs text-charcoal-muted">
-                        {person.dates}
-                      </span>
+                    <div className="flex items-center gap-3 min-w-0">
+                      {person.isPortrait && (
+                        <img
+                          src={person.image}
+                          alt={person.name}
+                          loading="lazy"
+                          className="w-12 h-14 object-cover object-top border border-deco-gold bg-[#EFE6D2] shrink-0 shadow-sm"
+                        />
+                      )}
+                      <div className="pr-2 min-w-0">
+                        <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-deco-crimson block">
+                          {person.relation}
+                        </span>
+                        <span className="font-display text-xl font-bold text-charcoal block mt-0.5">
+                          {person.name}
+                        </span>
+                        <span className="font-sans text-xs text-charcoal-muted">
+                          {person.dates}
+                        </span>
+                      </div>
                     </div>
-                    <span className="text-deco-gold font-bold text-lg">→</span>
+                    <span className="text-deco-gold font-bold text-lg shrink-0">→</span>
                   </button>
                 ))}
               </div>
@@ -408,11 +438,17 @@ export default function HomeExperience({ lang = 'es' }: { lang?: SiteLang }) {
                       <img
                         src={activeMember.image}
                         alt={activeMember.name}
-                        className="w-full h-72 object-cover object-top shadow-sm"
+                        className={
+                          activeMember.isPortrait
+                            ? 'w-full max-h-80 object-contain mx-auto shadow-sm'
+                            : 'w-full h-72 object-cover object-top shadow-sm'
+                        }
                       />
                     </div>
-                    <p className="font-sans text-[11px] text-center text-charcoal-muted">
-                      {t.familyFacsimileLabel} {activeMember.pages.join(', ')}
+                    <p className="font-sans text-[11px] text-center text-charcoal-muted leading-snug">
+                      {activeMember.isPortrait && activeMember.portraitCaption
+                        ? `${activeMember.portraitCaption} (${t.familyFacsimileLabel} ${activeMember.pages.join(', ')})`
+                        : `${t.familyFacsimileLabel} ${activeMember.pages.join(', ')}`}
                     </p>
                     {activeFamilyWork && (
                       <div className="p-3 bg-parchment-elevated border-l-4 border-deco-crimson space-y-1.5 text-left">
